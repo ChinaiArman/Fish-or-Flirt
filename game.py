@@ -42,7 +42,16 @@ def describe_current_location(board, character):
 
 
 def make_character(name):
-    return name
+    character = {
+        "name": name,
+        "x-coordinate": 0,
+        "y-coordinate": 0,
+        "luck": 0,
+        "charisma": 0,
+        "rod level": 0,
+        "inventory": []
+    }
+    return character
 
 
 def make_board(rows, columns):
