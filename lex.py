@@ -1,4 +1,5 @@
 from art import *
+import sys, time
 
 print(r"""\
                                                                                                                                                       
@@ -183,5 +184,11 @@ invalid_move_water = [
 ]
 
 tprint("ERROR 102", "dirty")
-for statements in invalid_move_water:
-    print(statements)
+
+# prints a character at a time
+for statement in invalid_move_water:
+    for char in statement:
+        print(char, end="")
+        sys.stdout.flush()
+        time.sleep(0.05)
+    print("")
