@@ -1,4 +1,5 @@
 from art import *
+import sys, time
 
 print(r"""\
                                                                                                                                                       
@@ -147,9 +148,9 @@ random_encounter_mermaid = [
 
 no_encounter_land = [
     "I don't like sand. ( ｡ •̀ ᴖ •́ ｡) It's coarse and rough and irritating and it gets everywhere.",
-    "WOW! CONGRATS! YOU FOUND \nseaweed... You found wet soggy seaweed... congrats",
+    "WOW! CONGRATS! YOU FOUND\nseaweed... You found wet soggy seaweed... congrats",
     "What kind of fisherman stays landlocked! Go to the sea, you'll find nothing on this barren land.",
-    "The 'racle hast possess'd me, I f'resee a prophecy... \nGasp! the young gudgeon'rman finds nothing h're"
+    "The 'racle hast possess'd me, I f'resee a prophecy...\nGasp! the young gudgeon'rman finds nothing h're!"
 ]
 
 no_encounter_sea = [
@@ -159,8 +160,35 @@ no_encounter_sea = [
     "You came, you saw, you left empty handed. Ain't no fish here pal!"
 ]
 
-encounter_leviathan = "Abandon hope all ye who enters here. \n" \
-                      "For here lies the lair of Leviathan, ruler of the deep and vicious seas. \n" \
-                      "If you unlucky sailors find yourselves in its maw, despair.\n" \
+encounter_leviathan = "Abandon hope all ye who enters here.\n" \
+                      "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
+                      "If you unlucky sailors find yourselves in its maw, despair\n" \
                       "<You have reached the final boss, the Leviathan! Are your stats high enough to fish or " \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
+
+invalid_move_land = [
+    "You can't step here!",
+    "There's nothing for you here.",
+    "The crabs look at you with disgust. What are you, stupid? You can't go there! Go somewhere else!",
+    "Error 102. Test subject is attempting to breach the wall. Alert. Alert. Alert. Alert. Alert. Al-\n"
+    "The crabs look at you with disgust. What are you, stupid? You can't go there! Go somewhere else!",
+    "WOW! You found a fish!... Is that what you thought would happen? You think you're so clever huh. You fool. There's nothing here!!"
+]
+
+invalid_move_water = [
+    "Careful there buddy! If you go over the edge you'll fall off this world!",
+    "You look into the void.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe void looks back.\nYou should turn back",
+    "Did you know that the world is actually a hemisphere laid onto of four elephants standing onto of a giant turtle? "
+    "You should be careful going that way, you might fall off the earth and onto a turtle.",
+    "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
+]
+
+tprint("ERROR 102", "dirty")
+
+# prints a character at a time
+for statement in invalid_move_water:
+    for char in statement:
+        print(char, end="")
+        sys.stdout.flush()
+        time.sleep(0.05)
+    print("")
