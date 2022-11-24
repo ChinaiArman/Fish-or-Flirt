@@ -100,7 +100,7 @@ tprint("True Final Boss")
 # each non encounter (land and sea)
 # each special encounter leviathan
 
-greeting = "Hello. We all know why you're here. \n" \
+get_name = "Hello. We all know why you're here. \n" \
            "You wish to fish. \n" \
            "You want to warp a carp, \n" \
            "getta a betta, net a flounder ten-pounder, snag a daring red haring– \n" \
@@ -108,7 +108,11 @@ greeting = "Hello. We all know why you're here. \n" \
            "I'll stop embarrassing you. \n" \
            "Here. \n" \
            "Take a fishing rod, \n" \
-           "and go wild kid."
+           "and go wild kid.\nBut first. What is your name?\t\t"
+
+choose_class = "What class do you want be in? Do you want to be a doctor, neurosurgeon, lawyer, fisherman, dentist, psychologist, magician, Prime Minister of Canada, Premier of Australia, astronaut, or rocket scientist?"
+
+after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder. Well, you get no autonomy anyways, so you're a fishman now. Congrats."
 
 random_encounter_crab = [
     "You were thoroughly enjoying the feeling of sand beneath your toes, until a crab decides your toes were looking at it the wrong way. The crab challenges you to a duel.",
@@ -182,6 +186,8 @@ invalid_move_water = [
     "You should be careful going that way, you might fall off the earth and onto a turtle.",
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
+
+
 
 tprint("ERROR 102", "dirty")
 
