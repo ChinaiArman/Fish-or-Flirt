@@ -55,6 +55,7 @@ def get_user_choice():
 
 def describe_current_location(board, character, columns):
     position = (character['x-coordinate'], character['y-coordinate'])
+    tile = board[position]
     board[position] = "\U0001F606"
     counter = 1
     for icon in board.values():
@@ -63,6 +64,7 @@ def describe_current_location(board, character, columns):
         else:
             print(icon, end="")
         counter += 1
+    board[position] = tile
 
 
 def make_character(name):
