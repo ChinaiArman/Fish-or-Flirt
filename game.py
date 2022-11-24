@@ -4,6 +4,18 @@ Lex Wong | A01322278
 """
 
 
+def boat_event(character):
+    pass
+
+
+def random_land_event(character):
+    pass
+
+
+def random_water_event(character):
+    pass
+
+
 def check_if_goal_attained(board, character):
     return False
 
@@ -24,45 +36,54 @@ def check_for_challenges():
     return True
 
 
-def move_character(character):
-    pass
+def move_character(character, move):
+    x_direction, y_direction = move
+    character["x-coordinate"] = x_direction
+    character["y-coordinate"] = y_direction
+    return
 
 
 def validate_move(board, character, direction):
-    if direction == "1" and character["x-coordinate"] != 0:
-        character["x-coordinate"] -= 1
-        return True
-    elif direction == "2" and character["x-coordinate"] != 9:
-        character["x-coordinate"] += 1
-        return True
-    elif direction == "3" and character["y-coordinate"] != 9:
-        character["y-coordinate"] += 1
-        return True
-    elif direction == "4" and character["y-coordinate"] != 0:
-        character["y-coordinate"] -= 1
-        return True
+    x_direction, y_direction = direction
+    if (character["x-coordinate"], character["y-coordinate"]) == direction:
+        return (character["x-coordinate"], character["y-coordinate"]), False
+    elif x_direction > 9 or x_direction < 0:
+        return (character["x-coordinate"], character["y-coordinate"]), False
+    elif y_direction > 9 or y_direction < 0:
+        return (character["x-coordinate"], character["y-coordinate"]), False
+    elif board[direction] == "\U0001F30A" and character["rod level"] == 0:
+        return (character["x-coordinate"], character["y-coordinate"]), False
     else:
-        return False
+        return direction, True
 
-
-def get_user_choice():
+def get_user_choice(character):
     print("Pick a direction to travel")
     directions = ["north", "south", "east", "west"]
     for key, direction in enumerate(directions, 1):
-        print(f"{key}.\t{direction}\t\t", end="")
-    return input("\nAnswer Here:\t")
+        print(f"{key}.\t{direction}")
+    direction = input("\nAnswer Here:\t")
+    if direction == "1":
+        return character["x-coordinate"] - 1, character["y-coordinate"]
+    elif direction == "2":
+        return character["x-coordinate"] + 1, character["y-coordinate"]
+    elif direction == "3":
+        return character["x-coordinate"], character["y-coordinate"] + 1
+    elif direction == "4":
+        return character["x-coordinate"], character["y-coordinate"] - 1
+    else:
+        return character["x-coordinate"], character["y-coordinate"]
 
 
 def describe_current_location(board, character, columns):
     position = (character['x-coordinate'], character['y-coordinate'])
     tile = board[position]
-    board[position] = "\U0001F606"
+    board[position] = "\U0001F9CD"
     counter = 1
     for icon in board.values():
         if counter % columns == 0:
-            print(icon)
+            print(icon[0])
         else:
-            print(icon, end="")
+            print(icon[0], end="")
         counter += 1
     board[position] = tile
 
@@ -81,21 +102,28 @@ def make_character(name):
 
 
 def make_board(rows, columns):
+    sea_tile = "\U0001F30A"
+    land_tile = "\U0001F3D6"
+    boat_tile = "\U000026F5"
     board = {}
+    # WATER
     for row in range(rows):
         for column in range(columns):
-            board[row, column] = "\U0001F30A"
+            board[row, column] = sea_tile
+    # SAND
     for column in range(columns):
-        board[9, column] = "\U000023F3"
+        board[9, column] = land_tile
     for column in range(columns):
         if column > 1:
-            board[8, column] = "\U000023F3"
+            board[8, column] = land_tile
     for column in range(columns):
         if column > 5:
-            board[7, column] = "\U000023F3"
+            board[7, column] = land_tile
     for column in range(columns):
         if column > 8:
-            board[6, column] = "\U000023F3"
+            board[6, column] = land_tile
+    # BOAT
+    board[(6, 9)] = boat_tile
     return board
 
 
@@ -107,10 +135,10 @@ def game():
     achieved_goal = False
     while not achieved_goal:
         describe_current_location(board, character, columns)
-        direction = get_user_choice()
-        valid_move = validate_move(board, character, direction)
+        direction = get_user_choice(character)
+        move, valid_move = validate_move(board, character, direction)
         if valid_move:
-            move_character(character)
+            move_character(character, move)
             # describe_current_location(board, character, columns)
             there_is_a_challenge = check_for_challenges()
             if there_is_a_challenge:
