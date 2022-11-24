@@ -5,7 +5,7 @@ Lex Wong | A01322278
 
 
 def check_if_goal_attained(board, character):
-    return True
+    return False
 
 
 def execute_glow_up_protocol():
@@ -29,12 +29,28 @@ def move_character(character):
 
 
 def validate_move(board, character, direction):
-    return True
+    if direction == "1" and character["x-coordinate"] != 0:
+        character["x-coordinate"] -= 1
+        return True
+    elif direction == "2" and character["x-coordinate"] != 9:
+        character["x-coordinate"] += 1
+        return True
+    elif direction == "3" and character["y-coordinate"] != 9:
+        character["y-coordinate"] += 1
+        return True
+    elif direction == "4" and character["y-coordinate"] != 0:
+        character["y-coordinate"] -= 1
+        return True
+    else:
+        return False
 
 
 def get_user_choice():
-    choice = 0
-    return choice
+    print("Pick a direction to travel")
+    directions = ["north", "south", "east", "west"]
+    for key, direction in enumerate(directions, 1):
+        print(f"{key}.\t{direction}\t\t", end="")
+    return input("\nAnswer Here:\t")
 
 
 def describe_current_location(board, character, columns):
