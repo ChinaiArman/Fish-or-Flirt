@@ -46,13 +46,18 @@ def make_character(name):
 
 
 def make_board(rows, columns):
-    return rows, columns
+    board = {}
+    for row in range(rows):
+        for column in range(columns):
+            board[row, column] = "\U0001f600"
+    return board
 
 
 def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
+    print(board)
     character = make_character("Player name")
     achieved_goal = False
     while not achieved_goal:
