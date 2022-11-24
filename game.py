@@ -85,6 +85,17 @@ def make_board(rows, columns):
     for row in range(rows):
         for column in range(columns):
             board[row, column] = "\U0001F30A"
+    for column in range(columns):
+        board[9, column] = "\U000023F3"
+    for column in range(columns):
+        if column > 1:
+            board[8, column] = "\U000023F3"
+    for column in range(columns):
+        if column > 5:
+            board[7, column] = "\U000023F3"
+    for column in range(columns):
+        if column > 8:
+            board[6, column] = "\U000023F3"
     return board
 
 
