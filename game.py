@@ -37,16 +37,37 @@ def get_user_choice():
     return choice
 
 
-def describe_current_location(board, character):
-    pass
+def describe_current_location(board, character, columns):
+    position = (character['x-coordinate'], character['y-coordinate'])
+    board[position] = "\U0001F606"
+    counter = 1
+    for icon in board.values():
+        if counter % columns == 0:
+            print(icon)
+        else:
+            print(icon, end="")
+        counter += 1
 
 
 def make_character(name):
-    return name
+    character = {
+        "name": name,
+        "x-coordinate": 9,
+        "y-coordinate": 0,
+        "luck": 0,
+        "charisma": 0,
+        "rod level": 0,
+        "inventory": []
+    }
+    return character
 
 
 def make_board(rows, columns):
-    return rows, columns
+    board = {}
+    for row in range(rows):
+        for column in range(columns):
+            board[row, column] = "\U0001F30A"
+    return board
 
 
 def game():
@@ -56,12 +77,12 @@ def game():
     character = make_character("Player name")
     achieved_goal = False
     while not achieved_goal:
-        describe_current_location(board, character)
+        describe_current_location(board, character, columns)
         direction = get_user_choice()
         valid_move = validate_move(board, character, direction)
         if valid_move:
             move_character(character)
-            describe_current_location(board, character)
+            # describe_current_location(board, character, columns)
             there_is_a_challenge = check_for_challenges()
             if there_is_a_challenge:
                 execute_challenge_protocol(character)
