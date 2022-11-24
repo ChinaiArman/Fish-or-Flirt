@@ -113,7 +113,9 @@ random_encounter_crab = [
     "You were thoroughly enjoying the feeling of sand beneath your toes, until a crab decides your toes were looking at it the wrong way. The crab challenges you to a duel.",
     "You see a crab. You are filled with hatred. The crab is also filled with hatred. You are hatred itself. The crab one-ups you and decides that it is despisal. You and the crab lock eyes and the first one to blink loses.",
     "Crab. What more should I say? Crab.",
-    "You step forward, the crab steps forward. You step left, and it, left. You try to eurostep that fool, but you are no match for the agility of the magnificent crab, and gets your ankles broken"
+    "You step forward, the crab steps forward. You step left, and it, left. You try to eurostep that fool, but you are no match for the agility of the magnificent crab, and gets your ankles broken. You take immense damage to your pride (not a real stat).",
+    "You see a crab. The crab sees you. It's too late to run, the only option for you now is to stand your ground, and FIGHT.",
+    "Legend says that by defeating a crab, you can gain a crab's power. Do you desire to absorb the might of this crab?"
 ]
 
 random_encounter_fisherman = [
