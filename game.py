@@ -4,8 +4,15 @@ Lex Wong | A01322278
 """
 
 
-def boat_event(character):
-    pass
+import random
+
+
+def boat_event(board, character):
+    water_tile = "\U0001F30A"
+    position = (character['x-coordinate'], character['y-coordinate'])
+    board[position] = water_tile
+    character["xp"] = 1
+    return
 
 
 def random_land_event(character):
@@ -20,20 +27,28 @@ def check_if_goal_attained(board, character):
     return False
 
 
-def execute_glow_up_protocol():
-    pass
+def execute_glow_up_protocol(character):
+    character["rod level"] = character["xp"]
 
 
-def character_has_leveled():
-    return True
+def character_has_leveled(character):
+    if character["xp"] > character["rod level"]:
+        return True
+    else:
+        return False
 
 
 def execute_challenge_protocol(character):
-    pass
+    character["rod level"] = character["xp"]
 
 
-def check_for_challenges():
-    return True
+def check_for_challenges(board, character):
+    boat_tile = "\U000026F5"
+    position = (character['x-coordinate'], character['y-coordinate'])
+    if board[position] == boat_tile:
+        return True, boat_event
+    else:
+        return False, None
 
 
 def move_character(character, move):
@@ -43,18 +58,20 @@ def move_character(character, move):
     return
 
 
-def validate_move(board, character, direction):
+def validate_move(board, character, direction, rows, columns):
+    water_tile = "\U0001F30A"
     x_direction, y_direction = direction
     if (character["x-coordinate"], character["y-coordinate"]) == direction:
         return (character["x-coordinate"], character["y-coordinate"]), False
-    elif x_direction > 9 or x_direction < 0:
+    elif x_direction > columns - 1 or x_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
-    elif y_direction > 9 or y_direction < 0:
+    elif y_direction > rows - 1 or y_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
-    elif board[direction] == "\U0001F30A" and character["rod level"] == 0:
+    elif board[direction] == water_tile and character["rod level"] == 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
     else:
         return direction, True
+
 
 def get_user_choice(character):
     print("Pick a direction to travel")
@@ -75,9 +92,16 @@ def get_user_choice(character):
 
 
 def describe_current_location(board, character, columns):
+    water_tile = "\U0001F30A"
+    boat_icon = "\U000026F5"
+    land_tile = "\U0001F3D6"
+    fisherman_icon = "\U0001F3A3"
     position = (character['x-coordinate'], character['y-coordinate'])
     tile = board[position]
-    board[position] = "\U0001F9CD"
+    if board[position] == water_tile:
+        board[position] = boat_icon
+    if board[position] == land_tile:
+        board[position] = fisherman_icon
     counter = 1
     for icon in board.values():
         if counter % columns == 0:
@@ -88,7 +112,8 @@ def describe_current_location(board, character, columns):
     board[position] = tile
 
 
-def make_character(name):
+def make_character():
+    name = input("name?")
     character = {
         "name": name,
         "x-coordinate": 9,
@@ -96,20 +121,22 @@ def make_character(name):
         "luck": 0,
         "charisma": 0,
         "rod level": 0,
+        "xp": 0,
         "inventory": []
     }
     return character
 
 
 def make_board(rows, columns):
-    sea_tile = "\U0001F30A"
+    water_tile = "\U0001F30A"
     land_tile = "\U0001F3D6"
     boat_tile = "\U000026F5"
+    island_tile = "\U0001F334"
     board = {}
     # WATER
     for row in range(rows):
         for column in range(columns):
-            board[row, column] = sea_tile
+            board[row, column] = water_tile
     # SAND
     for column in range(columns):
         board[9, column] = land_tile
@@ -124,6 +151,13 @@ def make_board(rows, columns):
             board[6, column] = land_tile
     # BOAT
     board[(6, 9)] = boat_tile
+    board[(3, 3)] = island_tile
+    board[(3, 2)] = island_tile
+    board[(3, 1)] = island_tile
+    board[(2, 2)] = island_tile
+    # board[(2, 3)] = island_tile
+    board[(4, 1)] = island_tile
+    board[(4, 2)] = island_tile
     return board
 
 
@@ -131,20 +165,19 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
-    character = make_character("Player name")
+    character = make_character()
     achieved_goal = False
     while not achieved_goal:
         describe_current_location(board, character, columns)
         direction = get_user_choice(character)
-        move, valid_move = validate_move(board, character, direction)
+        move, valid_move = validate_move(board, character, direction, rows, columns)
         if valid_move:
             move_character(character, move)
-            # describe_current_location(board, character, columns)
-            there_is_a_challenge = check_for_challenges()
+            there_is_a_challenge, challenge = check_for_challenges(board, character)
             if there_is_a_challenge:
-                execute_challenge_protocol(character)
-                if character_has_leveled():
-                    execute_glow_up_protocol()
+                challenge(board, character)
+                if character_has_leveled(character):
+                    execute_glow_up_protocol(character)
             achieved_goal = check_if_goal_attained(board, character)
         else:
             print("Tell the user they can’t go in that direction")
