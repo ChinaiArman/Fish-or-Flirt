@@ -198,8 +198,17 @@ pick_up_lines = {
     "You know I don’t go fishing often, But you’re quite the catch!": 5,
     "You’re like an award-winning fish": 2,
     "A shark just ate my girlfriend during our fishing trip. Will you be my new one?": 10,
-    "Are you Swedish? 'Cause you the sweetest fish I sea.": 5
+    "Are you Swedish? 'Cause you the sweetest fish I sea.": 5,
+    "Do you believe in love at first sight, or should I float by again?": 3,
+    "Hey baby, you wanna cast a line with me?": 7,
+    "I always knew the best catch of my life would be on this ocean.": 6,
+    "I can feel a lot of tension between us.": 7,
+    "If you were a fish, you’d be an Angelfish.": 5,
+    "You just reeled me in with your beauty.": 5,
+    "You’ve got me hook, line, and sinker.": 8
 }
+
+encounter_pirate = ""
 
 
 tprint("ERROR 102", "dirty")
