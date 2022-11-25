@@ -4,14 +4,28 @@ Lex Wong | A01322278
 """
 
 
-import random
+# import random
+
+
+def pirate_event(board, character):
+    island_tile = "\U0001F334"
+    position = (character['x-coordinate'], character['y-coordinate'])
+
+    # story here
+
+    board[position] = island_tile
+    character["xp"] += 1
+    return
 
 
 def boat_event(board, character):
     water_tile = "\U0001F30A"
     position = (character['x-coordinate'], character['y-coordinate'])
+
+    # story here
+
     board[position] = water_tile
-    character["xp"] = 1
+    character["xp"] += 1
     return
 
 
@@ -44,9 +58,13 @@ def execute_challenge_protocol(character):
 
 def check_for_challenges(board, character):
     boat_tile = "\U000026F5"
+    pirate_tile = "\U0001F480"
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
+        print("oh")
         return True, boat_event
+    elif board[position] == pirate_tile:
+        return True, pirate_event
     else:
         return False, None
 
@@ -95,12 +113,13 @@ def describe_current_location(board, character, columns):
     water_tile = "\U0001F30A"
     boat_icon = "\U000026F5"
     land_tile = "\U0001F3D6"
+    island_tile = "\U0001F334"
     fisherman_icon = "\U0001F3A3"
     position = (character['x-coordinate'], character['y-coordinate'])
     tile = board[position]
     if board[position] == water_tile:
         board[position] = boat_icon
-    if board[position] == land_tile:
+    if board[position] == land_tile or board[position] == island_tile:
         board[position] = fisherman_icon
     counter = 1
     for icon in board.values():
@@ -132,6 +151,8 @@ def make_board(rows, columns):
     land_tile = "\U0001F3D6"
     boat_tile = "\U000026F5"
     island_tile = "\U0001F334"
+    skull_tile = "\U0001F480"
+    boss_tile = "\U00002757"
     board = {}
     # WATER
     for row in range(rows):
@@ -157,10 +178,9 @@ def make_board(rows, columns):
     board[(3, 2)] = island_tile
     board[(3, 1)] = island_tile
     board[(2, 2)] = island_tile
-    # board[(2, 3)] = island_tile
-    board[(3, 0)] = island_tile
     board[(2, 1)] = island_tile
     board[(4, 2)] = island_tile
+    board[(2, 2)] = skull_tile
     return board
 
 
