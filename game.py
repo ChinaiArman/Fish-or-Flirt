@@ -151,12 +151,15 @@ def make_board(rows, columns):
             board[6, column] = land_tile
     # BOAT
     board[(6, 9)] = boat_tile
+    board[(1, 3)] = island_tile
+    board[(2, 3)] = island_tile
     board[(3, 3)] = island_tile
     board[(3, 2)] = island_tile
     board[(3, 1)] = island_tile
     board[(2, 2)] = island_tile
     # board[(2, 3)] = island_tile
-    board[(4, 1)] = island_tile
+    board[(3, 0)] = island_tile
+    board[(2, 1)] = island_tile
     board[(4, 2)] = island_tile
     return board
 
