@@ -9,11 +9,13 @@ Lex Wong | A01322278
 
 def pirate_event(board, character):
     island_tile = "\U0001F334"
+    boss_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
 
     # story here
 
     board[position] = island_tile
+    board[(1, 8)] = boss_tile
     character["xp"] += 1
     return
 
@@ -43,6 +45,7 @@ def check_if_goal_attained(board, character):
 
 def execute_glow_up_protocol(character):
     character["rod level"] = character["xp"]
+    print("LEVELUP")
 
 
 def character_has_leveled(character):
@@ -61,7 +64,6 @@ def check_for_challenges(board, character):
     pirate_tile = "\U0001F480"
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
-        print("oh")
         return True, boat_event
     elif board[position] == pirate_tile:
         return True, pirate_event
@@ -152,7 +154,6 @@ def make_board(rows, columns):
     boat_tile = "\U000026F5"
     island_tile = "\U0001F334"
     skull_tile = "\U0001F480"
-    boss_tile = "\U00002757"
     board = {}
     # WATER
     for row in range(rows):
