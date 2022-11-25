@@ -114,6 +114,11 @@ choose_class = "What class do you want be in? Do you want to be a doctor, neuros
 
 after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder. Well, you get no autonomy anyways, so you're a fishman now. Congrats."
 
+story_1 = "Once upon a time, a long long time ago, in a small little village, a fisherman was born.\nThat's you!\n" \
+          "You came out of the womb with a fishing rod in your precious little hands. Your mother had to get a C-section just to get it out!" \
+          " Poor mama-fisherman.\nOn that fateful day, a prophecy was discovered. " \
+          "You alone are destined to defeat the monster of the deep.\nYour parents have trained you all of life for this. "
+
 random_encounter_crab = [
     "You were thoroughly enjoying the feeling of sand beneath your toes, until a crab decides your toes were looking at it the wrong way. The crab challenges you to a duel.",
     "You see a crab. You are filled with hatred. The crab is also filled with hatred. You are hatred itself. The crab one-ups you and decides that it is despisal. You and the crab lock eyes and the first one to blink loses.",
@@ -187,6 +192,14 @@ invalid_move_water = [
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
 
+pick_up_lines = {
+    "I wish you were a fish so I could reel you in.": 2,
+    "You’re the only fish in the sea for me.": 10,
+    "You know I don’t go fishing often, But you’re quite the catch!": 5,
+    "You’re like an award-winning fish": 2,
+    "A shark just ate my girlfriend during our fishing trip. Will you be my new one?": 10,
+    "Are you Swedish? 'Cause you the sweetest fish I sea.": 5
+}
 
 
 tprint("ERROR 102", "dirty")
