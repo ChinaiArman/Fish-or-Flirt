@@ -117,7 +117,8 @@ after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your k
 story_1 = "Once upon a time, a long long time ago, in a small little village, a fisherman was born.\nThat's you!\n" \
           "You came out of the womb with a fishing rod in your precious little hands. Your mother had to get a C-section just to get it out!" \
           " Poor mama-fisherman.\nOn that fateful day, a prophecy was discovered. " \
-          "You alone are destined to defeat the monster of the deep.\nYour parents have trained you all of life for this. "
+          "You alone are destined to defeat the monster of the deep.\nYour parents have trained you all of life for this." \
+          "IT'S TIME TO FISH!"
 
 random_encounter_crab = [
     "You were thoroughly enjoying the feeling of sand beneath your toes, until a crab decides your toes were looking at it the wrong way. The crab challenges you to a duel.",
