@@ -5,6 +5,7 @@ Lex Wong | A01322278
 
 
 import random
+import lex as dialogue
 
 
 def leviathan_event(board, character):
@@ -67,24 +68,27 @@ def fisherman_event(_, character):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
-        if selection == 1:
-            # flirting options
-            pass
-
-        elif selection == 2:
-            # flirting options
-            pass
-
-        if character["charisma"] > random.randint(0, fisherman_charisma):
-            # Success dialogue
-            print("success")
-            if character["charisma"] < 80:
-                character["charisma"] += 5
-            character["inventory"] += ["Fisherman"]
-            flirting = False
+        if selection == "1":
+            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            valid_selection = True
+        elif selection == "2":
+            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            valid_selection = True
         else:
-            # Fail dialogue
-            print("fail")
+            print("invalid action")
+            valid_selection = False
+
+        if valid_selection:
+            if character["charisma"] > random.randint(0, fisherman_charisma):
+                # Success dialogue
+                print("success")
+                if character["charisma"] < 80:
+                    character["charisma"] += 5
+                character["inventory"] += ["Fisherman"]
+                flirting = False
+            else:
+                # Fail dialogue
+                print("fail")
     return
 
 
@@ -101,24 +105,27 @@ def crab_event(_, character):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
-        if selection == 1:
-            # flirting options
-            pass
-
-        elif selection == 2:
-            # flirting options
-            pass
-
-        if character["charisma"] > random.randint(0, crab_charisma):
-            # Success dialogue
-            print("success")
-            if character["charisma"] < 80:
-                character["charisma"] += 5
-            character["inventory"] += ["crab"]
-            flirting = False
+        if selection == "1":
+            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            valid_selection = True
+        elif selection == "2":
+            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            valid_selection = True
         else:
-            # Fail dialogue
-            print("fail")
+            print("invalid action")
+            valid_selection = False
+
+        if valid_selection:
+            if character["charisma"] > random.randint(0, crab_charisma):
+                # Success dialogue
+                print("success")
+                if character["charisma"] < 80:
+                    character["charisma"] += 5
+                character["inventory"] += ["Crab"]
+                flirting = False
+            else:
+                # Fail dialogue
+                print("fail")
     return
 
 
@@ -130,33 +137,35 @@ def whale_event(_, character):
     while flirting:
         # Opening dialogue to flirt combat
 
-        player_options = ["flirt", "flirt harder"]
+        player_options = ["fish", "flirt"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
-        if selection == 1:
-            # flirting options
-            pass
-
-        elif selection == 2:
-            # flirting options
-            pass
-
-        if character["charisma"] > random.randint(0, whale_charisma):
-            # Success dialogue
-            print("success")
-            if character["charisma"] < 80:
-                character["charisma"] += 5
-            character["inventory"] += ["whale"]
-            flirting = False
+        if selection == "1":
+            valid_selection = True
+        elif selection == "2":
+            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            valid_selection = True
         else:
-            # Fail dialogue
-            print("fail")
+            print("invalid action")
+            valid_selection = False
+
+        if valid_selection:
+            if character["charisma"] > random.randint(0, whale_charisma):
+                # Success dialogue
+                print("success")
+                if character["charisma"] < 80:
+                    character["charisma"] += 5
+                character["inventory"] += ["Whale"]
+                flirting = False
+            else:
+                # Fail dialogue
+                print("fail")
     return
 
 
-def mermaid_event(board, character):
+def mermaid_event(_, character):
     mermaid_charisma = random.randint(80, 100)
     # Story here
 
@@ -164,29 +173,31 @@ def mermaid_event(board, character):
     while flirting:
         # Opening dialogue to flirt combat
 
-        player_options = ["flirt", "flirt harder"]
+        player_options = ["fish", "flirt"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
-        if selection == 1:
-            # flirting options
-            pass
-
-        elif selection == 2:
-            # flirting options
-            pass
-
-        if character["charisma"] > random.randint(0, mermaid_charisma):
-            # Success dialogue
-            print("success")
-            if character["charisma"] < 80:
-                character["charisma"] += 5
-            character["inventory"] += ["mermaid"]
-            flirting = False
+        if selection == "1":
+            valid_selection = True
+        elif selection == "2":
+            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            valid_selection = True
         else:
-            # Fail dialogue
-            print("fail")
+            print("invalid action")
+            valid_selection = False
+
+        if valid_selection:
+            if character["charisma"] > random.randint(0, mermaid_charisma):
+                # Success dialogue
+                print("success")
+                if character["charisma"] < 80:
+                    character["charisma"] += 5
+                character["inventory"] += ["Mermaid"]
+                flirting = False
+            else:
+                # Fail dialogue
+                print("fail")
     return
 
 
