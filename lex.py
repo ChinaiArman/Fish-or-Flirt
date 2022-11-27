@@ -2,7 +2,7 @@ from art import *
 import sys
 import time
 
-print(r"""\
+crab = r"""\
                                                                                                                                                       
                                              ``                                                                                                       
                                              i:                                                                                                       
@@ -94,8 +94,8 @@ print(r"""\
                                                                                                                                                       
                                                                                                                                                       
 
-""")
-tprint("True Final Boss")
+"""
+surprise_boss_t_print_this = "True Final Boss"
 
 get_name = "Hello. We all know why you're here. \n" \
            "You wish to fish. \n" \
@@ -177,8 +177,8 @@ acquired_boat = "You touch the boat, and you feel an energy pulse through you. Y
                 "The hope of all those who've come before you empowers you on your journey."
 
 encounter_pirate = "You see a group of pirates, each with a two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
-                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BRILLIANT. " \
-                   "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SCENT THAN ONLY DIGGING WITH ONE!\""
+                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
+                   "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SEE-ENT THAN ONLY DIGGING WITH ONE!\""
 
 pirate_defeated = ""
 
@@ -235,9 +235,9 @@ level_up = ""
 tprint("ERROR 102", "dirty")
 
 # prints a character at a time
-for statement in invalid_move_water:
-    for char in statement:
-        print(char, end="")
-        sys.stdout.flush()
-        time.sleep(0.05)
-    print("")
+# for statement in invalid_move_water:
+#     for char in statement:
+#         print(char, end="")
+#         sys.stdout.flush()
+#         time.sleep(0.05)
+#     print("")
