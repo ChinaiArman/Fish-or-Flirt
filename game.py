@@ -7,15 +7,28 @@ Lex Wong | A01322278
 # import random
 
 
+def leviathan_event(board, character):
+    water_tile = "\U0001F30A"
+    leviathan_tile = "\U00002757"
+    position = (character['x-coordinate'], character['y-coordinate'])
+
+    # story here
+
+    board[position] = water_tile
+    board[(1, 8)] = leviathan_tile
+    character["xp"] += 1
+    return
+
+
 def pirate_event(board, character):
     island_tile = "\U0001F334"
-    boss_tile = "\U00002757"
+    leviathan_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
 
     # story here
 
     board[position] = island_tile
-    board[(1, 8)] = boss_tile
+    board[(1, 8)] = leviathan_tile
     character["xp"] += 1
     return
 
@@ -39,8 +52,11 @@ def random_water_event(character):
     pass
 
 
-def check_if_goal_attained(board, character):
-    return False
+def check_if_goal_attained(character):
+    if character["rod level"] == 3:
+        return True
+    else:
+        return False
 
 
 def execute_glow_up_protocol(character):
@@ -62,11 +78,14 @@ def execute_challenge_protocol(character):
 def check_for_challenges(board, character):
     boat_tile = "\U000026F5"
     pirate_tile = "\U0001F480"
+    leviathan_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
         return True, boat_event
     elif board[position] == pirate_tile:
         return True, pirate_event
+    elif board[position] == leviathan_tile:
+        return True, leviathan_event
     else:
         return False, None
 
@@ -202,7 +221,7 @@ def game():
                 challenge(board, character)
                 if character_has_leveled(character):
                     execute_glow_up_protocol(character)
-            achieved_goal = check_if_goal_attained(board, character)
+            achieved_goal = check_if_goal_attained(character)
         else:
             print("Tell the user they can’t go in that direction")
     print("end of game shenanigans")
