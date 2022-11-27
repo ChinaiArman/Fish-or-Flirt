@@ -177,13 +177,14 @@ acquired_boat = "You touch the boat, and you feel an energy pulse through you. Y
                 "The hope of all those who've come before you empowers you on your journey."
 
 encounter_pirate = "You see a group of pirates, each with a two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
-                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BRILLIANT. DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SCENT THAN ONLY DIGGING WITH ONE!\" "
+                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BRILLIANT. " \
+                   "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SCENT THAN ONLY DIGGING WITH ONE!\""
 
 pirate_defeated = ""
 
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
-                      "If you unlucky sailors find yourselves in its maw, despair\n" \
+                      "If you unlucky sailors find yourselves in its maw, despair!\n" \
                       "<You have reached the final boss, the Leviathan! Are your stats high enough to fish or " \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
 
@@ -206,13 +207,16 @@ invalid_move_water = [
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
 
-pick_up_lines = [
+flirt_dialogue = [
     "I wish you were a fish so I could reel you in.",
     "You’re the only fish in the sea for me.",
     "You know I don’t go fishing often, But you’re quite the catch!",
     "You’re like an award-winning fish",
     "A shark just ate my girlfriend during our fishing trip. Will you be my new one?",
-    "Are you Swedish? 'Cause you the sweetest fish I sea.",
+    "Are you Swedish? 'Cause you the sweetest fish I sea."
+]
+
+flirt_harder_dialogue = [
     "Do you believe in love at first sight, or should I float by again?",
     "Hey baby, you wanna cast a line with me?",
     "I always knew the best catch of my life would be on this ocean.",
