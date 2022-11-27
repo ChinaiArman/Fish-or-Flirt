@@ -1,5 +1,6 @@
 from art import *
-import sys, time
+import sys
+import time
 
 print(r"""\
                                                                                                                                                       
@@ -96,10 +97,6 @@ print(r"""\
 """)
 tprint("True Final Boss")
 
-# each random counter (land and sea) crabs fisherman fish mermaids
-# each non encounter (land and sea)
-# each special encounter leviathan
-
 get_name = "Hello. We all know why you're here. \n" \
            "You wish to fish. \n" \
            "You want to warp a carp, \n" \
@@ -170,11 +167,27 @@ no_encounter_sea = [
     "You came, you saw, you left empty handed. Ain't no fish here pal!"
 ]
 
+encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the signs of time decorating its sides. " \
+                 "However, the paint was recently redone a brilliant white, and you could see that the sails have been changed. " \
+                 "Beside the boat, an old fisherman sits, as if waiting for a friend.\nThe fisherman beckons you towards them, and gestures at their boat. " \
+                 "Behemoth, it reads. A worthy aid to help you in your journey against the monsters of the sea. " \
+                 "The old fisherman tips their straw hat, a twinkle shinning in their eyes, and walks away, humming a happy little tune."
+
+acquired_boat = "You touch the boat, and you feel an energy pulse through you. You've gotten stronger, my young friend. " \
+                "The hope of all those who've come before you empowers you on your journey."
+
+encounter_pirate = "You see a group of pirates, each with a two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
+                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BRILLIANT. DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SCENT THAN ONLY DIGGING WITH ONE!\" "
+
+pirate_defeated = ""
+
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
                       "If you unlucky sailors find yourselves in its maw, despair\n" \
                       "<You have reached the final boss, the Leviathan! Are your stats high enough to fish or " \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
+
+leviathan_defeated = ""
 
 invalid_move_land = [
     "You can't step here!",
@@ -193,24 +206,27 @@ invalid_move_water = [
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
 
-pick_up_lines = {
-    "I wish you were a fish so I could reel you in.": 2,
-    "You’re the only fish in the sea for me.": 10,
-    "You know I don’t go fishing often, But you’re quite the catch!": 5,
-    "You’re like an award-winning fish": 2,
-    "A shark just ate my girlfriend during our fishing trip. Will you be my new one?": 10,
-    "Are you Swedish? 'Cause you the sweetest fish I sea.": 5,
-    "Do you believe in love at first sight, or should I float by again?": 3,
-    "Hey baby, you wanna cast a line with me?": 7,
-    "I always knew the best catch of my life would be on this ocean.": 6,
-    "I can feel a lot of tension between us.": 7,
-    "If you were a fish, you’d be an Angelfish.": 5,
-    "You just reeled me in with your beauty.": 5,
-    "You’ve got me hook, line, and sinker.": 8
-}
+pick_up_lines = [
+    "I wish you were a fish so I could reel you in.",
+    "You’re the only fish in the sea for me.",
+    "You know I don’t go fishing often, But you’re quite the catch!",
+    "You’re like an award-winning fish",
+    "A shark just ate my girlfriend during our fishing trip. Will you be my new one?",
+    "Are you Swedish? 'Cause you the sweetest fish I sea.",
+    "Do you believe in love at first sight, or should I float by again?",
+    "Hey baby, you wanna cast a line with me?",
+    "I always knew the best catch of my life would be on this ocean.",
+    "I can feel a lot of tension between us.",
+    "If you were a fish, you’d be an Angelfish.",
+    "You just reeled me in with your beauty.",
+    "You’ve got me hook, line, and sinker."
+]
 
-encounter_pirate = ""
+flirt_success = ""
 
+flirt_fail = ""
+
+level_up = ""
 
 tprint("ERROR 102", "dirty")
 
