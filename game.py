@@ -4,13 +4,17 @@ Lex Wong | A01322278
 """
 
 
-# import random
+import random
 
 
 def leviathan_event(board, character):
     water_tile = "\U0001F30A"
     leviathan_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
+
+    # story here
+
+    # Mechanics here
 
     # story here
 
@@ -27,6 +31,10 @@ def pirate_event(board, character):
 
     # story here
 
+    # Mechanics here
+
+    # story here
+
     board[position] = island_tile
     board[(1, 8)] = leviathan_tile
     character["xp"] += 1
@@ -39,17 +47,33 @@ def boat_event(board, character):
 
     # story here
 
+    # Mechanics here
+
+    # story here
+
     board[position] = water_tile
     character["xp"] += 1
     return
 
 
-def random_land_event(character):
-    pass
+def fisherman_event(board, character):
+    print("fisherman")
+    return
 
 
-def random_water_event(character):
-    pass
+def crab_event(board, character):
+    print("crab")
+    return
+
+
+def mermaid_event(board, character):
+    print("mermaid")
+    return
+
+
+def whale_event(board, character):
+    print("whale")
+    return
 
 
 def check_if_goal_attained(character):
@@ -79,6 +103,9 @@ def check_for_challenges(board, character):
     boat_tile = "\U000026F5"
     pirate_tile = "\U0001F480"
     leviathan_tile = "\U00002757"
+    water_tile = "\U0001F30A"
+    land_tile = "\U0001F3D6"
+    chance = random.randint(0, 100)
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
         return True, boat_event
@@ -86,6 +113,14 @@ def check_for_challenges(board, character):
         return True, pirate_event
     elif board[position] == leviathan_tile:
         return True, leviathan_event
+    elif board[position] == land_tile and chance < 18:
+        return True, crab_event
+    elif board[position] == land_tile and 36 > chance >= 18:
+        return True, fisherman_event
+    elif board[position] == water_tile and chance < 18:
+        return True, mermaid_event
+    elif board[position] == water_tile and 36 > chance >= 18:
+        return True, whale_event
     else:
         return False, None
 
