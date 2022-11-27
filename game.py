@@ -47,8 +47,6 @@ def boat_event(board, character):
 
     # story here
 
-    # Mechanics here
-
     # story here
 
     board[position] = water_tile
@@ -56,23 +54,139 @@ def boat_event(board, character):
     return
 
 
-def fisherman_event(board, character):
-    print("fisherman")
+def fisherman_event(_, character):
+    fisherman_charisma = random.randint(80, 100)
+    # Story here
+
+    flirting = True
+    while flirting:
+        # Opening dialogue to flirt combat
+
+        player_options = ["flirt", "flirt harder"]
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
+
+        if selection == 1:
+            # flirting options
+            pass
+
+        elif selection == 2:
+            # flirting options
+            pass
+
+        if character["charisma"] > random.randint(0, fisherman_charisma):
+            # Success dialogue
+            print("success")
+            if character["charisma"] < 80:
+                character["charisma"] += 5
+            character["inventory"] += ["Fisherman"]
+            flirting = False
+        else:
+            # Fail dialogue
+            print("fail")
     return
 
 
-def crab_event(board, character):
-    print("crab")
+def crab_event(_, character):
+    crab_charisma = random.randint(80, 100)
+    # Story here
+
+    flirting = True
+    while flirting:
+        # Opening dialogue to flirt combat
+
+        player_options = ["flirt", "flirt harder"]
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
+
+        if selection == 1:
+            # flirting options
+            pass
+
+        elif selection == 2:
+            # flirting options
+            pass
+
+        if character["charisma"] > random.randint(0, crab_charisma):
+            # Success dialogue
+            print("success")
+            if character["charisma"] < 80:
+                character["charisma"] += 5
+            character["inventory"] += ["crab"]
+            flirting = False
+        else:
+            # Fail dialogue
+            print("fail")
+    return
+
+
+def whale_event(_, character):
+    whale_charisma = random.randint(80, 100)
+    # Story here
+
+    flirting = True
+    while flirting:
+        # Opening dialogue to flirt combat
+
+        player_options = ["flirt", "flirt harder"]
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
+
+        if selection == 1:
+            # flirting options
+            pass
+
+        elif selection == 2:
+            # flirting options
+            pass
+
+        if character["charisma"] > random.randint(0, whale_charisma):
+            # Success dialogue
+            print("success")
+            if character["charisma"] < 80:
+                character["charisma"] += 5
+            character["inventory"] += ["whale"]
+            flirting = False
+        else:
+            # Fail dialogue
+            print("fail")
     return
 
 
 def mermaid_event(board, character):
-    print("mermaid")
-    return
+    mermaid_charisma = random.randint(80, 100)
+    # Story here
 
+    flirting = True
+    while flirting:
+        # Opening dialogue to flirt combat
 
-def whale_event(board, character):
-    print("whale")
+        player_options = ["flirt", "flirt harder"]
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
+
+        if selection == 1:
+            # flirting options
+            pass
+
+        elif selection == 2:
+            # flirting options
+            pass
+
+        if character["charisma"] > random.randint(0, mermaid_charisma):
+            # Success dialogue
+            print("success")
+            if character["charisma"] < 80:
+                character["charisma"] += 5
+            character["inventory"] += ["mermaid"]
+            flirting = False
+        else:
+            # Fail dialogue
+            print("fail")
     return
 
 
@@ -113,13 +227,13 @@ def check_for_challenges(board, character):
         return True, pirate_event
     elif board[position] == leviathan_tile:
         return True, leviathan_event
-    elif board[position] == land_tile and chance < 18:
+    elif board[position] == land_tile and chance < 20:
         return True, crab_event
-    elif board[position] == land_tile and 36 > chance >= 18:
+    elif board[position] == land_tile and 40 > chance >= 20:
         return True, fisherman_event
-    elif board[position] == water_tile and chance < 18:
+    elif board[position] == water_tile and chance < 20:
         return True, mermaid_event
-    elif board[position] == water_tile and 36 > chance >= 18:
+    elif board[position] == water_tile and 40 > chance >= 20:
         return True, whale_event
     else:
         return False, None
