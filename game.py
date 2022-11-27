@@ -193,8 +193,8 @@ def make_character():
         "name": name,
         "x-coordinate": 9,
         "y-coordinate": 0,
-        "luck": 0,
-        "charisma": 0,
+        "luck": 40,
+        "charisma": 40,
         "rod level": 0,
         "xp": 0,
         "inventory": []
@@ -227,6 +227,7 @@ def make_board(rows, columns):
             board[6, column] = land_tile
     # BOAT
     board[(6, 9)] = boat_tile
+    # ISLAND
     board[(1, 3)] = island_tile
     board[(2, 3)] = island_tile
     board[(3, 3)] = island_tile
