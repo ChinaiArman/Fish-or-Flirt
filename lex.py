@@ -232,7 +232,7 @@ flirt_fail = ""
 
 level_up = ""
 
-tprint("ERROR 102", "dirty")
+# tprint("ERROR 102", "dirty")
 
 # prints a character at a time
 # for statement in invalid_move_water:
