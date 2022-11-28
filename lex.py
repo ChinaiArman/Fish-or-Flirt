@@ -97,14 +97,14 @@ crab = r"""\
 """
 # tprint("True Final Boss")
 
-get_name = "Hello. We all know why you're here. \n" \
-           "You wish to fish. \n" \
-           "You want to warp a carp, \n" \
-           "getta a betta, net a flounder ten-pounder, snag a daring red haring– \n" \
-           "OK. \n" \
-           "I'll stop embarrassing you. \n" \
-           "Here. \n" \
-           "Take a fishing rod, \n" \
+get_name = "Hello. We all know why you're here.\n" \
+           "You wish to fish.\n" \
+           "You want to warp a carp,\n" \
+           "getta a betta, net a flounder ten-pounder, snag a daring red haring–\n" \
+           "OK.\n" \
+           "I'll stop embarrassing you.\n" \
+           "Here.\n" \
+           "Take a fishing rod,\n" \
            "and go wild kid.\nBut first. What is your name?\t\t"
 
 choose_class = "What class do you want be in? Do you want to be a doctor, neurosurgeon, lawyer, fisherman, dentist, psychologist, magician, Prime Minister of Canada, Premier of Australia, astronaut, or rocket scientist?"
@@ -119,10 +119,10 @@ story_1 = "Once upon a time, a long long time ago, in a small little village, a 
 
 random_encounter_crab = [
     "You were thoroughly enjoying the feeling of sand beneath your toes, until a crab decides your toes were looking at it the wrong way. The crab challenges you to a duel.",
-    "You see a crab. You are filled with hatred. The crab is also filled with hatred. You are hatred itself. The crab one-ups you and decides that it is despisal. You and the crab lock eyes and the first one to blink loses.",
+    "You see a crab.\nYou are filled with hatred.\nThe crab is also filled with hatred.\nYou are hatred itself.\nThe crab one-ups you and decides that it is despisal.\nYou and the crab lock eyes and the first one to blink loses.",
     "Crab. What more should I say? Crab.",
-    "You step forward, the crab steps forward. You step left, and it, left. You try to eurostep that fool, but you are no match for the agility of the magnificent crab, and gets your ankles broken. You take immense damage to your pride (not a real stat).",
-    "You see a crab. The crab sees you. It's too late to run, the only option for you now is to stand your ground, and FIGHT.",
+    "You step forward, the crab steps forward.\nYou step left, and it, left.\nYou try to eurostep that fool, but you are no match for the agility of the magnificent crab, and gets your ankles broken.\nYou take immense damage to your pride (not a real stat).",
+    "You see a crab. The crab sees you. It's too late to run, the only option for you now is to stand your ground,\nand FIGHT.",
     "Legend says that by defeating a crab, you can gain a crab's power. Do you desire to absorb the might of this crab?"
 ]
 
@@ -186,7 +186,7 @@ encounter_pirate = "You see a group of pirates, each with a two shovels in hand.
                    "All of them are now unconscious. I'm not even sure if all of them are breathing. " \
                    "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck. Go on then."
 
-pirate_defeated = ""
+pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory"
 
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
@@ -232,13 +232,16 @@ flirt_harder_dialogue = [
     "You’ve got me hook, line, and sinker."
 ]
 
+# different flirt success and fails for different flirtable things
 flirt_success = ""
 
 flirt_fail = ""
 
 fish_for_fish = []
 
-fish_as_battle = []
+fish_for_mermaid = []
+
+fish_for_whale = []
 
 level_up = ""
 
