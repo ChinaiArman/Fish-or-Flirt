@@ -8,6 +8,11 @@ from random import randint
 from time import sleep
 import dialogue
 import ascii_art as asc
+import sys
+
+
+def fish(character):
+    pass
 
 
 def leviathan_event(board, character):
@@ -75,7 +80,7 @@ def fisherman_event(_, character):
             dialogue.slow_print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
             valid_selection = True
         else:
-            print("invalid action")
+            print(dialogue.invalid_flirt)
             valid_selection = False
 
         if valid_selection:
@@ -116,7 +121,7 @@ def crab_event(_, character):
             dialogue.slow_print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
             valid_selection = True
         else:
-            print("invalid action")
+            print(dialogue.invalid_flirt)
             valid_selection = False
 
         if valid_selection:
@@ -156,15 +161,16 @@ def whale_event(_, character):
             dialogue.slow_print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
             if character["luck"] > randint(0, whale_difficulty):
                 # Success dialogue
-                print(dialogue.fishing_success[randint(0, len(dialogue.fishing_success) - 1)])
                 print(dialogue.fish_whale_success)
                 if character["luck"] < 80:
                     character["luck"] += 1
                 character["inventory"] += ["Whale"]
                 attempting = False
             else:
-                # Fail dialogue
-                pass
+                # need art
+                # need art
+                # need art
+                print(dialogue.fish_whale_fail)
         elif selection == "2":
             print(dialogue.start_flirt)
             dialogue.slow_print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
@@ -205,15 +211,19 @@ def mermaid_event(_, character):
             dialogue.slow_print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
             if character["luck"] > randint(0, mermaid_difficulty):
                 # Success dialogue
-                print(dialogue.fishing_success[randint(0, len(dialogue.fishing_success) - 1)])
+                # need art
+                # need art
+                # need art
                 print(dialogue.fish_mermaid_success)
                 if character["luck"] < 80:
                     character["luck"] += 1
                 character["inventory"] += ["Mermaid"]
                 attempting = False
             else:
-                # Fail dialogue
-                pass
+                # need art
+                # need art
+                # need art
+                print(dialogue.fish_mermaid_fail)
         elif selection == "2":
             print(dialogue.start_flirt)
             dialogue.slow_print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
@@ -306,15 +316,15 @@ def invalid_move(board, character):
     elif board[position] == land_tile:
         return dialogue.invalid_move_land[randint(0, len(dialogue.invalid_move_land) - 1)]
     elif board[position] == island_tile:
-        return "invalid island move"
+        return dialogue.invalid_move_island[randint(0, len(dialogue.invalid_move_island) - 1)]
 
 
 def validate_move(board, character, direction, rows, columns):
     water_tile = "\U0001F30A"
-    x_direction, y_direction = direction
-    if (character["x-coordinate"], character["y-coordinate"]) == direction:
+    if not direction:
         return (character["x-coordinate"], character["y-coordinate"]), False
-    elif x_direction > columns - 1 or x_direction < 0:
+    x_direction, y_direction = direction
+    if x_direction > columns - 1 or x_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
     elif y_direction > rows - 1 or y_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
@@ -325,8 +335,8 @@ def validate_move(board, character, direction, rows, columns):
 
 
 def get_user_choice(character):
-    print("Pick a direction to travel")
-    directions = ["north", "south", "east", "west"]
+    print("Possible Actions")
+    directions = ["north", "south", "east", "west", "fish", "quit"]
     for key, direction in enumerate(directions, 1):
         print(f"{key}.\t{direction}")
     direction = input("\nAnswer Here:\t")
@@ -338,8 +348,14 @@ def get_user_choice(character):
         return character["x-coordinate"], character["y-coordinate"] + 1
     elif direction == "4":
         return character["x-coordinate"], character["y-coordinate"] - 1
-    else:
+    elif direction == "5":
+        fish(character)
         return character["x-coordinate"], character["y-coordinate"]
+    elif direction == "6":
+        print("Thanks for playing")
+        sys.exit()
+    else:
+        return False
 
 
 def describe_current_location(board, character, columns):
