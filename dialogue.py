@@ -10,7 +10,7 @@ choose_class = "What class do you want be in? Do you want to be a:"
 
 class_options = ["doctor", "neurosurgeon", "lawyer", "fisherman", "dentist", "psychologist", "magician", "Prime Minister of Canada", "Premier of Australia", "astronaut", "rocket scientist"]
 
-after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder next time. Well, you get no autonomy anyways, so you're a fishman now. Congrats.\n"
+after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder next time. Well, you get no autonomy anyways, so you're a fisherman now. Congrats.\n"
 
 story_1 = "Let me set the scene. Once upon a time, a long long time ago, in a small little village, a fisherman was born.\nThat's you!\n" \
           "You came out of the womb with a fishing rod in your precious little hands. Your mother had to get a C-section just to get it out!" \
@@ -87,14 +87,14 @@ encounter_island = "There's a small island in the midst of the angry waves. Ther
                    "Through them, you think you can glimpse movement.\n" \
                    "You're not sure if it's friend or foe, but there's only one (or two) real choices anyways."
 
-encounter_pirate = "You see a group of pirates, each with a two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
+encounter_pirate = "You see a group of pirates, each with two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
                    "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
                    "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SEE-ENT THAN ONLY DIGGING WITH ONE!\"\n" \
                    "Oh, what, interesting(?) pirates. " \
-                   "You see a big map lying behind them, with \"LOCATION OF LEVIANTHAN\" scrawled in the most horrendous writing you've seen." \
+                   "You see a big map lying behind them, with \"LOCATION OF LEVIANTHAN\" scrawled in the most horrendous writing you've seen.\n" \
                    "Actually, it's a wonder you were able to read it in the first place. To get to it, you must get through all the shovel carrying pirates. " \
                    "Good luc-\nOh. One of the pirates accidentally smacked all the other pirates in the head.\n...\nThat sure was a very very very loud noise." \
-                   "All of them are now unconscious. I'm not even sure if all of them are breathing. " \
+                   "All of them are now unconscious. I'm not even sure if all of them are breathing.\n" \
                    "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck. Go on then."
 
 pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory.\nYou've acquired the location of the terror of the sea, the Leviathan."
@@ -147,9 +147,9 @@ start_fish = [
 
 fishing_success = [
     "FSIH FISH FISHS FSIHDSF FSIFH FSIHF FISHF FISHF FISH. There's a fish.",
-    "It's your lucky day! You've found a strange looking being with 21 limbs, "
-    "oil and tar dripping from its skin and sliding onto the sea. It looks at you with beady, soulless eyes, "
-    "and without knowing the reason, you are overcome with the desire to look away. But you must keep your eyes on it, "
+    "It's your lucky day! You've found a strange looking being with 21 limbs,\n"
+    "oil and tar dripping from its skin and sliding onto the sea. It looks at you with beady, soulless eyes,\n"
+    "and without knowing the reason, you are overcome with the desire to look away. But you must keep your eyes on it,\n"
     "after all, IT'S SUCH A COOL FISH!!",
     "You found a fish. Good job buddy.",
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
@@ -157,9 +157,9 @@ fishing_success = [
 
 fish_for_mermaid = "You try to fish the mermaid. This will be interesting."
 
-fish_for_whale = ""
+fish_for_whale = "You through your cast your rod into the water. Your prized fishing rod looks tiny when compared to the giant whale."
 
-whale_success = ""
+whale_success = "You caught a whale! Cue Pokemon sounds."
 
 mermaid_success = ""
 
