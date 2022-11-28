@@ -11,8 +11,6 @@ def leviathan_event(board, character):
     position = (character['x-coordinate'], character['y-coordinate'])
     print(asc.leviathan)
     dialogue.slow_print(dialogue.encounter_leviathan)
-    # story here
-
     # Mechanics here
 
     # story here
@@ -26,11 +24,36 @@ def leviathan_event(board, character):
 def pirate_event(board, character):
     island_tile = "\U0001F334"
     leviathan_tile = "\U00002757"
+    pirate_charisma = 120
     position = (character['x-coordinate'], character['y-coordinate'])
     dialogue.slow_print(dialogue.encounter_pirate)
     print(dialogue.start_flirt)
 
-    # Mechanics here
+    flirting = True
+    while flirting:
+        player_options = ("Seduce", "Flee")
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
+
+        if selection == "1":
+            # Special Pirate Flirts
+            # dialogue.slow_print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
+            if character["charisma"] > randint(0, pirate_charisma):
+                # Pirate Blush
+                # print(asc.blushing)
+                print(dialogue.flirt_success_fisherman)
+                character["charisma"] += 5
+                character["luck"] += 5
+                character["inventory"] += ["Pirate", "Pirate's Shovel (mildly damaged)"]
+                flirting = False
+            else:
+                print(asc.flirt_fail)
+                print(dialogue.flirt_fail_fisherman)
+        elif selection == "2":
+            print("No fleeing, only flirting")
+        else:
+            print(dialogue.invalid_flirt)
 
     board[position] = island_tile
     board[(1, 8)] = leviathan_tile
@@ -76,7 +99,7 @@ def fisherman_event(_, character):
             if character["charisma"] > randint(0, fisherman_charisma):
                 print(asc.blushing)
                 print(dialogue.flirt_success_fisherman)
-                character += character["charisma"] < 80
+                character["charisma"] += character["charisma"] < 80
                 character["inventory"] += ["Fisherman"]
                 flirting = False
             else:
@@ -112,7 +135,7 @@ def crab_event(_, character):
             if character["charisma"] > randint(0, crab_charisma):
                 print(asc.blushing)
                 print(dialogue.flirt_success_crab)
-                character += character["charisma"] < 80
+                character["charisma"] += character["charisma"] < 80
                 character["inventory"] += ["Crab"]
                 flirting = False
             else:
@@ -140,7 +163,7 @@ def whale_event(_, character):
             if character["luck"] > randint(0, whale_difficulty):
                 print(asc.bucket)
                 print(dialogue.fish_whale_success)
-                character += character["luck"] < 80
+                character["luck"] += character["luck"] < 80
                 character["inventory"] += ["Whale"]
                 attempting = False
             else:
@@ -152,7 +175,7 @@ def whale_event(_, character):
             if character["charisma"] > randint(0, whale_charisma):
                 print(asc.blushing)
                 print(dialogue.flirt_success_whale)
-                character += character["charisma"] < 80
+                character["charisma"] += character["charisma"] < 80
                 character["inventory"] += ["Whale"]
                 attempting = False
             else:
@@ -182,7 +205,7 @@ def mermaid_event(_, character):
             if character["luck"] > randint(0, mermaid_difficulty):
                 print(asc.bucket)
                 print(dialogue.fish_mermaid_success)
-                character += character["luck"] < 80
+                character["luck"] += character["luck"] < 80
                 character["inventory"] += ["Mermaid"]
                 attempting = False
             else:
@@ -194,7 +217,7 @@ def mermaid_event(_, character):
             if character["charisma"] > randint(0, mermaid_charisma):
                 print(asc.blushing)
                 print(dialogue.flirt_success_mermaid)
-                character += character["charisma"] < 80
+                character["charisma"] += character["charisma"] < 80
                 character["inventory"] += ["Mermaid"]
                 attempting = False
             else:
