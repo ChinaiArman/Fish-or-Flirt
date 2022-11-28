@@ -24,7 +24,7 @@ get_name = "So now, we all know why you're here.\n" \
            "OK.\n" \
            "I'll stop embarrassing you.\n" \
            "Here.\n" \
-           "Take a fishing rod,\n" \
+           "Take this fishing rod,\n" \
            "and go wild kid.\nBut first. What is your name?\n"
 
 random_encounter_crab = [
@@ -155,6 +155,14 @@ fishing_success = [
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
 ]
 
+fish_for_mermaid = "You try to fish the mermaid. This will be interesting."
+
+fish_for_whale = ""
+
+whale_success = ""
+
+mermaid_success = ""
+
 fishing_fail = "You failed to catch a fish. Perhaps you should try again?"
 
 start_flirt = "You decided that a good fisherman can both fish AND woo their opponents into being fished."
@@ -193,25 +201,17 @@ flirt_success_mermaid = "The mermaid tells you they are willing to exchange voic
 
 flirt_fail_mermaid = "The mermaid bears their many many teeth at you. They weren't amused at your fish based flirts."
 
-flirt_success_whale = ""
+flirt_success_whale = "The whale is enamored by your sweet words."
 
-flirt_fail_whale = ""
+flirt_fail_whale = "The whale does not care for you puny human flirtations."
 
-flirt_success_pirate = ""
+flirt_success_pirate = "\"AYE! If you be my new CAPT'N I'll be your first mate!\"\nTranslation: Your flirt was a success."
 
-flirt_fail_pirate = ""
+flirt_fail_pirate = "The pirate waves their shovel around. It almost hits you in the head. I don't think they appreciated your pick-up lines."
 
-flirt_success_leviathan = ""
+flirt_fail_leviathan = "The Leviathan thrashes their many arms. You dodged skillfully. If only your flirting skills were just as skillful."
 
-flirt_fail_leviathan = ""
-
-fish_for_fish = []
-
-fish_for_mermaid = []
-
-fish_for_whale = []
-
-level_up = ""
+level_up = "You levelled up! Your rod is now stronger."
 
 # tprint("ERROR 102", "dirty")
 
