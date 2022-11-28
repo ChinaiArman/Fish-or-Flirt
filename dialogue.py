@@ -46,11 +46,18 @@ random_encounter_fisherman = [
 random_encounter_mermaid = [
     "Me-me-mermaid... Pretty.",
     "You see a person in the water! They may be drowning!\n"
-    "You try to rush over towards them before you are met with many many many many many many many many many many many "
-    "many many many many many many many many many many many many many many many many many many many many many many many "
+    "You try to rush over towards them before you are met with many many many many many many many many many many many\n"
+    "many many many many many many many many many many many many many many many many many many many many many many many\n"
     "many many teeth.\nWhew! It was only a mermaid.\nMermaids can't drown silly. Don't worry about it.",
     "There's a mermaid. It's a mermaid.",
-    "'Wow!' You think, 'What a big fish!' A mermaid hits you for calling them derogatory terms."
+    "\"Wow!\" You think, \"What a big fish!\" A mermaid hits you for calling them derogatory terms."
+]
+
+random_encounter_whale = [
+    "\"Wow!\" You think, \"What a big fish!\" The whale looks at you blankly.",
+    "The whale tries to swallow you into their stomach. You call your mom to ask for consent. Your mom says \"No.\"\n"
+    "The whale legally cannot swallow yoo without your mother's consent.",
+    "It's a bird! It's a plane! No! It's a flying whale- wait no you were just looking into the water. It's a regular whale."
 ]
 
 no_encounter_land = [
@@ -175,15 +182,16 @@ invalid_flirt = "That's not flirting kid. You suck."
 
 flirt_success_crab = "Your amazing flirting skills have surpassed the fishermen's and crabs' hatred of each other.\nIt's like a modern day Romeo and Juliet!"
 
-flirt_fail_crab = ""
+flirt_fail_crab = "The crab looks at you with even more disgust. To it, you are beneath the sand it crawls on."
 
-flirt_success_fisherman = ""
+flirt_success_fisherman = "You both gave deeply into each other's eyes, and exchange a prized fish."
 
-flirt_fail_fisherman = ""
+flirt_fail_fisherman = "The fisherman humphs and turns their back on you. Maybe if you gave them a bigger fish they'll accept you."
 
-flirt_success_mermaid = ""
+flirt_success_mermaid = "The mermaid tells you they are willing to exchange voice to gain legs to live with you.\n" \
+                        "You tell them it's alright, and that legs don't really live up to the hype."
 
-flirt_fail_mermaid = ""
+flirt_fail_mermaid = "The mermaid bears their many many teeth at you. They weren't amused at your fish based flirts."
 
 flirt_success_whale = ""
 
