@@ -173,7 +173,7 @@ flirt_harder_dialogue = [
 
 invalid_flirt = "That's not flirting kid. You suck."
 
-flirt_success_crab = ""
+flirt_success_crab = "Your amazing flirting skills have surpassed the fishermen's and crabs' hatred of each other.\nIt's like a modern day Romeo and Juliet!"
 
 flirt_fail_crab = ""
 
