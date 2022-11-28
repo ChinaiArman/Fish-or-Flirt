@@ -6,7 +6,7 @@ Lex Wong | A01322278
 
 from random import randint
 from time import sleep
-import lex as dialogue
+import dialogue as dialogue
 
 
 def leviathan_event(board, character):
