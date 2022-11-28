@@ -127,28 +127,18 @@ random_encounter_crab = [
 ]
 
 random_encounter_fisherman = [
-    "You see another person, wearing a straw hat, holding a rod and a bucket in each hand. You both startle and point and each other in excitement. Neither of you say a word, but the intent is clear. FISH.",
+    "You see another person, wearing a straw hat, holding a rod and a bucket in each hand.\nYou both startle and point and each other in excitement.\nNeither of you say a word, but the intent is clear.\nFISH.",
     "The only living being a fisherman hates more than a crab, is another fisherman. You see another fisherman.",
     "You see a person, with a fish. What a nice fish, you think. They see a person with a fish. What a nice fish, they think.",
-    "You see a person with a rod, and a bucket. There is no fish in their bucket. You are filled with overwhelming pity for them. You are filled with overwhelming self-superiority over them. This is the start of your villain arc."
-]
-
-random_encounter_fish = [
-    "FSIH FISH FISHS FSIHDSF FSIFH FSIHF FISHF FISHF FISH. There's a fish.",
-    "It's your lucky day! You've found a strange looking being with 21 limbs, "
-    "oil and tar dripping from its skin and sliding onto the sea. It looks at you with beady, soulless eyes, "
-    "and without knowing the reason, you are overcome with the desire to look away. But you must keep your eyes on it, "
-    "after all, IT'S SUCH A COOL FISH!!",
-    "You found a fish. Good job buddy.",
-    "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish. Gasp! I think you've found a fish!"
+    "You see a person with a rod, and a bucket.\nThere is no fish in their bucket.\nYou are filled with overwhelming pity for them.\nYou are filled with overwhelming self-superiority over them.\nThis is the start of your villain arc."
 ]
 
 random_encounter_mermaid = [
     "Me-me-mermaid... Pretty.",
-    "You see a person in the water! They may be drowning! "
+    "You see a person in the water! They may be drowning!\n"
     "You try to rush over towards them before you are met with many many many many many many many many many many many "
     "many many many many many many many many many many many many many many many many many many many many many many many "
-    "many many teeth. Whew! It was only a mermaid. Mermaids can't drown silly. Don't worry about it.",
+    "many many teeth.\nWhew! It was only a mermaid.\nMermaids can't drown silly. Don't worry about it.",
     "There's a mermaid. It's a mermaid.",
     "'Wow!' You think, 'What a big fish!' A mermaid hits you for calling them derogatory terms."
 ]
@@ -186,7 +176,7 @@ encounter_pirate = "You see a group of pirates, each with a two shovels in hand.
                    "All of them are now unconscious. I'm not even sure if all of them are breathing. " \
                    "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck. Go on then."
 
-pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory"
+pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory. You've aquired the location of the "
 
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
@@ -212,6 +202,22 @@ invalid_move_water = [
     "You should be careful going that way, you might fall off the earth and onto a turtle.",
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
+
+start_fish = []
+
+fishing_success = [
+    "FSIH FISH FISHS FSIHDSF FSIFH FSIHF FISHF FISHF FISH. There's a fish.",
+    "It's your lucky day! You've found a strange looking being with 21 limbs, "
+    "oil and tar dripping from its skin and sliding onto the sea. It looks at you with beady, soulless eyes, "
+    "and without knowing the reason, you are overcome with the desire to look away. But you must keep your eyes on it, "
+    "after all, IT'S SUCH A COOL FISH!!",
+    "You found a fish. Good job buddy.",
+    "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
+]
+
+fishing_fail = []
+
+start_flirt = ""
 
 flirt_dialogue = [
     "I wish you were a fish so I could reel you in.",
