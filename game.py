@@ -95,6 +95,7 @@ def fisherman_event(_, character):
 
 def crab_event(_, character):
     crab_charisma = randint(80, 100)
+    print(asc.crab)
     print(dialogue.random_encounter_crab[(randint(0, len(dialogue.random_encounter_crab) - 1))])
     print(dialogue.start_flirt)
 
@@ -186,6 +187,7 @@ def whale_event(_, character):
 def mermaid_event(_, character):
     mermaid_charisma = randint(80, 100)
     mermaid_difficulty = randint(80, 100)
+    print(asc.mermaid)
     print(dialogue.random_encounter_mermaid[(randint(0, len(dialogue.random_encounter_mermaid) - 1))])
 
     attempting = True
