@@ -260,3 +260,37 @@ mermaid = r"""
                       `.    )/  //     `.
 
 """
+
+fisherman = r"""
+               .:~!?JJJ7.                                                       
+           :?YYYJ?7~^:^JB:                                                      
+          !#7:.         GG                                                      
+          ?#    .^~7?JYYJY5J~.                                                  
+          ^@PJYYYJ7!^:.    ^J5Y~.                        .^~7?JJ5~              
+          J@7:.        .:^~7?YB#PP^                 :~7JYYYY555PB7              
+         ^#!    .^~77JJYJ?7~^. :PG.             .~?YYJJYYYJ?!~:#J               
+        ^&5~7JYYYJ7!5Y?!~^^~!7Y5?            .!Y5J7?YYJ!^.     BJ               
+        Y5P&~:.  .^.GG!77YJ?&J:            ~Y5?!7YY7^          BJ               
+          .G5:  .#Y5G#:  !: YG           !P5~^JP?:             BJ               
+            75Y?!GP :.      G5         ~P5^:5P!                BJ               
+              :!B#7       .YB:       .YB! JG!                  B?               
+                 ?&5?7!7?Y5J.       ^#@YJGB.                 ^7#5:              
+                .Y&5G@57^:        :?BY:  J#.                JG!~75P:            
+               ^BJ!Y555G5:   .:~?557.  ~5P~                 BY    ?#.           
+               5P7#~:~7JGPYY5#Y7~.  ^?P5~                   ~&J^   BY           
+               GY^GJ^.      .#J ^!J5Y7:                    ~#5#5   5&P7         
+               5P  ~?JJJJJY5JPGJJ7^.                       .5Y#?   PY.BJ        
+               ?#:7777??J7~@!                                 BY  :&P!PG        
+               ^&7@7~~~~GG 5P   J!     :Y:            7PJ?~ .JB: .G5:!Y~        
+               .#Y&.    YG ^&~~5GBJ^:^7GGG7^.         !@^~YGGJ:^?GJ             
+                GP#J????G5 .#G7^ .!?J?7: :7J^         ^&: .BBJJJ!:              
+                GP~!77?JYYYGB:                        7@JY5?.                   
+                ?@J???77!^:?#.                        :^^:                      
+                .&!    !JJJY@~                                                  
+                 !#~        GY              5?        ?Y        !P.             
+                  BY        5G            :5BB?.    :JBBY:    .7BBP^            
+                  BJ        ?B         :JY57 .?5YJJY5?. 75YJJY5J: !YYY^         
+                  BJ        7#.         :.      .::.      .::.       ..         
+                  BY        !&.                                                 
+                  ~^        :!                                                                                                                             
+"""
