@@ -155,9 +155,13 @@ fishing_success = [
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
 ]
 
-whale_success = "You caught a whale! Cue Pokemon sounds."
+fish_whale_success = "You caught a whale! Cue Pokemon sounds."
 
-mermaid_success = "You've caught a mermaid on your hook! The horror!"
+fish_mermaid_success = "You've caught a mermaid! Or has the mermaid caught you?"
+
+fish_whale_fail = "What are you thinking? Trying to fish a whale with such a flimsy fishing rod."
+
+fish_mermaid_fail = "The mermaid quickly ties a heavy rock to the end of your line. You nearly fall into the water."
 
 fishing_fail = "You failed to catch a fish. Perhaps you should try again?"
 
