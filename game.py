@@ -56,6 +56,7 @@ def boat_event(board, character):
 
 def fisherman_event(_, character):
     fisherman_charisma = randint(80, 100)
+    print(asc.fisherman)
     print(dialogue.random_encounter_fisherman[(randint(0, len(dialogue.random_encounter_fisherman) - 1))])
     print(dialogue.start_flirt)
     # Story here
