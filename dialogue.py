@@ -155,10 +155,6 @@ fishing_success = [
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
 ]
 
-fish_for_mermaid = "You try to fish the mermaid. This will be interesting."
-
-fish_for_whale = "You through your cast your rod into the water. Your prized fishing rod looks tiny when compared to the giant whale."
-
 whale_success = "You caught a whale! Cue Pokemon sounds."
 
 mermaid_success = "You've caught a mermaid on your hook! The horror!"
