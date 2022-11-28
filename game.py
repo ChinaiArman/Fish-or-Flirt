@@ -370,6 +370,7 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
+    dialogue.slow_print(dialogue.title)
     dialogue.slow_print(dialogue.choose_class)
     for key, class_option in enumerate(dialogue.class_options, 1):
         print(f"{key}.\t{class_option}")
