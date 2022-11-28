@@ -2,7 +2,7 @@ from art import *
 import sys
 import time
 
-title = r"""\
+title = r"""
 
  ________ .-./`)    .-'''-. .---.  .---.             ,-----.    .-------.             ________   .---.    .-./`) .-------. ,---------.  
 |        |\ .-.')  / _     \|   |  |_ _|           .'  .-,  '.  |  _ _   \           |        |  | ,_|    \ .-.')|  _ _   \\          \ 
@@ -16,7 +16,7 @@ title = r"""\
                                                                                                                                         
 """
 
-crab = r"""\
+crab = r"""
                                                                                                                                                       
                                              ``                                                                                                       
                                              i:                                                                                                       
@@ -110,7 +110,7 @@ crab = r"""\
 
 """
 
-blushing = r"""\
+blushing = r"""
 ⣤⣤⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣠⣾⡿⣿⣇⠀⠀⠀⠀
 ⣿⢏⣹⣳⣯⣗⣤⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⡿⠃⠒⣜⣮⢧⡀⠀⠀
 ⣿⡞⠁⡉⠙⠻⣷⣿⢦⣤⣤⣶⣶⣶⣶⣶⣶⣾⣿⡿⠋⠀⠌⡐⠈⢿⣿⣣⠀⠀
@@ -128,7 +128,7 @@ blushing = r"""\
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⡇⠀⠀⠀⠀⠀⠀⠘⣷⠀⠀⠀⠀⠀⠀⠀
 """
 
-flirt_fail = r"""\
+flirt_fail = r"""
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠿⠿⠿⢿⣿⣿⣿⣿⣿⣿⡿⢛⣾⣿⠿⠟⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⡿⠟⠛⠻⠷⠶⢦⣄⡉⠻⢿⣿⣿⠃⣸⢋⣤⡾⠟⠛⠓⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
@@ -167,6 +167,26 @@ flirt_fail = r"""\
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
 ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+"""
+
+boat = r"""
+             ____
+              ---|
+  \/            /|     \/
+               / |\
+              /  | \        \/
+             /   || \
+            /    | | \
+           /     | |  \
+          /      | |   \
+         /       ||     \
+        /        /       \
+       /________/         \
+       ________/__________--/
+ ~~~   \___________________/
+         ~~~~~~~~~~       ~~~~~~~~
+~~~~~~~~~~~~~     ~~~~~~~~~
+                               ~~~~~~~~~
 """
 # tprint("True Final Boss")
 
@@ -233,10 +253,10 @@ no_encounter_sea = [
     "You came, you saw, you left empty handed. Ain't no fish here pal!"
 ]
 
-encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the signs of time decorating its sides. " \
-                 "However, the paint was recently redone a brilliant white, and you could see that the sails have been changed. " \
-                 "Beside the boat, an old fisherman sits, as if waiting for a friend.\nThe fisherman beckons you towards them, and gestures at their boat. " \
-                 "Behemoth, it reads. A worthy aid to help you in your journey against the monsters of the sea. " \
+encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the signs of time decorating its sides.\n" \
+                 "However, the paint was recently redone a brilliant white, and you could see that the sails have been changed.\n" \
+                 "Beside the boat, an old fisherman sits, as if waiting for a friend.\nThe fisherman beckons you towards them, and gestures at their boat.\n" \
+                 "Behemoth, it reads. A worthy aid to help you in your journey against the monsters of the sea.\n" \
                  "The old fisherman tips their straw hat, a twinkle shinning in their eyes, and walks away, humming a happy little tune."
 
 acquired_boat = "You touch the boat, and you feel an energy pulse through you. You've gotten stronger, my young friend. " \
@@ -264,7 +284,8 @@ encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "<You have reached the final boss, the Leviathan! Are your stats high enough to fish or " \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
 
-leviathan_defeated_fish = "With your strong rod and amazing fishing skills, "
+leviathan_defeated_fish = "With your strong rod and amazing fishing skills, you've fished the Leviathan from the sea!\n" \
+                          "I can't believe you even have enough bicep strength to do that! Amazing! You've fulfilled the prophecy "
 
 leviathan_defeated_flirt = "You should be jailed! Your irresistible charm and dashing good looks have stolen the Leviathan's heart.\n" \
                            "When talking with the Leviathan, you discovered that the only reason it was terrorizing the seas was because it had a terrible stomach ache.\n" \
@@ -331,6 +352,8 @@ flirt_harder_dialogue = [
     "You just reeled me in with your beauty.",
     "You’ve got me hook, line, and sinker."
 ]
+
+invalid_flirt = "That's not flirting kid. You suck."
 
 # different flirt success and fails for different flirt-able things
 flirt_success_crab = ""
