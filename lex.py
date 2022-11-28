@@ -105,9 +105,9 @@ get_name = "Hello. We all know why you're here.\n" \
            "I'll stop embarrassing you.\n" \
            "Here.\n" \
            "Take a fishing rod,\n" \
-           "and go wild kid.\nBut first. What is your name?\t\t"
+           "and go wild kid.\nBut first. What is your name?\n"
 
-choose_class = "What class do you want be in? Do you want to be a doctor, neurosurgeon, lawyer, fisherman, dentist, psychologist, magician, Prime Minister of Canada, Premier of Australia, astronaut, or rocket scientist?"
+choose_class = "What class do you want be in? Do you want to be a doctor, neurosurgeon, lawyer, fisherman, dentist, psychologist, magician, Prime Minister of Canada, Premier of Australia, astronaut, or rocket scientist?\n"
 
 after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder. Well, you get no autonomy anyways, so you're a fishman now. Congrats."
 
@@ -176,7 +176,7 @@ encounter_pirate = "You see a group of pirates, each with a two shovels in hand.
                    "All of them are now unconscious. I'm not even sure if all of them are breathing. " \
                    "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck. Go on then."
 
-pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory. You've aquired the location of the "
+pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory.\nYou've acquired the location of the terror of the sea, the Leviathan."
 
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
