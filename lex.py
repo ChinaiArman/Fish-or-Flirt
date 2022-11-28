@@ -2,6 +2,20 @@ from art import *
 import sys
 import time
 
+title = r"""\
+
+ ________ .-./`)    .-'''-. .---.  .---.             ,-----.    .-------.             ________   .---.    .-./`) .-------. ,---------.  
+|        |\ .-.')  / _     \|   |  |_ _|           .'  .-,  '.  |  _ _   \           |        |  | ,_|    \ .-.')|  _ _   \\          \ 
+|   .----'/ `-' \ (`' )/`--'|   |  ( ' )          / ,-.|  \ _ \ | ( ' )  |           |   .----',-./  )    / `-' \| ( ' )  | `--.  ,---' 
+|  _|____  `-'`"`(_ o _).   |   '-(_{;}_)        ;  \  '_ /  | :|(_ o _) /           |  _|____ \  '_ '`)   `-'`"`|(_ o _) /    |   \    
+|_( )_   | .---.  (_,_). '. |      (_,_)         |  _`,/ \ _/  || (_,_).' __         |_( )_   | > (_)  )   .---. | (_,_).' __  :_ _:    
+(_ o._)__| |   | .---.  \  :| _ _--.   |         : (  '\_/ \   ;|  |\ \  |  |        (_ o._)__|(  .  .-'   |   | |  |\ \  |  | (_I_)    
+|(_,_)     |   | \    `-'  ||( ' ) |   |          \ `"/  \  ) / |  | \ `'   /        |(_,_)     `-'`-'|___ |   | |  | \ `'   /(_(=)_)   
+|   |      |   |  \       / (_{;}_)|   |           '. \_/``".'  |  |  \    /         |   |       |        \|   | |  |  \    /  (_I_)    
+'---'      '---'   `-...-'  '(_,_) '---'             '-----'    ''-'   `'-'          '---'       `--------`'---' ''-'   `'-'   '---'    
+                                                                                                                                        
+"""
+
 crab = r"""\
                                                                                                                                                       
                                              ``                                                                                                       
@@ -113,7 +127,7 @@ class_options = ["doctor", "neurosurgeon", "lawyer", "fisherman", "dentist", "ps
 
 after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder. Well, you get no autonomy anyways, so you're a fishman now. Congrats."
 
-story_1 = "Once upon a time, a long long time ago, in a small little village, a fisherman was born.\nThat's you!\n" \
+story_1 = "Let me set the scene. Once upon a time, a long long time ago, in a small little village, a fisherman was born.\nThat's you!\n" \
           "You came out of the womb with a fishing rod in your precious little hands. Your mother had to get a C-section just to get it out!" \
           " Poor mama-fisherman.\nOn that fateful day, a prophecy was discovered. " \
           "You alone are destined to defeat the monster of the deep.\nYour parents have trained you all of life for this." \
@@ -205,7 +219,10 @@ invalid_move_water = [
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
 
-start_fish = []
+start_fish = [
+    "You throw your rod into the sea. The bobber creates small ripples in the water, growing larger as they expand outwards. You feel one with the sea.",
+    ""
+]
 
 fishing_success = [
     "FSIH FISH FISHS FSIHDSF FSIFH FSIHF FISHF FISHF FISH. There's a fish.",
@@ -240,7 +257,7 @@ flirt_harder_dialogue = [
     "You’ve got me hook, line, and sinker."
 ]
 
-# different flirt success and fails for different flirtable things
+# different flirt success and fails for different flirt-able things
 flirt_success_crab = ""
 
 flirt_fail_crab = ""
