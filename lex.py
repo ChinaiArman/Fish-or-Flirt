@@ -239,9 +239,29 @@ flirt_harder_dialogue = [
 ]
 
 # different flirt success and fails for different flirtable things
-flirt_success = ""
+flirt_success_crab = ""
 
-flirt_fail = ""
+flirt_fail_crab = ""
+
+flirt_success_fisherman = ""
+
+flirt_fail_fisherman = ""
+
+flirt_success_mermaid = ""
+
+flirt_fail_mermaid = ""
+
+flirt_success_whale = ""
+
+flirt_fail_whale = ""
+
+flirt_success_pirate = ""
+
+flirt_fail_pirate = ""
+
+flirt_success_leviathan = ""
+
+flirt_fail_leviathan = ""
 
 fish_for_fish = []
 
