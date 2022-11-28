@@ -313,7 +313,7 @@ def describe_current_location(board, character, columns):
 
 
 def make_character():
-    print(dialogue.get_name)
+    dialogue.slow_print(dialogue.get_name)
     name = input("Answer Here:\t\t")
     character = {
         "name": name,
