@@ -24,7 +24,7 @@ def leviathan_event(board, character):
 def pirate_event(board, character):
     island_tile = "\U0001F334"
     leviathan_tile = "\U00002757"
-    pirate_charisma = 120
+    pirate_charisma = 100
     position = (character['x-coordinate'], character['y-coordinate'])
     dialogue.slow_print(dialogue.encounter_pirate)
     print(dialogue.start_flirt)
@@ -37,22 +37,22 @@ def pirate_event(board, character):
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            # Special Pirate Flirts
-            # dialogue.slow_print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
+            dialogue.slow_print(dialogue.seduce_pirate[randint(0, len(dialogue.seduce_pirate) - 1)])
             if character["charisma"] > randint(0, pirate_charisma):
                 # Pirate Blush
-                # print(asc.blushing)
-                print(dialogue.flirt_success_fisherman)
+                # Success Art
+                print(dialogue.flirt_success_pirate)
                 character["charisma"] += 5
                 character["luck"] += 5
                 character["inventory"] += ["Pirate", "Pirate's Shovel (mildly damaged)"]
                 flirting = False
             else:
-                print(asc.flirt_fail)
-                print(dialogue.flirt_fail_fisherman)
+                # Fail Art
+                print(dialogue.flirt_fail_pirate)
         elif selection == "2":
             print("No fleeing, only flirting")
         else:
+            # Confused Art
             print(dialogue.invalid_flirt)
 
     board[position] = island_tile
