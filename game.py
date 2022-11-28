@@ -86,6 +86,7 @@ def fisherman_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
+                print(dialogue.flirt_fail)
                 print(dialogue.flirt_fail_fisherman)
     return
 
@@ -125,6 +126,7 @@ def crab_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
+                print(dialogue.flirt_fail)
                 print(dialogue.flirt_fail_crab)
     return
 
@@ -163,6 +165,7 @@ def whale_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
+                print(dialogue.flirt_fail)
                 print(dialogue.flirt_fail_whale)
     return
 
@@ -201,6 +204,7 @@ def mermaid_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
+                print(dialogue.flirt_fail)
                 print(dialogue.flirt_fail_mermaid)
     return
 
