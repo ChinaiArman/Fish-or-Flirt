@@ -306,7 +306,7 @@ def move_character(character, move):
     return
 
 
-def invalid_move(board, character):
+def describe_invalid_move(board, character):
     land_tile = "\U0001F3D6"
     water_tile = "\U0001F30A"
     island_tile = "\U0001F334"
@@ -461,7 +461,7 @@ def game():
                     execute_glow_up_protocol(character)
             achieved_goal = check_if_goal_attained(character)
         else:
-            print(invalid_move(board, character))
+            print(describe_invalid_move(board, character))
         sleep(1)
     print("end of game shenanigans")
 
