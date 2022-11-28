@@ -107,7 +107,9 @@ get_name = "Hello. We all know why you're here.\n" \
            "Take a fishing rod,\n" \
            "and go wild kid.\nBut first. What is your name?\n"
 
-choose_class = "What class do you want be in? Do you want to be a doctor, neurosurgeon, lawyer, fisherman, dentist, psychologist, magician, Prime Minister of Canada, Premier of Australia, astronaut, or rocket scientist?\n"
+choose_class = "What class do you want be in? Do you want to be a:"
+
+class_options = ["doctor", "neurosurgeon", "lawyer", "fisherman", "dentist", "psychologist", "magician", "Prime Minister of Canada", "Premier of Australia", "astronaut", "rocket scientist"]
 
 after_class_input = "Well, I'm a computer, so I can't hear you. Maybe hit your keyboard harder. Well, you get no autonomy anyways, so you're a fishman now. Congrats."
 
