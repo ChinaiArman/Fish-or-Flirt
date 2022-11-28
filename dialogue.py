@@ -161,7 +161,7 @@ fish_for_whale = "You through your cast your rod into the water. Your prized fis
 
 whale_success = "You caught a whale! Cue Pokemon sounds."
 
-mermaid_success = ""
+mermaid_success = "You've caught a mermaid on your hook! The horror!"
 
 fishing_fail = "You failed to catch a fish. Perhaps you should try again?"
 
