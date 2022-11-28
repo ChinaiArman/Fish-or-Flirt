@@ -370,7 +370,12 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
-    print(dialogue.story_1)
+    dialogue.slow_print(dialogue.choose_class)
+    for key, class_option in enumerate(dialogue.class_options, 1):
+        print(f"{key}.\t{class_option}")
+    _ = input("Answer Here:\t\t")
+    dialogue.slow_print(dialogue.after_class_input)
+    dialogue.slow_print(dialogue.story_1)
     character = make_character()
     achieved_goal = False
     while not achieved_goal:
