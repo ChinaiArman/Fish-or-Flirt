@@ -334,9 +334,9 @@ fishing_success = [
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
 ]
 
-fishing_fail = []
+fishing_fail = "You failed to catch a fish. Perhaps you should try again?"
 
-start_flirt = ""
+start_flirt = "You decided that a good fisherman can both fish AND woo their opponents into being fished."
 
 flirt_dialogue = [
     "I wish you were a fish so I could reel you in.",
