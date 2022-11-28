@@ -57,7 +57,7 @@ def fisherman_event(_, character):
 
     flirting = True
     while flirting:
-        player_options = ["Flirt", "Flirt Harder"]
+        player_options = ("Flirt", "Flirt Harder")
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
@@ -94,7 +94,7 @@ def crab_event(_, character):
 
     flirting = True
     while flirting:
-        player_options = ["Flirt", "Flirt Harder"]
+        player_options = ("Flirt", "Flirt Harder")
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
@@ -131,7 +131,7 @@ def whale_event(_, character):
 
     attempting = True
     while attempting:
-        player_options = ["Fish", "Flirt"]
+        player_options = ("Fish", "Flirt")
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
@@ -175,7 +175,7 @@ def mermaid_event(_, character):
 
     attempting = True
     while attempting:
-        player_options = ["Fish", "Flirt"]
+        player_options = ("Fish", "Flirt")
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")

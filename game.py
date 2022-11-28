@@ -108,7 +108,7 @@ def validate_move(board, character, direction, rows, columns):
 
 def get_user_choice(character):
     print("Possible Actions")
-    directions = ["north", "south", "east", "west", "fish", "quit"]
+    directions = ("north", "south", "east", "west", "fish", "quit")
     for key, direction in enumerate(directions, 1):
         print(f"{key}.\t{direction}")
     direction = input("\nAnswer Here:\t")
