@@ -285,7 +285,8 @@ encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
 
 leviathan_defeated_fish = "With your strong rod and amazing fishing skills, you've fished the Leviathan from the sea!\n" \
-                          "I can't believe you even have enough bicep strength to do that! Amazing! You've fulfilled the prophecy "
+                          "I can't believe you even have enough bicep strength to do that! Amazing!\n" \
+                          "You've fulfilled the prophecy, and your parents will finally love you, I mean what."
 
 leviathan_defeated_flirt = "You should be jailed! Your irresistible charm and dashing good looks have stolen the Leviathan's heart.\n" \
                            "When talking with the Leviathan, you discovered that the only reason it was terrorizing the seas was because it had a terrible stomach ache.\n" \
@@ -312,12 +313,15 @@ invalid_move_water = [
 invalid_move_island = [
     "I don't know how you got here. You can't even move incorrectly on this island. How did you manage to make an invalid move?",
     "Let's review our NUMBERS. 1 for NORTH. 2 for SOUTH. 3 for EAST. 4 for SOUTH. Try again.",
-    "How did you get here again? We should change your name into little Alice Liddell. Stop following the White Rabbit and go "
+    "How did you get here again? We should change your name into little Alice Liddell. Stop following the White Rabbit and go."
 ]
 
 start_fish = [
     "You throw your rod into the sea. The bobber creates small ripples in the water, growing larger as they expand outwards. You feel one with the sea.",
-    ""
+    "The ocean breeze gently blows across your face like soft and loving caress. You think you'll find good fish today.",
+    "In the distance, you hear the call of seagulls. They too, are accompanying you in your fishing.",
+    "You throw your rod into the sea. The ocean's crystalline surface breaks for a moment, before returning to its original calm.",
+    "You hum a soft tune under your breath as you wait for a fish to take the bait. You're not sure where it came from, but it comforts your soul."
 ]
 
 fishing_success = [
