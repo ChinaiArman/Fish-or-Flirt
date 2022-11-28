@@ -4,7 +4,7 @@ Lex Wong | A01322278
 """
 
 
-import random
+from random import randint
 import lex as dialogue
 
 
@@ -56,30 +56,30 @@ def boat_event(board, character):
 
 
 def fisherman_event(_, character):
-    fisherman_charisma = random.randint(80, 100)
+    fisherman_charisma = randint(80, 100)
     # Story here
 
     flirting = True
     while flirting:
-        # Opening dialogue to flirt combat
+        print(dialogue.random_encounter_fisherman[(randint(0, len(dialogue.random_encounter_fisherman) - 1))])
 
-        player_options = ["flirt", "flirt harder"]
+        player_options = ["Flirt", "Flirt Harder"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
             valid_selection = True
         elif selection == "2":
-            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
             valid_selection = True
         else:
             print("invalid action")
             valid_selection = False
 
         if valid_selection:
-            if character["charisma"] > random.randint(0, fisherman_charisma):
+            if character["charisma"] > randint(0, fisherman_charisma):
                 # Success dialogue
                 print("success")
                 if character["charisma"] < 80:
@@ -93,30 +93,30 @@ def fisherman_event(_, character):
 
 
 def crab_event(_, character):
-    crab_charisma = random.randint(80, 100)
-    # Story here
+    crab_charisma = randint(80, 100)
+    print(dialogue.random_encounter_crab[(randint(0, len(dialogue.random_encounter_crab) - 1))])
 
     flirting = True
     while flirting:
         # Opening dialogue to flirt combat
 
-        player_options = ["flirt", "flirt harder"]
+        player_options = ["Flirt", "Flirt Harder"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
             valid_selection = True
         elif selection == "2":
-            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
             valid_selection = True
         else:
             print("invalid action")
             valid_selection = False
 
         if valid_selection:
-            if character["charisma"] > random.randint(0, crab_charisma):
+            if character["charisma"] > randint(0, crab_charisma):
                 # Success dialogue
                 print("success")
                 if character["charisma"] < 80:
@@ -130,14 +130,14 @@ def crab_event(_, character):
 
 
 def whale_event(_, character):
-    whale_charisma = random.randint(80, 100)
+    whale_charisma = randint(80, 100)
     # Story here
 
     flirting = True
     while flirting:
         # Opening dialogue to flirt combat
 
-        player_options = ["fish", "flirt"]
+        player_options = ["Fish", "Flirt"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
@@ -145,14 +145,14 @@ def whale_event(_, character):
         if selection == "1":
             valid_selection = True
         elif selection == "2":
-            print(dialogue.flirt_dialogue[random.randint(0, len(dialogue.flirt_dialogue) - 1)])
+            print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
             valid_selection = True
         else:
             print("invalid action")
             valid_selection = False
 
         if valid_selection:
-            if character["charisma"] > random.randint(0, whale_charisma):
+            if character["charisma"] > randint(0, whale_charisma):
                 # Success dialogue
                 print("success")
                 if character["charisma"] < 80:
@@ -166,8 +166,8 @@ def whale_event(_, character):
 
 
 def mermaid_event(_, character):
-    mermaid_charisma = random.randint(80, 100)
-    # Story here
+    mermaid_charisma = randint(80, 100)
+    print(dialogue.random_encounter_mermaid[(randint(0, len(dialogue.random_encounter_mermaid) - 1))])
 
     flirting = True
     while flirting:
@@ -181,14 +181,14 @@ def mermaid_event(_, character):
         if selection == "1":
             valid_selection = True
         elif selection == "2":
-            print(dialogue.flirt_harder_dialogue[random.randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
+            print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
             valid_selection = True
         else:
             print("invalid action")
             valid_selection = False
 
         if valid_selection:
-            if character["charisma"] > random.randint(0, mermaid_charisma):
+            if character["charisma"] > randint(0, mermaid_charisma):
                 # Success dialogue
                 print("success")
                 if character["charisma"] < 80:
@@ -230,7 +230,7 @@ def check_for_challenges(board, character):
     leviathan_tile = "\U00002757"
     water_tile = "\U0001F30A"
     land_tile = "\U0001F3D6"
-    chance = random.randint(0, 100)
+    chance = randint(0, 100)
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
         return True, boat_event
@@ -313,7 +313,8 @@ def describe_current_location(board, character, columns):
 
 
 def make_character():
-    name = input("name?")
+    print(dialogue.get_name)
+    name = input("Answer Here:\t\t")
     character = {
         "name": name,
         "x-coordinate": 9,
@@ -369,6 +370,7 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
+    print(dialogue.story_1)
     character = make_character()
     achieved_goal = False
     while not achieved_goal:
