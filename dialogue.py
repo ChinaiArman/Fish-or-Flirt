@@ -189,13 +189,20 @@ flirt_harder_dialogue = [
 seduce_pirate = [
     "A good captain goes down with his ship, wanna go down with me?",
     "Arrrrrrrrrrrrr you free this Saturday?",
-    "You may be burying treasure, but you're the only treasure I see."
-]
-
-seduce_harder_pirate = [
+    "You may be burying treasure, but you're the only treasure I see.",
     "I can sail through any storm if it's with you!",
     "I have the latest copy of Windows 11 with cracked product activation. ;)",
     "I've sailed the seven seas, and you're the sleekest schooner I've ever sighted."
+]
+
+flee_from_pirate = [
+    "No fleeing, only flirting",
+    "Fish or Flirt's Art of War-If equally matched, you can offer flirts;\n"
+    "if slightly inferior in numbers, you should've just avoided the enemy in the first place;\n"
+    "if quite unequal in every way, we can flee from him.\n"
+    "You are equally matched. GO WOE THE POOR THING.",
+    "You try to run away, only to trip on one of the pirate's unconscious, or dead, friends.\n"
+    "Fisher-mama taught you better than to kick people in their sleep!"
 ]
 
 invalid_flirt = "That's not flirting kid. You suck."
