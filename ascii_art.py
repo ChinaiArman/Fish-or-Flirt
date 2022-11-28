@@ -340,7 +340,7 @@ broken_heart = r"""
 ⠀⠀⠀⠀⠀⠀⠈⠙⢿⡿⠀⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀
 """
 
-fishing_line_breaks = r"""
+fishing_fail = r"""
               _
          **  / ) _  _
        %_[]=%   | )/ )
