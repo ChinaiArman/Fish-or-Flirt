@@ -4,7 +4,7 @@ import time
 
 # tprint("True Final Boss")
 
-welcome_message = "Welcome to Fish or Flirt. In this game, you can fish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nor flirt. Let's start!"
+welcome_message = "Welcome to Fish or Flirt, by Arman Chinai and Lex Wong. In this game, you can fish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nor flirt. Let's start!"
 
 choose_class = "What class do you want be in? Do you want to be a:"
 
@@ -186,6 +186,18 @@ flirt_harder_dialogue = [
     "You’ve got me hook, line, and sinker."
 ]
 
+seduce_pirate = [
+    "A good captain goes down with his ship, wanna go down with me?",
+    "Arrrrrrrrrrrrr you free this Saturday?",
+    "You may be burying treasure, but you're the only treasure I see."
+]
+
+seduce_harder_pirate = [
+    "I can sail through any storm if it's with you!",
+    "I have the latest copy of Windows 11 with cracked product activation. ;)",
+    "I've sailed the seven seas, and you're the sleekest schooner I've ever sighted."
+]
+
 invalid_flirt = "That's not flirting kid. You suck."
 
 flirt_success_crab = "Your amazing flirting skills have surpassed the fishermen's and crabs' hatred of each other.\nIt's like a modern day Romeo and Juliet!"
@@ -212,6 +224,9 @@ flirt_fail_pirate = "The pirate waves their shovel around. It almost hits you in
 flirt_fail_leviathan = "The Leviathan thrashes their many arms. You dodged skillfully. If only your flirting skills were just as skillful."
 
 level_up = "You levelled up! Your rod is now stronger."
+
+end_of_game_shenanigans = "Thank you for playing our game! We hope you had lots of fun fishing and flirting with everyone.\n" \
+                          "Come back again soon!"
 
 # tprint("ERROR 102", "dirty")
 
