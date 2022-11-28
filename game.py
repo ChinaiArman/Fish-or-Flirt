@@ -37,7 +37,6 @@ def pirate_event(board, character):
 
     # Mechanics here
 
-    dialogue.slow_print(dialogue.encounter_pirate)
     board[position] = island_tile
     board[(1, 8)] = leviathan_tile
     character["xp"] += 1
@@ -367,8 +366,8 @@ def make_character():
         "name": name,
         "x-coordinate": 9,
         "y-coordinate": 0,
-        "luck": 50,
-        "charisma": 50,
+        "luck": 40,
+        "charisma": 40,
         "rod level": 0,
         "xp": 0,
         "inventory": []
