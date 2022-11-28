@@ -6,13 +6,15 @@ Lex Wong | A01322278
 
 from random import randint
 from time import sleep
-import dialogue as dialogue
+import dialogue
+import ascii_art as asc
 
 
 def leviathan_event(board, character):
     water_tile = "\U0001F30A"
     leviathan_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
+    print(asc.leviathan)
     dialogue.slow_print(dialogue.encounter_leviathan)
     # story here
 
@@ -45,6 +47,7 @@ def pirate_event(board, character):
 def boat_event(board, character):
     water_tile = "\U0001F30A"
     position = (character['x-coordinate'], character['y-coordinate'])
+    print(asc.boat)
     dialogue.slow_print(dialogue.encounter_boat)
     dialogue.slow_print(dialogue.acquired_boat)
     board[position] = water_tile
@@ -78,7 +81,7 @@ def fisherman_event(_, character):
         if valid_selection:
             if character["charisma"] > randint(0, fisherman_charisma):
                 # Success dialogue
-                print(dialogue.blushing)
+                print(asc.blushing)
                 print(dialogue.flirt_success_fisherman)
                 if character["charisma"] < 80:
                     character["charisma"] += 5
@@ -86,7 +89,7 @@ def fisherman_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
-                print(dialogue.flirt_fail)
+                print(asc.flirt_fail)
                 print(dialogue.flirt_fail_fisherman)
     return
 
@@ -118,7 +121,7 @@ def crab_event(_, character):
         if valid_selection:
             if character["charisma"] > randint(0, crab_charisma):
                 # Success dialogue
-                print(dialogue.blushing)
+                print(asc.blushing)
                 print(dialogue.flirt_success_crab)
                 if character["charisma"] < 80:
                     character["charisma"] += 5
@@ -126,18 +129,20 @@ def crab_event(_, character):
                 flirting = False
             else:
                 # Fail dialogue
-                print(dialogue.flirt_fail)
+                print(asc.flirt_fail)
                 print(dialogue.flirt_fail_crab)
     return
 
 
 def whale_event(_, character):
     whale_charisma = randint(80, 100)
-    print(dialogue.start_flirt)
+    whale_difficulty = randint(80, 100)
     # Story here
+    print(asc.whale)
+    print(dialogue.random_encounter_whale[(randint(0, len(dialogue.random_encounter_whale) - 1))])
 
-    flirting = True
-    while flirting:
+    attempting = True
+    while attempting:
         # Opening dialogue to flirt combat
 
         player_options = ["Fish", "Flirt"]
@@ -146,66 +151,82 @@ def whale_event(_, character):
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            valid_selection = True
+            print(asc.fishing_rod)
+            dialogue.slow_print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
+            if character["luck"] > randint(0, whale_difficulty):
+                # Success dialogue
+                print(dialogue.fishing_success[randint(0, len(dialogue.fishing_success) - 1)])
+                if character["luck"] < 80:
+                    character["luck"] += 5
+                character["inventory"] += ["Whale"]
+                attempting = False
+            else:
+                # Fail dialogue
+                pass
         elif selection == "2":
+            print(dialogue.start_flirt)
             dialogue.slow_print(dialogue.flirt_dialogue[randint(0, len(dialogue.flirt_dialogue) - 1)])
-            valid_selection = True
-        else:
-            print("invalid action")
-            valid_selection = False
-
-        if valid_selection:
             if character["charisma"] > randint(0, whale_charisma):
                 # Success dialogue
-                print(dialogue.blushing)
+                print(asc.blushing)
                 print(dialogue.flirt_success_whale)
                 if character["charisma"] < 80:
                     character["charisma"] += 5
                 character["inventory"] += ["Whale"]
-                flirting = False
+                attempting = False
             else:
                 # Fail dialogue
-                print(dialogue.flirt_fail)
+                print(asc.flirt_fail)
                 print(dialogue.flirt_fail_whale)
+        else:
+            print(dialogue.invalid_flirt)
     return
 
 
 def mermaid_event(_, character):
     mermaid_charisma = randint(80, 100)
+    mermaid_difficulty = randint(80, 100)
     print(dialogue.random_encounter_mermaid[(randint(0, len(dialogue.random_encounter_mermaid) - 1))])
-    print(dialogue.start_flirt)
 
-    flirting = True
-    while flirting:
+    attempting = True
+    while attempting:
         # Opening dialogue to flirt combat
 
-        player_options = ["fish", "flirt"]
+        player_options = ["Fish", "Flirt"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            valid_selection = True
+            print(asc.fishing_rod)
+            dialogue.slow_print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
+            if character["luck"] > randint(0, mermaid_difficulty):
+                # Success dialogue
+                print(dialogue.fishing_success[randint(0, len(dialogue.fishing_success) - 1)])
+                if character["luck"] < 80:
+                    character["luck"] += 5
+                character["inventory"] += ["Mermaid"]
+                attempting = False
+            else:
+                # Fail dialogue
+                pass
         elif selection == "2":
+            print(dialogue.start_flirt)
             dialogue.slow_print(dialogue.flirt_harder_dialogue[randint(0, len(dialogue.flirt_harder_dialogue) - 1)])
-            valid_selection = True
-        else:
-            print("invalid action")
-            valid_selection = False
-
-        if valid_selection:
             if character["charisma"] > randint(0, mermaid_charisma):
                 # Success dialogue
-                print(dialogue.blushing)
+                print(asc.blushing)
                 print(dialogue.flirt_success_mermaid)
                 if character["charisma"] < 80:
                     character["charisma"] += 5
                 character["inventory"] += ["Mermaid"]
-                flirting = False
+                attempting = False
             else:
                 # Fail dialogue
-                print(dialogue.flirt_fail)
+                print(asc.flirt_fail)
                 print(dialogue.flirt_fail_mermaid)
+        else:
+            print(dialogue.invalid_flirt)
     return
 
 
@@ -246,13 +267,13 @@ def check_for_challenges(board, character):
         return True, pirate_event
     elif board[position] == leviathan_tile:
         return True, leviathan_event
-    elif board[position] == land_tile and chance < 20:
+    elif board[position] == land_tile and chance < 18:
         return True, crab_event
-    elif board[position] == land_tile and 40 > chance >= 20:
+    elif board[position] == land_tile and 36 > chance >= 18:
         return True, fisherman_event
-    elif board[position] == water_tile and chance < 20:
+    elif board[position] == water_tile and chance < 18:
         return True, mermaid_event
-    elif board[position] == water_tile and 40 > chance >= 20:
+    elif board[position] == water_tile and 36 > chance >= 18:
         return True, whale_event
     elif board[position] == land_tile:
         print(dialogue.no_encounter_land[randint(0, len(dialogue.no_encounter_land) - 1)])
@@ -282,7 +303,6 @@ def invalid_move(board, character):
         return dialogue.invalid_move_land[randint(0, len(dialogue.invalid_move_land) - 1)]
     elif board[position] == island_tile:
         return "invalid island move"
-
 
 
 def validate_move(board, character, direction, rows, columns):
@@ -398,7 +418,7 @@ def game():
     rows = 10
     columns = 10
     board = make_board(rows, columns)
-    print(dialogue.title)
+    print(asc.title)
     # dialogue.slow_print(dialogue.welcome_message)
     # dialogue.slow_print(dialogue.choose_class)
     for key, class_option in enumerate(dialogue.class_options, 1):
@@ -422,7 +442,7 @@ def game():
             achieved_goal = check_if_goal_attained(character)
         else:
             print(invalid_move(board, character))
-        sleep(2)
+        sleep(1)
     print("end of game shenanigans")
 
 
