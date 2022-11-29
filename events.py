@@ -53,7 +53,7 @@ def pirate_event(board, character, event_dialogue):
             print("No fleeing, only flirting")
         else:
             # Confused Art
-            print(event_dialogue["invalid"])
+            print(event_dialogue["flee"][randint(0, len(event_dialogue["flee"]) - 1)])
 
     board[position] = island_tile
     board[(1, 8)] = leviathan_tile

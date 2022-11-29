@@ -261,7 +261,8 @@ PIRATE_DIALOGUE = {
     "seduction": seduce_pirate,
     "success": flirt_success_pirate,
     "fail": flirt_fail_pirate,
-    "invalid": invalid_flirt
+    "invalid": invalid_flirt,
+    "flee": flee_from_pirate
 }
 
 LEVIATHAN_DIALOGUE = {
@@ -318,6 +319,7 @@ MERMAID_DIALOGUE = {
 }
 
 WHALE_DIALOGUE = {
+    "entity": "Whale",
     "ascii_encounter": asc.whale,
     "encounter": random_encounter_whale,
     "fishing_rod": asc.fishing_rod,
