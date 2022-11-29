@@ -48,27 +48,27 @@ def check_for_challenges(board, character):
     chance = randint(0, 100)
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == boat_tile:
-        return True, events.boat_event
+        return True, events.boat_event, dialogue.BOAT_DIALOGUE
     elif board[position] == pirate_tile:
-        return True, events.pirate_event
+        return True, events.pirate_event, dialogue.PIRATE_DIALOGUE
     elif board[position] == leviathan_tile:
-        return True, events.leviathan_event
+        return True, events.leviathan_event, dialogue.LEVIATHAN_DIALOGUE
     elif board[position] == land_tile and chance < 18:
-        return True, events.crab_event
+        return True, events.land_event, dialogue.CRAB_DIALOGUE
     elif board[position] == land_tile and 36 > chance >= 18:
-        return True, events.fisherman_event
+        return True, events.land_event, dialogue.FISHERMAN_DIALOGUE
     elif board[position] == water_tile and chance < 18:
-        return True, events.mermaid_event
+        return True, events.water_event, dialogue.MERMAID_DIALOGUE
     elif board[position] == water_tile and 36 > chance >= 18:
-        return True, events.whale_event
+        return True, events.water_event, dialogue.WHALE_DIALOGUE
     elif board[position] == land_tile:
         print(dialogue.no_encounter_land[randint(0, len(dialogue.no_encounter_land) - 1)])
-        return False, None
+        return False, None, None
     elif board[position] == water_tile:
         print(dialogue.no_encounter_sea[randint(0, len(dialogue.no_encounter_sea) - 1)])
-        return False, None
+        return False, None, None
     else:
-        return False, None
+        return False, None, None
 
 
 def move_character(character, move):
@@ -226,9 +226,9 @@ def game():
         move, valid_move = validate_move(board, character, direction, rows, columns)
         if valid_move:
             move_character(character, move)
-            there_is_a_challenge, challenge = check_for_challenges(board, character)
+            there_is_a_challenge, challenge, event_dialogue = check_for_challenges(board, character)
             if there_is_a_challenge:
-                challenge(board, character)
+                challenge(board, character, event_dialogue)
                 if character_has_leveled(character):
                     execute_glow_up_protocol(character)
             achieved_goal = check_if_goal_attained(character)

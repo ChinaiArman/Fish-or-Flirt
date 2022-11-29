@@ -1,6 +1,6 @@
-from art import *
 import sys
 import time
+import ascii_art as asc
 
 # tprint("True Final Boss")
 
@@ -245,3 +245,92 @@ def slow_print(dialogue):
         sys.stdout.flush()
         time.sleep(0.05)
     print("")
+    
+
+BOAT_DIALOGUE = {
+    "entity": "Sail Boat",
+    "ascii_encounter": asc.boat,
+    "encounter": encounter_boat,
+    "acquisition": acquired_boat
+}
+
+PIRATE_DIALOGUE = {
+    "entity": "Pirate",
+    "encounter": encounter_pirate,
+    "start_flirt": start_flirt,
+    "seduction": seduce_pirate,
+    "success": flirt_success_pirate,
+    "fail": flirt_fail_pirate,
+    "invalid": invalid_flirt
+}
+
+LEVIATHAN_DIALOGUE = {
+    "entity": "Leviathan",
+    "ascii_encounter": asc.leviathan,
+    "encounter": encounter_leviathan,
+}
+
+CRAB_DIALOGUE = {
+    "entity": "Crab",
+    "ascii_encounter": asc.crab,
+    "encounter": random_encounter_crab,
+    "start_flirt": start_flirt,
+    "flirt_dialogue": flirt_dialogue,
+    "flirt_harder_dialogue": flirt_harder_dialogue,
+    "invalid_flirt": invalid_flirt,
+    "ascii_blushing": asc.blushing,
+    "success_dialogue": flirt_success_crab,
+    "ascii_fail": asc.flirt_fail,
+    "fail_dialogue": flirt_fail_crab
+}
+
+FISHERMAN_DIALOGUE = {
+    "entity": "Fisherman",
+    "ascii_encounter": asc.fisherman,
+    "encounter": random_encounter_fisherman,
+    "start_flirt": start_flirt,
+    "flirt_dialogue": flirt_dialogue,
+    "flirt_harder_dialogue": flirt_harder_dialogue,
+    "invalid_flirt": invalid_flirt,
+    "ascii_blushing": asc.blushing,
+    "success_dialogue": flirt_success_fisherman,
+    "ascii_fail": asc.flirt_fail,
+    "fail_dialogue": flirt_fail_fisherman
+}
+
+MERMAID_DIALOGUE = {
+    "entity": "Mermaid",
+    "ascii_encounter": asc.mermaid,
+    "encounter": random_encounter_mermaid,
+    "fishing_rod": asc.fishing_rod,
+    "start_fish": start_fish,
+    "ascii_bucket": asc.bucket,
+    "fishing_success_dialogue": fish_mermaid_success,
+    "ascii_fishing_fail": asc.fishing_fail,
+    "fishing_fail_dialogue": fish_mermaid_fail,
+    "start_flirt": start_flirt,
+    "flirt_dialogue": flirt_dialogue,
+    "ascii_blushing": asc.blushing,
+    "flirt_success": flirt_success_mermaid,
+    "ascii_fail": asc.flirt_fail,
+    "flirt_fail": flirt_fail_mermaid,
+    "invalid_flirt": invalid_flirt
+}
+
+WHALE_DIALOGUE = {
+    "ascii_encounter": asc.whale,
+    "encounter": random_encounter_whale,
+    "fishing_rod": asc.fishing_rod,
+    "start_fish": start_fish,
+    "ascii_bucket": asc.bucket,
+    "fishing_success_dialogue": fish_whale_success,
+    "ascii_fishing_fail": asc.fishing_fail,
+    "fishing_fail_dialogue": fish_whale_fail,
+    "start_flirt": start_flirt,
+    "flirt_dialogue": flirt_dialogue,
+    "ascii_blushing": asc.blushing,
+    "flirt_success": flirt_success_whale,
+    "ascii_fail": asc.flirt_fail,
+    "flirt_fail": flirt_fail_whale,
+    "invalid_flirt": invalid_flirt
+}
