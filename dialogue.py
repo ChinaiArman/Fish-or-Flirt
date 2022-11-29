@@ -88,14 +88,14 @@ encounter_island = "There's a small island in the midst of the angry waves. Ther
                    "You're not sure if it's friend or foe, but there's only one (or two) real choices anyways."
 
 encounter_pirate = "You see a group of pirates, each with two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
-                   "You ask yourself.\"WOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
+                   "You ask yourself.\"\nWOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
                    "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SEE-ENT THAN ONLY DIGGING WITH ONE!\"\n" \
                    "Oh, what, interesting(?) pirates. " \
                    "You see a big map lying behind them, with \"LOCATION OF LEVIANTHAN\" scrawled in the most horrendous writing you've seen.\n" \
                    "Actually, it's a wonder you were able to read it in the first place. To get to it, you must get through all the shovel carrying pirates. " \
                    "Good luc-\nOh. One of the pirates accidentally smacked all the other pirates in the head.\n...\nThat sure was a very very very loud noise." \
                    "All of them are now unconscious. I'm not even sure if all of them are breathing.\n" \
-                   "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck. Go on then."
+                   "Well then, 1 pirate isn't that hard to deal with. I'll feel bad for the poor pirate if I wished you luck.\nGo on then."
 
 pirate_defeated = "You've successfully wooed the pirate. They swoon romantically and fall into your inventory.\nYou've acquired the location of the terror of the sea, the Leviathan."
 
@@ -139,7 +139,7 @@ invalid_move_island = [
 
 start_fish = [
     "You throw your rod into the sea. The bobber creates small ripples in the water, growing larger as they expand outwards. You feel one with the sea.",
-    "The ocean breeze gently blows across your face like soft and loving caress. You think you'll find good fish today.",
+    "The ocean breeze gently blows across your face like soft and loving caresses. You think you'll find good fish today.",
     "In the distance, you hear the call of seagulls. They too, are accompanying you in your fishing.",
     "You throw your rod into the sea. The ocean's crystalline surface breaks for a moment, before returning to its original calm.",
     "You hum a soft tune under your breath as you wait for a fish to take the bait. You're not sure where it came from, but it comforts your soul."
