@@ -17,10 +17,11 @@ def fish(character):
 
 
 def check_if_goal_attained(character):
-    if character["rod level"] == 3:
-        return True
-    else:
-        return False
+    # if character["rod level"] == 3:
+    #     return True
+    # else:
+    #     return False
+    return "Rod of The Gods" in character["inventory"]
 
 
 def execute_glow_up_protocol(character):
