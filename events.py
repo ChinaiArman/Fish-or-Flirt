@@ -1,13 +1,48 @@
 from random import randint
-# from time import sleep
+from time import sleep
 import dialogue
 import ascii_art as asc
 # import sys
 
 
+WATER_TILE = "\U0001F30A"
+LAND_TILE = "\U0001F3D6"
+BOAT_TILE = "\U000026F5"
+ISLAND_TILE = "\U0001F334"
+PLAYER_TILE = "\U0001F3A3"
+SKULL_TILE = "\U0001F480"
+LEVIATHAN_TILE = "\U00002757"
+FISHABLE_ITEMS = {0: "stick", 1: "stick", 2: "stick", 3: "stick", 5: "stick", 6: "boot", 7: "boot",
+                  8: "boot", 9: "fishie", 10: "fishie", 11: "fishie", 12: "pufferfishie", 13: "penguin", 14: "shark",
+                  15: "POSEIDON'S TRIDENT"}
+
+
+def fishing_game(character):
+    print(asc.fishing_rod)
+    print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
+    for i in range(randint(2, 7)):
+        print("...\n\n")
+        sleep(1)
+    fished_item = FISHABLE_ITEMS[randint(0, 2)]
+    if fished_item != "boot" and fished_item != "stick":
+        print(asc.bucket)
+    else:
+        print(asc.sadness)
+    sleep(1)
+    if fished_item == "POSEIDON'S TRIDENT":
+        for i in range(2):
+            print("...\n\n")
+            sleep(1)
+        print(asc.fishing_ascii[fished_item])
+        print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
+    else:
+        print(asc.fishing_ascii[fished_item])
+        print(f"You fished a {fished_item}! It has been added to your inventory.")
+    character["inventory"] += [fished_item]
+    sleep(2)
+
+
 def leviathan_event(board, character, event_dialogue):
-    water_tile = "\U0001F30A"
-    leviathan_tile = "\U00002757"
     position = (character['x-coordinate'], character['y-coordinate'])
     print(asc.leviathan)
     dialogue.slow_print(dialogue.encounter_leviathan)
@@ -15,15 +50,13 @@ def leviathan_event(board, character, event_dialogue):
 
     # story here
 
-    board[position] = water_tile
-    board[(1, 8)] = leviathan_tile
+    board[position] = WATER_TILE
+    board[(1, 8)] = LEVIATHAN_TILE
     character["xp"] += 1
     return
 
 
 def pirate_event(board, character, event_dialogue):
-    island_tile = "\U0001F334"
-    leviathan_tile = "\U00002757"
     pirate_charisma = 100
     position = (character['x-coordinate'], character['y-coordinate'])
     dialogue.slow_print(event_dialogue["encounter"])
@@ -55,19 +88,18 @@ def pirate_event(board, character, event_dialogue):
             # Confused Art
             print(event_dialogue["flee"][randint(0, len(event_dialogue["flee"]) - 1)])
 
-    board[position] = island_tile
-    board[(1, 8)] = leviathan_tile
+    board[position] = ISLAND_TILE
+    board[(1, 8)] = LEVIATHAN_TILE
     character["xp"] += 1
     return
 
 
 def boat_event(board, character, event_dialogue):
-    water_tile = "\U0001F30A"
     position = (character['x-coordinate'], character['y-coordinate'])
     print(event_dialogue["ascii_encounter"])
     dialogue.slow_print(event_dialogue["encounter"])
     dialogue.slow_print(event_dialogue["acquisition"])
-    board[position] = water_tile
+    board[position] = WATER_TILE
     character["xp"] += 1
     character["inventory"] += [event_dialogue["entity"]]
     return
@@ -110,24 +142,6 @@ def land_event(_, character, event_dialogue):
     return
 
 
-# MERMAID_DIALOGUE = {
-#     "entity": "Mermaid",
-#     "ascii_encounter": asc.mermaid,
-#     "encounter": dialogue.random_encounter_mermaid,
-#     "fishing_rod": asc.fishing_rod,
-#     "start_fish": dialogue.start_fish,
-#     "ascii_bucket": asc.bucket,
-#     "fishing_success_dialogue": dialogue.fish_mermaid_success,
-#     "ascii_fishing_fail": asc.fishing_fail,
-#     "fishing_fail_dialogue": dialogue.fish_mermaid_fail,
-#     "start_flirt": dialogue.start_flirt,
-#     "flirt_dialogue": dialogue.flirt_dialogue,
-#     "ascii_blushing": asc.blushing,
-#     "flirt_success": dialogue.flirt_success_mermaid,
-#     "ascii_fail": asc.flirt_fail,
-#     "flirt_fail": dialogue.flirt_fail_mermaid,
-#     "invalid_flirt": dialogue.invalid_flirt
-# }
 def water_event(_, character, event_dialogue):
     entity_charisma = randint(80, 100)
     entity_difficulty = randint(80, 100)
