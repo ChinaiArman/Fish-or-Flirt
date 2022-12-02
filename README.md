@@ -29,7 +29,7 @@ levxxvi (99051920)
 | one or more functions from the itertools module       |                        |
 | the enumerate function                                |                        |
 | the filter or map function                            |                        |
- | the random module                                     |                        |
+| the random module                                     |                        |
 
 ## Any important comments you'd like to make about your work:
 Replace this line with any comments you want to share
