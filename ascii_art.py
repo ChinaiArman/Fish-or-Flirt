@@ -1,3 +1,11 @@
+"""
+Arman Chinai | A01317650
+Lex Wong | A01322278
+
+A python module containing the ascii art for Fish or Flirt.
+"""
+
+
 title = r"""
 
  ________ .-./`)    .-'''-. .---.  .---.             ,-----.    .-------.             ________   .---.    .-./`) .-------. ,---------.  

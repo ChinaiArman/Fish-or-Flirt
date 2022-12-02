@@ -1,6 +1,8 @@
 """
 Arman Chinai | A01317650
 Lex Wong | A01322278
+
+A python module containing the engine for Fish or Flirt
 """
 
 
@@ -174,7 +176,7 @@ def describe_current_location(board, character, columns):
 
 
 def make_character():
-    # dialogue.slow_print(dialogue.get_name)
+    dialogue.slow_print(dialogue.get_name)
     name = input("Answer Here:\t\t")
     character = {
         "name": name,
@@ -218,13 +220,13 @@ def game():
     columns = 10
     board = make_board(rows, columns)
     print(asc.title)
-    # dialogue.slow_print(dialogue.welcome_message)
-    # dialogue.slow_print(dialogue.choose_class)
+    dialogue.slow_print(dialogue.welcome_message)
+    dialogue.slow_print(dialogue.choose_class)
     for key, class_option in enumerate(dialogue.class_options, 1):
         print(f"{key}.\t{class_option}")
     _ = input("Answer Here:\t\t")
-    # dialogue.slow_print(dialogue.after_class_input)
-    # dialogue.slow_print(dialogue.story_1)
+    dialogue.slow_print(dialogue.after_class_input)
+    dialogue.slow_print(dialogue.story_1)
     character = make_character()
     achieved_goal = False
     while not achieved_goal:

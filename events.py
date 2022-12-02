@@ -1,8 +1,15 @@
+"""
+Arman Chinai | A01317650
+Lex Wong | A01322278
+
+A python module containing the event functions for Fish or Flirt.
+"""
+
+
 from random import randint
 from time import sleep
 import dialogue
 import ascii_art as asc
-# import sys
 
 
 WATER_TILE = "\U0001F30A"

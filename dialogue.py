@@ -1,3 +1,10 @@
+"""
+Arman Chinai | A01317650
+Lex Wong | A01322278
+
+A python module containing the dialogue for Fish or Flirt.
+"""
+
 import sys
 import time
 import ascii_art as asc
