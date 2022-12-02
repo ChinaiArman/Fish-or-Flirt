@@ -207,3 +207,11 @@ def water_event(_, character, event_dialogue):
         else:
             print(event_dialogue["invalid_flirt"])
     return
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
