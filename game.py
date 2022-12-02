@@ -21,19 +21,23 @@ SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
 
 
-def can_fish(character, board):
-    x_coordinate = character["x-coordinate"]
-    y_coordinate = character["y-coordinate"]
-    return board[x_coordinate - 1, y_coordinate] == WATER_TILE or board[x_coordinate + 1, y_coordinate] == WATER_TILE \
-        or board[x_coordinate, y_coordinate - 1] == WATER_TILE or board[x_coordinate, y_coordinate + 1] == WATER_TILE
+def check_can_fish(character, board):
+    try:
+        x_coordinate = character["x-coordinate"]
+        y_coordinate = character["y-coordinate"]
+        return board[x_coordinate - 1, y_coordinate] == WATER_TILE or board[x_coordinate + 1, y_coordinate] == \
+            WATER_TILE or board[x_coordinate, y_coordinate - 1] == WATER_TILE or board[x_coordinate, y_coordinate + 1] \
+            == WATER_TILE
+    except KeyError:
+        return False
+
+
+def end_game():
+    print("you win")
 
 
 def check_if_goal_attained(character):
-    # if character["rod level"] == 3:
-    #     return True
-    # else:
-    #     return False
-    return "Rod of The Gods" in character["inventory"]
+    return "Leviathan" in character["inventory"]
 
 
 def execute_glow_up_protocol(character):
@@ -122,11 +126,11 @@ def get_user_choice(character, board):
     elif direction == "4":
         return character["x-coordinate"], character["y-coordinate"] - 1
     elif direction == "5":
-        fishing = can_fish(character, board)
+        fishing = check_can_fish(character, board)
         if fishing:
             events.fishing_game(character)
         else:
-            print("cant fish here")
+            print("[LEX] TOO FAR FROM WATER DIALOGUE")
         return character["x-coordinate"], character["y-coordinate"]
     elif direction == "6":
         print("Thanks for playing")
@@ -159,8 +163,8 @@ def make_character():
         "name": name,
         "x-coordinate": 9,
         "y-coordinate": 0,
-        "luck": 35,
-        "charisma": 35,
+        "luck": 40,
+        "charisma": 40,
         "rod level": 0,
         "xp": 0,
         "inventory": ["Mama's Fishing Rod"]
@@ -230,7 +234,7 @@ def game():
         else:
             print(describe_invalid_move(board, character))
         sleep(1)
-    print("end of game shenanigans")
+    end_game()
 
 
 def main():

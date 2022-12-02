@@ -109,7 +109,7 @@ leviathan_defeated_fish = "With your strong rod and amazing fishing skills, you'
                           "I can't believe you even have enough bicep strength to do that! Amazing!\n" \
                           "You've fulfilled the prophecy, and your parents will finally love you, I mean what."
 
-leviathan_defeated_flirt = "You should be jailed! Your irresistible charm and dashing good looks have stolen the Leviathan's heart.\n" \
+leviathan_defeated = "You should be jailed! Your irresistible charm and dashing good looks have stolen the Leviathan's heart.\n" \
                            "When talking with the Leviathan, you discovered that the only reason it was terrorizing the seas was because it had a terrible stomach ache.\n" \
                            "After giving the Leviathan drugs, I MEAN, asprin, it felt a lot better, and no longer terrorizes the sea.\n" \
                            "You and the Leviathan, and all the other animals and people you've wooed along the way now live happily ever after."

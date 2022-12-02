@@ -14,7 +14,7 @@ SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
 FISHABLE_ITEMS = {0: "stick", 1: "stick", 2: "stick", 3: "stick", 5: "stick", 6: "boot", 7: "boot",
                   8: "boot", 9: "fishie", 10: "fishie", 11: "fishie", 12: "pufferfishie", 13: "penguin", 14: "shark",
-                  15: "POSEIDON'S TRIDENT"}
+                  15: "POSEIDON'S TRIDENT", 16: "none", 17: "none", 18: "none", 19: "none", 20: "none"}
 
 
 def fishing_game(character):
@@ -23,33 +23,54 @@ def fishing_game(character):
     for i in range(randint(2, 7)):
         print("...\n\n")
         sleep(1)
-    fished_item = FISHABLE_ITEMS[randint(0, 2)]
-    if fished_item != "boot" and fished_item != "stick":
+    fished_item = FISHABLE_ITEMS[randint(0, 20)]
+    if fished_item != "none":
         print(asc.bucket)
+        if fished_item == "POSEIDON'S TRIDENT":
+            for i in range(2):
+                print("...\n\n")
+                sleep(1)
+            print(asc.fishing_ascii[fished_item])
+            print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
+        else:
+            sleep(1)
+            print(asc.fishing_ascii[fished_item])
+            print(f"You fished a {fished_item}! It has been added to your inventory.")
+        character["inventory"] += [fished_item]
+        character["luck"] += 1
     else:
         print(asc.sadness)
-    sleep(1)
-    if fished_item == "POSEIDON'S TRIDENT":
-        for i in range(2):
-            print("...\n\n")
-            sleep(1)
-        print(asc.fishing_ascii[fished_item])
-        print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
-    else:
-        print(asc.fishing_ascii[fished_item])
-        print(f"You fished a {fished_item}! It has been added to your inventory.")
-    character["inventory"] += [fished_item]
+        print("[LEX] FISH FAILURE MESSAGE")
     sleep(2)
 
 
 def leviathan_event(board, character, event_dialogue):
+    leviathan_charisma = 100
+    leviathan_difficulty = 100
     position = (character['x-coordinate'], character['y-coordinate'])
     print(asc.leviathan)
     dialogue.slow_print(dialogue.encounter_leviathan)
-    # Mechanics here
+    flirting = True
+    while flirting:
+        player_options = ["Fish and Flirt"]
+        for key, player_options in enumerate(player_options, 1):
+            print(f"{key}.\t{player_options}")
+        selection = input("\nAnswer Here:\t")
 
-    # story here
-
+        if selection == "1":
+            dialogue.slow_print("[LEX] MIXED FISH AND FLIRT DIALOGUE")
+            if character["charisma"] > randint(0, leviathan_charisma) and character["luck"] > \
+                    randint(0, leviathan_difficulty):
+                print("[LEX] SUCCESS ART")
+                dialogue.slow_print(dialogue.leviathan_defeated)
+                character["charisma"] += 15
+                character["luck"] += 15
+                character["inventory"] += ["Leviathan", "An Unspoken Level of Rod-ly-ness"]
+                flirting = False
+            else:
+                print("[LEX] FAIL ART AND DIALOGUE")
+        else:
+            print(event_dialogue["invalid_flirt"])
     board[position] = WATER_TILE
     board[(1, 8)] = LEVIATHAN_TILE
     character["xp"] += 1
@@ -64,7 +85,7 @@ def pirate_event(board, character, event_dialogue):
 
     flirting = True
     while flirting:
-        player_options = ("Seduce", "Flee")
+        player_options = ["Seduce"]
         for key, player_options in enumerate(player_options, 1):
             print(f"{key}.\t{player_options}")
         selection = input("\nAnswer Here:\t")
@@ -72,20 +93,17 @@ def pirate_event(board, character, event_dialogue):
         if selection == "1":
             dialogue.slow_print(event_dialogue["seduction"][randint(0, len(event_dialogue["seduction"]) - 1)])
             if character["charisma"] > randint(0, pirate_charisma):
-                # Pirate Blush
-                # Success Art
+                print("[LEX] PIRATE BLUSH ART")
                 print(event_dialogue["success"])
                 character["charisma"] += 5
                 character["luck"] += 5
                 character["inventory"] += [event_dialogue["entity"]]
                 flirting = False
             else:
-                # Fail Art
+                print("[LEX] PIRATE FAIL ART")
                 print(event_dialogue["fail"])
-        elif selection == "2":
-            print("No fleeing, only flirting")
         else:
-            # Confused Art
+            print("[LEX] CONFUSION ART")
             print(event_dialogue["flee"][randint(0, len(event_dialogue["flee"]) - 1)])
 
     board[position] = ISLAND_TILE
