@@ -6,11 +6,10 @@ Lex Wong | A01322278
 
 from random import randint
 from time import sleep
-import dialogue
-import ascii_art as asc
-import sys
-import events
 from itertools import starmap
+import dialogue
+import events
+import ascii_art as asc
 
 
 WATER_TILE = "\U0001F30A"
@@ -20,17 +19,6 @@ ISLAND_TILE = "\U0001F334"
 PLAYER_TILE = "\U0001F3A3"
 SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
-
-
-def check_can_fish(character, board):
-    try:
-        x_coordinate = character["x-coordinate"]
-        y_coordinate = character["y-coordinate"]
-        return board[x_coordinate - 1, y_coordinate] == WATER_TILE or board[x_coordinate + 1, y_coordinate] == \
-            WATER_TILE or board[x_coordinate, y_coordinate - 1] == WATER_TILE or board[x_coordinate, y_coordinate + 1] \
-            == WATER_TILE
-    except KeyError:
-        return False
 
 
 def scoring(item, count):
@@ -49,7 +37,7 @@ def end_game(character):
     totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
     score = list(starmap(scoring, totals))
     total_score = sum([element[2] for element in score])
-    # NEEDS TO BE BEAUTIFIED
+    print("[ARMAN] NEEDS TO BE BEAUTIFIED")
     for item in score:
         print(f"{item[1]}x {item[0]}:\t\t\t{item[2]}\n")
     print(f"Total Score:\t\t{total_score}")
@@ -61,15 +49,13 @@ def check_if_goal_attained(character):
 
 def execute_glow_up_protocol(character):
     character["rod level"] = character["xp"]
+    character["luck"] += 2
+    character["charisma"] += 2
     print(dialogue.level_up)
 
 
 def character_has_leveled(character):
     return character["xp"] > character["rod level"]
-
-
-def execute_challenge_protocol(character):
-    character["rod level"] = character["xp"]
 
 
 def check_for_challenges(board, character):
@@ -100,14 +86,20 @@ def check_for_challenges(board, character):
 
 
 def move_character(character, move):
-    x_direction, y_direction = move
-    character["x-coordinate"] = x_direction
-    character["y-coordinate"] = y_direction
-    return
+    if move == "fishing":
+        events.fishing_game(character)
+        return
+    else:
+        x_direction, y_direction = move
+        character["x-coordinate"] = x_direction
+        character["y-coordinate"] = y_direction
+        return
 
 
-def describe_invalid_move(board, character):
+def describe_invalid_move(board, character, move):
     position = (character['x-coordinate'], character['y-coordinate'])
+    if move == "fishing":
+        return "[LEX] INVALID FISH MOVE"
     if board[position] == WATER_TILE:
         return dialogue.invalid_move_water[randint(0, len(dialogue.invalid_move_water) - 1)]
     elif board[position] == LAND_TILE:
@@ -119,6 +111,16 @@ def describe_invalid_move(board, character):
 def validate_move(board, character, direction, rows, columns):
     if not direction:
         return (character["x-coordinate"], character["y-coordinate"]), False
+    if direction == "fishing":
+        try:
+            x_coordinate = character["x-coordinate"]
+            y_coordinate = character["y-coordinate"]
+            return "fishing", board[x_coordinate - 1, y_coordinate] == WATER_TILE or \
+                board[x_coordinate + 1, y_coordinate] == WATER_TILE or \
+                board[x_coordinate, y_coordinate - 1] == WATER_TILE or \
+                board[x_coordinate, y_coordinate + 1] == WATER_TILE
+        except KeyError:
+            return "fishing", False
     x_direction, y_direction = direction
     if x_direction > columns - 1 or x_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
@@ -130,7 +132,7 @@ def validate_move(board, character, direction, rows, columns):
         return direction, True
 
 
-def get_user_choice(character, board):
+def get_user_choice(character):
     print("Possible Actions")
     directions = ("north", "south", "east", "west", "fish", "quit")
     for key, direction in enumerate(directions, 1):
@@ -145,15 +147,10 @@ def get_user_choice(character, board):
     elif direction == "4":
         return character["x-coordinate"], character["y-coordinate"] - 1
     elif direction == "5":
-        fishing = check_can_fish(character, board)
-        if fishing:
-            events.fishing_game(character)
-        else:
-            print("[LEX] TOO FAR FROM WATER DIALOGUE")
-        return character["x-coordinate"], character["y-coordinate"]
+        return "fishing"
     elif direction == "6":
         print("Thanks for playing")
-        sys.exit()
+        quit()
     else:
         return False
 
@@ -193,11 +190,9 @@ def make_character():
 
 def make_board(rows, columns):
     board = {}
-    # WATER
     for row in range(rows):
         for column in range(columns):
             board[row, column] = WATER_TILE
-    # SAND
     for column in range(columns):
         board[9, column] = LAND_TILE
     for column in range(columns):
@@ -209,9 +204,7 @@ def make_board(rows, columns):
     for column in range(columns):
         if column > 8:
             board[6, column] = LAND_TILE
-    # BOAT
     board[(6, 9)] = BOAT_TILE
-    # ISLAND
     board[(1, 3)] = ISLAND_TILE
     board[(2, 3)] = ISLAND_TILE
     board[(3, 3)] = ISLAND_TILE
@@ -240,7 +233,7 @@ def game():
     achieved_goal = False
     while not achieved_goal:
         describe_current_location(board, character, columns)
-        direction = get_user_choice(character, board)
+        direction = get_user_choice(character)
         move, valid_move = validate_move(board, character, direction, rows, columns)
         if valid_move:
             move_character(character, move)
@@ -251,7 +244,7 @@ def game():
                     execute_glow_up_protocol(character)
             achieved_goal = check_if_goal_attained(character)
         else:
-            print(describe_invalid_move(board, character))
+            print(describe_invalid_move(board, character, move))
         sleep(1)
     end_game(character)
 
