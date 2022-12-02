@@ -10,6 +10,7 @@ import dialogue
 import ascii_art as asc
 import sys
 import events
+from itertools import starmap
 
 
 WATER_TILE = "\U0001F30A"
@@ -32,8 +33,26 @@ def check_can_fish(character, board):
         return False
 
 
-def end_game():
-    print("you win")
+def scoring(item, count):
+    if item == "banana":
+        return item, count, count * 5
+    elif item == "johnson":
+        return item, count, count * 17
+    else:
+        return item, count, count * 0
+
+
+def end_game(character):
+    print(asc.win)
+    print("[LEX] END GAME DIALOGUE")
+    inventory = character["inventory"]
+    totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
+    score = list(starmap(scoring, totals))
+    total_score = sum([element[2] for element in score])
+    # NEEDS TO BE BEAUTIFIED
+    for item in score:
+        print(f"{item[1]}x {item[0]}:\t\t\t{item[2]}\n")
+    print(f"Total Score:\t\t{total_score}")
 
 
 def check_if_goal_attained(character):
@@ -234,7 +253,7 @@ def game():
         else:
             print(describe_invalid_move(board, character))
         sleep(1)
-    end_game()
+    end_game(character)
 
 
 def main():
