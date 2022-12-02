@@ -158,7 +158,23 @@ def get_user_choice(character):
         return False
 
 
-def describe_current_location(board, character, columns):
+def describe_current_location(board: dict, character: dict, columns: int) -> None:
+    """
+    Describe the current state of the game board, as well as the players location on the game board in a visually
+    pleasing manner (10 x 10 grid of Unicode characters).
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param columns: An integer representing the number of columns in the game board.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :precondition: columns equals to the number of columns represented in board.
+    :postcondition: Will print in the console a beautified description of board, in the form of a 10 x 10 grid of icons
+    (represented with Unicode characters).
+    :return: None
+    """
     position = (character['x-coordinate'], character['y-coordinate'])
     tile = board[position]
     if board[position] == WATER_TILE:
