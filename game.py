@@ -291,6 +291,9 @@ def game() -> None:
 
 
 def main():
+    """
+    Drive the program.
+    """
     game()
 
 

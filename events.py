@@ -210,6 +210,9 @@ def water_event(_, character, event_dialogue):
 
 
 def main():
+    """
+    Drive the program.
+    """
     pass
 
 

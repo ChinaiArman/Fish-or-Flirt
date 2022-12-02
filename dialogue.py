@@ -354,6 +354,9 @@ WHALE_DIALOGUE = {
 
 
 def main():
+    """
+    Drive the program.
+    """
     pass
 
 
