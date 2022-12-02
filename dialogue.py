@@ -9,6 +9,23 @@ import sys
 import time
 import ascii_art as asc
 
+
+def slow_print(dialogue: str) -> None:
+    """
+    Prints characters slowly, in batches in the console.
+
+    :param dialogue: A string containing any characters
+    :precondition: dialogue must be a string character.
+    :postcondition: dialogue will be printed into the console slowly, in batches of characters.
+    :return: None
+    """
+    for char in dialogue:
+        print(char, end="")
+        sys.stdout.flush()
+        time.sleep(0.05)
+    print("")
+
+
 # tprint("True Final Boss")
 
 welcome_message = "Welcome to Fish or Flirt, by Arman Chinai and Lex Wong. In this game, you can fish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nor flirt. Let's start!"
@@ -243,15 +260,6 @@ end_of_game_shenanigans = "Thank you for playing our game! We hope you had lots 
                           "Come back again soon!"
 
 # tprint("ERROR 102", "dirty")
-
-
-def slow_print(dialogue):
-    # prints a character at a time
-    for char in dialogue:
-        print(char, end="")
-        sys.stdout.flush()
-        time.sleep(0.05)
-    print("")
     
 
 BOAT_DIALOGUE = {
@@ -343,3 +351,11 @@ WHALE_DIALOGUE = {
     "flirt_fail": flirt_fail_whale,
     "invalid_flirt": invalid_flirt
 }
+
+
+def main():
+    pass
+
+
+if __name__ == "__main__":
+    main()
