@@ -44,6 +44,7 @@ def end_game(character):
 
 
 def check_if_goal_attained(character):
+    sleep(1)
     return "Leviathan" in character["inventory"]
 
 
@@ -204,15 +205,10 @@ def make_board(rows, columns):
     for column in range(columns):
         if column > 8:
             board[6, column] = LAND_TILE
+    island_tiles = [(1, 3), (2, 3), (3, 3), (3, 2), (3, 1), (2, 2), (2, 1), (4, 2)]
+    for tile in island_tiles:
+        board[tile] = ISLAND_TILE
     board[(6, 9)] = BOAT_TILE
-    board[(1, 3)] = ISLAND_TILE
-    board[(2, 3)] = ISLAND_TILE
-    board[(3, 3)] = ISLAND_TILE
-    board[(3, 2)] = ISLAND_TILE
-    board[(3, 1)] = ISLAND_TILE
-    board[(2, 2)] = ISLAND_TILE
-    board[(2, 1)] = ISLAND_TILE
-    board[(4, 2)] = ISLAND_TILE
     board[(2, 2)] = SKULL_TILE
     return board
 
@@ -245,7 +241,6 @@ def game():
             achieved_goal = check_if_goal_attained(character)
         else:
             print(describe_invalid_move(board, character, move))
-        sleep(1)
     end_game(character)
 
 
