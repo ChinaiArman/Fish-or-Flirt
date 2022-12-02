@@ -14,10 +14,10 @@ def slow_print(dialogue: str) -> None:
     """
     Prints characters slowly, in batches in the console.
 
-    :param dialogue: A string containing any characters
+    :param dialogue: A string containing any characters.
     :precondition: dialogue must be a string character.
     :postcondition: dialogue will be printed into the console slowly, in batches of characters.
-    :return: None
+    :return: None.
     """
     for char in dialogue:
         print(char, end="")

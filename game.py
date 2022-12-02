@@ -175,12 +175,23 @@ def describe_current_location(board, character, columns):
     board[position] = tile
 
 
-def make_character():
+def make_character(columns: int) -> dict:
+    """
+    Create a character dictionary to store player information while the game function is running.
+
+    :param columns: An integer representing the number of columns on the game board.
+    :precondition: columns is the same integer value as the number of columns on the game board.
+    :precondition: User must enter required input value to complete function.
+    :postcondition: Will create a character dictionary containing key-value pairs necessary for the game to function.
+    Dictionary will contain a key-value pair called name, which contains a user inputted value representing their
+    character's name.
+    :return: A dictionary representing the player for the duration of the game.
+    """
     dialogue.slow_print(dialogue.get_name)
     name = input("Answer Here:\t\t")
     character = {
         "name": name,
-        "x-coordinate": 9,
+        "x-coordinate": columns - 1,
         "y-coordinate": 0,
         "luck": 40,
         "charisma": 40,
@@ -191,7 +202,17 @@ def make_character():
     return character
 
 
-def make_board(rows, columns):
+def make_board(rows: int, columns: int) -> dict:
+    """
+    Create a dictionary representing a game board of a variable row and column size. Coordinates on the board are
+    represented in tuples with tiles represented using unicode characters.
+
+    :param rows: An integer representing the number of rows in the game board.
+    :param columns: An integer representing the number of columns in the game board.
+    :precondition: rows, columns must be integers greater than or equal to 10.
+    :postcondition: Will create a dictionary representing a game board, with row rows and column columns.
+    :return: A dictionary.
+    """
     board = {}
     for row in range(rows):
         for column in range(columns):
@@ -215,7 +236,14 @@ def make_board(rows, columns):
     return board
 
 
-def game():
+def game() -> None:
+    """
+    The game's main engine. This function operates all the logic for the game, and all helper functions branch off from
+    here.
+
+    :postcondition: Will run the Fish or Flirt game to completion.
+    :return: None.
+    """
     rows = 10
     columns = 10
     board = make_board(rows, columns)
@@ -227,7 +255,7 @@ def game():
     _ = input("Answer Here:\t\t")
     dialogue.slow_print(dialogue.after_class_input)
     dialogue.slow_print(dialogue.story_1)
-    character = make_character()
+    character = make_character(columns)
     achieved_goal = False
     while not achieved_goal:
         describe_current_location(board, character, columns)
