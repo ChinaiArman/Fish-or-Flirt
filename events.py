@@ -25,6 +25,13 @@ FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 4: "Stick", 5:
 
 
 def fishing_game(character):
+    """
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition:
+    :postcondition:
+    :return:
+    """
     print(asc.fishing_rod)
     print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
     dialogue.loading(randint(2, 7))
