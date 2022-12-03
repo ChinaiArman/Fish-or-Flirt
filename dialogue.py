@@ -215,7 +215,7 @@ fishing_success = [
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
 ]
 
-fishing_fail = [
+fishing_game_fail = [
     "Your wire broke. Unlucky.",
     "WOW! I never thought the Chosen One can suck so much at fishing!",
     "YOU CAUUUUUUUUGHT, oh wow how rare, NOTHING!!!",
