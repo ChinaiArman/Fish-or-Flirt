@@ -109,7 +109,22 @@ def character_has_leveled(character):
     return character["xp"] > character["rod level"]
 
 
-def check_for_challenges(board, character):
+def check_for_challenges(board: dict, character: dict) -> tuple:
+    """
+    Check if a challenge is happening on a given tile.
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :postcondition: Will return a tuple containing a boolean value representing whether there is a challenge for the
+    user, the name of a function corresponding to the challenge on that tile (or None if no challenge), and a dictionary
+    containing the dialogue for the challenge (or None if no challenge).
+    :return: A tuple containing a boolean value, the name of an event function and the dialogue corresponding to the
+    event function.
+    """
     chance = randint(0, 100)
     position = (character['x-coordinate'], character['y-coordinate'])
     if board[position] == BOAT_TILE:
