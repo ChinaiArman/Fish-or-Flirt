@@ -98,11 +98,21 @@ def check_if_goal_attained(character: dict) -> bool:
     return "Leviathan" in character["inventory"]
 
 
-def execute_glow_up_protocol(character):
+def execute_glow_up_protocol(character: dict) -> None:
+    """
+    Level's up the character.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character exists and has the key-value pairs 'xp' and 'rod level' containing integers.
+    :postcondition: Will increase 'rod level' to match the value of 'xp'.
+    :postcondition: Will increase 'luck' and 'charisma' by 2.
+    :return: None
+    """
     character["rod level"] = character["xp"]
     character["luck"] += 2
     character["charisma"] += 2
     print(dialogue.level_up)
+    return
 
 
 def character_has_leveled(character: dict) -> bool:
