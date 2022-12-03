@@ -50,9 +50,7 @@ def fishing_game(character: dict) -> None:
     if fished_item != "none":
         print(asc.bucket)
         if fished_item == "POSEIDON'S TRIDENT":
-            for i in range(3):
-                print("...\n\n")
-                sleep(1)
+            dialogue.loading(3)
             print(asc.fishing_ascii[fished_item])
             dialogue.slow_print(dialogue.acquired_trident)
             del FISHABLE_ITEMS[20]
