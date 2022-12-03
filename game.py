@@ -136,7 +136,22 @@ def check_for_challenges(board, character):
         return False, None, None
 
 
-def move_character(character, move):
+def move_character(character: dict, move: (int, int)) -> None:
+    """
+    Move the character on the board to match the coordinates in move.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param move: A tuple representing the x and y coordinates the player wishes to move to OR the string
+    'fishing'.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :precondition: move must be a tuple representing the x and y coordinates the player wishes to move to OR the
+    string 'fishing'.
+    :postcondition: Will call fishing_game from the event module if move is equal to 'fishing'
+    :postcondition: Will change the x-coordinate in the character dictionary to the first value in move, and the
+    y-coordinate in the character dictionary to the second value in move.
+    :return: None
+    """
     if move == "fishing":
         events.fishing_game(character)
         return
@@ -325,6 +340,7 @@ def describe_current_location(board: dict, character: dict, columns: int) -> Non
             print(icon[0], end="")
         counter += 1
     board[position] = tile
+    return
 
 
 def make_character(columns: int) -> dict:
@@ -424,6 +440,7 @@ def game() -> None:
         else:
             print(describe_invalid_move(board, character, move))
     end_game(character)
+    return
 
 
 def main():
