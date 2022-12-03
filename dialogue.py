@@ -122,7 +122,7 @@ encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the
 acquired_boat = "You touch the boat, and you feel an energy pulse through you. You've gotten stronger, my young friend. " \
                 "The hope of all those who've come before you empowers you on your journey."
 
-acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish you've caught before, and a mix of anxiety and excitement races through you." \
+acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish you've caught before, and a mix of anxiety and excitement races through you.\n" \
                    "Will the string hold? You're really not looking forward to changing the fishing wire.\n" \
                    "Your old man said it was his favourite past time, but to you, any time spent not fishing is a waste of time.\n...\n" \
                    "This lack of struggle scares you. What kind of fish is this???\n" \
@@ -139,7 +139,7 @@ encounter_island = "There's a small island in the midst of the angry waves. Ther
                    "You're not sure if it's friend or foe, but there's only one (or two) real choices anyways."
 
 encounter_pirate = "You see a group of pirates, each with two shovels in hand.\n\"Why are they all carrying two shovels?\" " \
-                   "You ask yourself.\"\nWOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
+                   "You ask yourself.\n\"WOW CAPT'N! YOU'RE ABSOLUTELY BILLY-ANT. " \
                    "DIGGING WITH TWO SHOVELS MAKES US SO MUCH MORE IF-FEET-SEE-ENT THAN ONLY DIGGING WITH ONE!\"\n" \
                    "Oh, what, interesting(?) pirates. " \
                    "You see a big map lying behind them, with \"LOCATION OF LEVIANTHAN\" scrawled in the most horrendous writing you've seen.\n" \
