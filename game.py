@@ -138,7 +138,7 @@ def describe_invalid_move(board, character, move):
         return dialogue.invalid_move_island[randint(0, len(dialogue.invalid_move_island) - 1)]
 
 
-def validate_move(board: dict, character: dict, direction: tuple, rows: int, columns: int) -> tuple:
+def validate_move(board: dict, character: dict, direction, rows: int, columns: int) -> tuple:
     """
     Validate the user's move coming from get_user_choice, and returns a tuple containing their updated position on the
     board. If the move is invalid, the function also returns False, else True.
@@ -152,7 +152,8 @@ def validate_move(board: dict, character: dict, direction: tuple, rows: int, col
     :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
     stored at that position.
     :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
-    within the range 0 and the game boards rows and columns.
+    within the range 0 and the game boards rows and columns AND a key-value pair 'rod level' which contains the player
+    level.
     :precondition: direction must be a tuple representing the x and y coordinates the player wishes to move to OR the
     string 'fishing' and a boolean to prompt the fishing game OR the boolean False.
     :precondition: rows equals to the number of rows represented in board.
@@ -165,19 +166,42 @@ def validate_move(board: dict, character: dict, direction: tuple, rows: int, col
     to move the player to, and a boolean representing whether the user's desired move was valid.
     :return: A tuple containing integers representing coordinates to move the character to, or the string 'fishing',
     AND a boolean representing whether the move was valid.
+
+    >>> doctest_board = {(0, 0): LAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): LAND_TILE}
+    >>> doctest_character = {"x-coordinate": 0, "y-coordinate": 0, "rod level": 0}
+    >>> doctest_direction = "fishing"
+    >>> validate_move(doctest_board, doctest_character, doctest_direction, 2, 2)
+    ('fishing', True)
+    >>> doctest_direction = (0, 1)
+    >>> validate_move(doctest_board, doctest_character, doctest_direction, 2, 2)
+    ((0, 1), True)
+    >>> doctest_direction = False
+    >>> validate_move(doctest_board, doctest_character, doctest_direction, 2, 2)
+    ((0, 0), False)
     """
     if not direction:
         return (character["x-coordinate"], character["y-coordinate"]), False
     if direction == "fishing":
+        x_coordinate = character["x-coordinate"]
+        y_coordinate = character["y-coordinate"]
+        counter = 0
         try:
-            x_coordinate = character["x-coordinate"]
-            y_coordinate = character["y-coordinate"]
-            return "fishing", board[x_coordinate - 1, y_coordinate] == WATER_TILE or \
-                board[x_coordinate + 1, y_coordinate] == WATER_TILE or \
-                board[x_coordinate, y_coordinate - 1] == WATER_TILE or \
-                board[x_coordinate, y_coordinate + 1] == WATER_TILE
+            counter += board[x_coordinate - 1, y_coordinate] == WATER_TILE
         except KeyError:
-            return "fishing", False
+            pass
+        try:
+            counter += board[x_coordinate + 1, y_coordinate] == WATER_TILE
+        except KeyError:
+            pass
+        try:
+            counter += board[x_coordinate, y_coordinate - 1] == WATER_TILE
+        except KeyError:
+            pass
+        try:
+            counter += board[x_coordinate, y_coordinate + 1] == WATER_TILE
+        except KeyError:
+            pass
+        return "fishing", counter > 0
     x_direction, y_direction = direction
     if x_direction > columns - 1 or x_direction < 0:
         return (character["x-coordinate"], character["y-coordinate"]), False
