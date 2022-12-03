@@ -64,7 +64,7 @@ def leviathan_event(board, character, event_dialogue):
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            dialogue.slow_print("[LEX] MIXED FISH AND FLIRT DIALOGUE")
+            dialogue.slow_print(dialogue.leviathan_fish_and_flirt)
             if character["charisma"] > randint(0, leviathan_charisma) and character["luck"] > \
                     randint(0, leviathan_difficulty):
                 print("[LEX] SUCCESS ART")

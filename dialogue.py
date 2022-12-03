@@ -152,8 +152,11 @@ pirate_defeated = "You've successfully wooed the pirate. They swoon romantically
 encounter_leviathan = "Abandon hope all ye who enters here.\n" \
                       "For here lies the lair of Leviathan, ruler of the deep and vicious seas.\n" \
                       "If you unlucky sailors find yourselves in its maw, despair!\n" \
-                      "<You have reached the final boss, the Leviathan! Are your stats high enough to fish or " \
+                      "<You have reached the final boss, the Leviathan! Are your stats high enough to fish AND " \
                       "capture the heart of this fearsome foe? Take up your rod and find out!>"
+
+leviathan_fish_and_flirt = "You shout into the sea! Your voice travels to the Leviathan's ears, wooing with sweet honeyed words.\n" \
+                           "If the Leviathan accepts your declaration of romance, maybe it will allow itself to be fished easily."
 
 leviathan_defeated_fish = "With your strong rod and amazing fishing skills, you've fished the Leviathan from the sea!\n" \
                           "I can't believe you even have enough bicep strength to do that! Amazing!\n" \
@@ -210,6 +213,12 @@ fishing_success = [
     "after all, IT'S SUCH A COOL FISH!!",
     "You found a fish. Good job buddy.",
     "It looks like a fish, it smells like a fish, it sounds like a fish, it feels like a fish, it tastes like a fish.\nGasp!\nI think you've found a fish!"
+]
+
+fishing_fail = [
+    "Your wire broke. Unlucky.",
+    "WOW! I never thought the Chosen One can suck so much at fishing!",
+    "YOU CAUUUUUUUUGHT, oh wow how rare, NOTHING!!!",
 ]
 
 fish_whale_success = "You caught a whale! Cue Pokemon sounds."
