@@ -68,8 +68,8 @@ def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
     :param event_dialogue: A dictionary containing the dialogue for the challenge.
     :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
     stored at that position.
-    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', 'charisma' and 'luck'
-    containing integers, and 'inventory' containing a list of game items.
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', 'charisma', 'luck', and
+    'xp' containing integers, and 'inventory' containing a list of game items.
     :precondition: event_dialogue is the Leviathan dictionary constant from the dialogue module containing strings with
     storylines for the event.
     :return: None
@@ -114,7 +114,7 @@ def pirate_event(board: dict, character: dict, event_dialogue: dict) -> None:
     :param event_dialogue: A dictionary containing the dialogue for the challenge.
     :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
     stored at that position.
-    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', and 'charisma'
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', 'charisma', and 'xp'
     containing integers, and 'inventory' containing a list of game items.
     :precondition: event_dialogue is the Pirate dictionary constant from the dialogue module containing strings with
     storylines for the event.
@@ -154,7 +154,21 @@ def pirate_event(board: dict, character: dict, event_dialogue: dict) -> None:
     return
 
 
-def boat_event(board, character, event_dialogue):
+def boat_event(board: dict, character: dict, event_dialogue: dict) -> None:
+    """
+    Play the Boat Event Challenge.
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param event_dialogue: A dictionary containing the dialogue for the challenge.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', and 'xp'
+    containing integers, and 'inventory' containing a list of game items.
+    :precondition: event_dialogue is the Boat dictionary constant from the dialogue module containing strings with
+    storylines for the event.
+    :return: None
+    """
     position = (character['x-coordinate'], character['y-coordinate'])
     print(event_dialogue["ascii_encounter"])
     dialogue.slow_print(event_dialogue["encounter"])
