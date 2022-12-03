@@ -52,7 +52,7 @@ def scoreboard(character):
     inventory = character["inventory"]
     totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
     score = list(starmap(scoring, totals))
-    total_score = sum([element[2] for element in score])
+    # total_score = sum([element[2] for element in score])
     row_headers = [element[0] for element in score]
     column_headers = ["Quantity", "Points"]
     data = [[element[1], element[2]] for element in score]

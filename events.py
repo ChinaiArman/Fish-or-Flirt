@@ -19,9 +19,9 @@ ISLAND_TILE = "\U0001F334"
 PLAYER_TILE = "\U0001F3A3"
 SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
-FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 5: "Stick", 6: "Boot", 7: "Boot",
-                  8: "Boot", 9: "Fishie", 10: "Fishie", 11: "Fishie", 12: "Pufferfishie", 13: "Penguin", 14: "Shark",
-                  15: "POSEIDON'S TRIDENT", 16: "none", 17: "none", 18: "none", 19: "none", 20: "none"}
+FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 4: "Stick", 5: "Boot", 6: "Boot",
+                  7: "Boot", 8: "Boot", 9: "Fishie", 10: "Fishie", 11: "Fishie", 12: "Pufferfishie", 13: "Penguin",
+                  14: "Shark", 15: "POSEIDON'S TRIDENT", 16: "none", 17: "none", 18: "none", 19: "none", 20: "none"}
 
 
 def fishing_game(character):
