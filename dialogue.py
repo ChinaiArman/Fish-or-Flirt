@@ -330,6 +330,11 @@ LEVIATHAN_DIALOGUE = {
     "entity": "Leviathan",
     "ascii_encounter": asc.leviathan,
     "encounter": encounter_leviathan,
+    "fish_and_flirt": leviathan_fish_and_flirt,
+    "success": asc.leviathan_success,
+    "fail": asc.leviathan_fail,
+    "action_failed": flirt_fail_leviathan,
+    "defeated": leviathan_defeated
 }
 
 CRAB_DIALOGUE = {

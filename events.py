@@ -55,7 +55,7 @@ def leviathan_event(board, character, event_dialogue):
     leviathan_difficulty = 100
     position = (character['x-coordinate'], character['y-coordinate'])
     print(asc.leviathan)
-    dialogue.slow_print(dialogue.encounter_leviathan)
+    dialogue.slow_print(event_dialogue["encounter"])
     flirting = True
     while flirting:
         player_options = ["Fish and Flirt"]
@@ -64,17 +64,18 @@ def leviathan_event(board, character, event_dialogue):
         selection = input("\nAnswer Here:\t")
 
         if selection == "1":
-            dialogue.slow_print(dialogue.leviathan_fish_and_flirt)
+            dialogue.slow_print(event_dialogue["fish_and_flirt"])
             if character["charisma"] > randint(0, leviathan_charisma) and character["luck"] > \
                     randint(0, leviathan_difficulty):
-                print("[LEX] SUCCESS ART")
-                dialogue.slow_print(dialogue.leviathan_defeated)
+                print(event_dialogue["success"])
+                dialogue.slow_print(event_dialogue["defeated"])
                 character["charisma"] += 15
                 character["luck"] += 15
                 character["inventory"] += ["Leviathan", "An Unspoken Level of Rod-ly-ness"]
                 flirting = False
             else:
-                print("[LEX] FAIL ART AND DIALOGUE")
+                print(event_dialogue["fail"])
+                print(event_dialogue["action_failed"])
         else:
             print(event_dialogue["invalid_flirt"])
     board[position] = WATER_TILE
