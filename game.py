@@ -103,10 +103,25 @@ def execute_glow_up_protocol(character: dict) -> None:
     Level's up the character.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
-    :precondition: character exists and has the key-value pairs 'xp' and 'rod level' containing integers.
+    :precondition: character exists and has the key-value pairs 'xp', 'rod level', 'luck', and 'charisma' containing
+    integers.
     :postcondition: Will increase 'rod level' to match the value of 'xp'.
     :postcondition: Will increase 'luck' and 'charisma' by 2.
+    :postcondition: Will print dialogue.level_up into the console.
     :return: None
+
+    >>> doctest_character = {'xp': 1, 'rod level': 0, 'charisma': 0, 'luck': 0}
+    >>> execute_glow_up_protocol(doctest_character)
+    You levelled up! Your rod is now stronger.
+    >>> doctest_character['xp'] == doctest_character['rod level'] and doctest_character['charisma'] == 2 and \
+    doctest_character['luck'] == 2
+    True
+    >>> second_doctest_character = {'xp': 2, 'rod level': 0, 'charisma': 17, 'luck': 36}
+    >>> execute_glow_up_protocol(second_doctest_character)
+    You levelled up! Your rod is now stronger.
+    >>> second_doctest_character['xp'] == second_doctest_character['rod level'] \
+    and second_doctest_character['charisma'] == 19 and second_doctest_character['luck'] == 38
+    True
     """
     character["rod level"] = character["xp"]
     character["luck"] += 2
