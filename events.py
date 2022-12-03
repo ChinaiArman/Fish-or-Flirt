@@ -60,6 +60,13 @@ def fishing_game(character):
 
 
 def leviathan_event(board, character, event_dialogue):
+    """
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param event_dialogue:
+    :return:
+    """
     leviathan_charisma = 100
     leviathan_difficulty = 100
     position = (character['x-coordinate'], character['y-coordinate'])
