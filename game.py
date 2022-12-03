@@ -30,7 +30,7 @@ SCORING_SHEET = {
     "Pufferfishie": 5,
     "Penguin": 10,
     "Shark": 20,
-    "POSEIDON'S TRIDENT": 500,
+    "POSEIDON'S TRIDENT": 1000,
     "Sail Boat": 100,
     "Pirate": 100,
     "Leviathan": 500,
@@ -38,7 +38,7 @@ SCORING_SHEET = {
     "Fisherman": 50,
     "Mermaid": 50,
     "Whale": 50,
-    "An Unspoken Level of Rod-ly-ness": 1000
+    "An Unspoken Level of Rod-ly-ness": 250
 }
 
 
@@ -162,7 +162,26 @@ def validate_move(board, character, direction, rows, columns):
         return direction, True
 
 
-def get_user_choice(character):
+def get_user_choice(character: dict):
+    """
+    Ask the user to select one of the enumerated options, and log their selection. Users respond with the enumerated
+    number corresponding to their desired selection, else the function returns False. Responding with an enumerated
+    option causes the function to return a value representing their selection.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :postcondition: Will enumerate the available options and print them into the console.
+    :postcondition: If the user selects one of the available options (by typing the corresponding number into the
+    console), the function will return value(s) that match the user's decision.
+    :postcondition: If the user selects the options 1 through 4 inclusive, the function will return the coordinates of
+    the tile the user wishes to move their character to.
+    :postcondition: If the user selects option 5, the function will return "fishing", to prompt the game function to run
+    the fishing game.
+    :postcondition: If the user selects option 6, the call stack will be terminated and the game will end.
+    :postcondition: If the user does not enter a valid option from the enumerated list, the function will return False.
+    :return: A tuple of integers representing coordinates, a string, None, or False, depending on the user input.
+    """
     print("Possible Actions")
     directions = ("north", "south", "east", "west", "fish", "quit")
     for key, direction in enumerate(directions, 1):
