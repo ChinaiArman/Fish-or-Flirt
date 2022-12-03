@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from game import remove_non_legendary_items
 
 

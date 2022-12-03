@@ -1,7 +1,7 @@
+from unittest import TestCase
 import io
 import unittest.mock
-import time
-from unittest import TestCase
+
 from dialogue import loading
 
 

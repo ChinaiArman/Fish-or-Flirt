@@ -1,4 +1,5 @@
 from unittest import TestCase
+
 from game import character_has_leveled
 
 

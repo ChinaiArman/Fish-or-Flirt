@@ -1,6 +1,7 @@
 import io
 import unittest.mock
 from unittest import TestCase
+
 from dialogue import slow_print
 
 
