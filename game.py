@@ -267,20 +267,6 @@ def move_character(character: dict, move: (int, int)) -> None:
     :postcondition: Will change the x-coordinate in the character dictionary to the first value in move, and the
     y-coordinate in the character dictionary to the second value in move.
     :return: None
-
-    >>> doctest_character = {'x-coordinate': 0, 'y-coordinate': 0}
-    >>> doctest_move = 'fishing'
-    >>> move_character(doctest_character, doctest_move)
-    >>> doctest_character['x-coordinate'], doctest_character['y-coordinate'] == doctest_move
-    True
-    >>> doctest_move = (1, 0)
-    >>> move_character(doctest_character, doctest_move)
-    >>> doctest_character['x-coordinate'], doctest_character['y-coordinate'] == doctest_move
-    True
-    >>> doctest_move = (0, 1)
-    >>> move_character(doctest_character, doctest_move)
-    >>> doctest_character['x-coordinate'], doctest_character['y-coordinate'] == doctest_move
-    True
     """
     if move == "fishing":
         events.fishing_game(character)
