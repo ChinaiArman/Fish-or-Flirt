@@ -15,6 +15,8 @@ def slow_print(dialogue: str) -> None:
     """
     Prints characters slowly, in batches in the console.
 
+    Not unit tested due to complex patching with sys.stdout.flush() and time.sleep().
+
     :param dialogue: A string containing any characters.
     :precondition: dialogue must be a string character.
     :postcondition: dialogue will be printed into the console slowly, in batches of characters.
@@ -31,6 +33,8 @@ def loading(times: int) -> None:
     """
     Creates a buffer in the console a variable number of times.
 
+    Not unit tested due to complex patching with time.sleep.
+
     :param times: An integer greater than or equal to 0,
     :precondition: times must be an integer greater than or equal to 0.
     :postcondition: Will print in the console the string "...", then sleep for a second a variable number of times.
@@ -40,8 +44,6 @@ def loading(times: int) -> None:
         print("...\n\n")
         sleep(1)
 
-
-# tprint("True Final Boss")
 
 welcome_message = "Welcome to Fish or Flirt, by Arman Chinai and Lex Wong. In this game, you can fish\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nor flirt. Let's start!"
 
@@ -321,8 +323,6 @@ final_point_total_display = "Wow! That's a lot of points, maybe your parents wil
 final_legendary_item_display = "But first, let's remember the legendary items you unlocked throughout your journey!"
 
 transition_to_point_total = "And now, the point total!"
-
-# tprint("ERROR 102", "dirty")
     
 
 BOAT_DIALOGUE = {
