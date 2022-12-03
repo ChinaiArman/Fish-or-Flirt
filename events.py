@@ -46,7 +46,7 @@ def fishing_game(character):
         character["luck"] += 1
     else:
         print(asc.sadness)
-        dialogue.slow_print(dialogue.fishing_game_fail)
+        dialogue.slow_print(dialogue.fishing_game_fail[randint(0, len(dialogue.fishing_game_fail) - 1)])
     sleep(2)
 
 
