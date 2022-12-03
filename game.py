@@ -22,24 +22,9 @@ ISLAND_TILE = "\U0001F334"
 PLAYER_TILE = "\U0001F3A3"
 SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
-SCORING_SHEET = {
-    "Mama's Fishing Rod": 1,
-    "Stick": 0,
-    "Boot": 0,
-    "Fishie": 3,
-    "Pufferfishie": 5,
-    "Penguin": 10,
-    "Shark": 20,
-    "POSEIDON'S TRIDENT": 1000,
-    "Sail Boat": 100,
-    "Pirate": 100,
-    "Leviathan": 500,
-    "Crab": 50,
-    "Fisherman": 50,
-    "Mermaid": 50,
-    "Whale": 50,
-    "An Unspoken Level of Rod-ly-ness": 250
-}
+SCORING_SHEET = {"Mama's Fishing Rod": 1, "Stick": 0, "Boot": 0, "Fishie": 3, "Pufferfishie": 5, "Penguin": 10,
+                 "Shark": 20, "POSEIDON'S TRIDENT": 1000, "Sail Boat": 100, "Pirate": 100, "Leviathan": 500, "Crab": 50,
+                 "Fisherman": 50, "Mermaid": 50, "Whale": 50, "An Unspoken Level of Rod-ly-ness": 250}
 
 
 def scoring(item: str, count: int) -> (str, int, int):
