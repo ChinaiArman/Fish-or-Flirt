@@ -4,13 +4,16 @@ from game import check_if_goal_attained
 
 class TestCheckIfGoalAttained(TestCase):
     def test_has_leviathan(self):
-        inventory_with_leviathan = {'inventory': ["fishie", "stick", "stick", "Leviathan"]}
-        self.assertEqual(check_if_goal_attained(inventory_with_leviathan), True)
+        expected = True
+        actual = check_if_goal_attained({'inventory': ["fishie", "stick", "stick", "Leviathan"]})
+        self.assertEqual(expected, actual)
 
     def test_no_leviathan(self):
-        inventory_without_leviathan = {'inventory': ['boot', 'mermaid']}
-        self.assertEqual(check_if_goal_attained(inventory_without_leviathan), False)
+        expected = False
+        actual = check_if_goal_attained({'inventory': ['boot', 'mermaid']})
+        self.assertEqual(expected, actual)
 
     def test_empty_inventory(self):
-        empty_inventory = {'inventory': []}
-        self.assertEqual(check_if_goal_attained(empty_inventory), False)
+        expected = False
+        actual = check_if_goal_attained({'inventory': []})
+        self.assertEqual(expected, actual)
