@@ -73,6 +73,22 @@ def end_game(character):
 
 
 def check_if_goal_attained(character):
+    """
+    Return if the win condition for the game has been met.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character must have the key-value pair 'inventory', containing a list representing the players
+    inventory.
+    :postcondition: Will return True if 'Leviathan' is in 'inventory', else False.
+    :return: A boolean value representing whether the end condition has been met.
+
+    >>> doctest_character = {'inventory': []}
+    >>> check_if_goal_attained(doctest_character)
+    False
+    >>> doctest_character = {'inventory': ['Leviathan']}
+    >>> check_if_goal_attained(doctest_character)
+    True
+    """
     sleep(1)
     return "Leviathan" in character["inventory"]
 
@@ -168,8 +184,8 @@ def validate_move(board: dict, character: dict, direction, rows: int, columns: i
     AND a boolean representing whether the move was valid.
 
     >>> doctest_board = {(0, 0): LAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): LAND_TILE}
-    >>> doctest_character = {"x-coordinate": 0, "y-coordinate": 0, "rod level": 0}
-    >>> doctest_direction = "fishing"
+    >>> doctest_character = {'x-coordinate': 0, 'y-coordinate': 0, 'rod level': 0}
+    >>> doctest_direction = 'fishing'
     >>> validate_move(doctest_board, doctest_character, doctest_direction, 2, 2)
     ('fishing', True)
     >>> doctest_direction = (0, 1)
