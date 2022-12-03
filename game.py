@@ -42,7 +42,27 @@ SCORING_SHEET = {
 }
 
 
-def scoring(item, count):
+def scoring(item: str, count: int) -> (str, int, int):
+    """
+    Return a tuple containing the item, the quantity, and the number of points generated from the item using
+    SCORING_SHEET.
+
+    :param item: A string containing the name of a game object.
+    :param count: An integer representing the amount of times player collected item throughout the game.
+    :precondition: item is a string representing an object in the game.
+    :precondition: count is an integer representing the number of times the game object appears in the player's
+    inventory.
+    :postcondition: Will return a tuple containing the item, the number of times the item appears in the player's
+    inventory, and an integer representing the amount of points the item generated for the player.
+    :return: A tuple containing a string and two integers.
+
+    >>> scoring('Shark', 3)
+    ('Shark', 3, 60)
+    >>> scoring('Stick', 50)
+    ('Stick', 50, 0)
+    >>> scoring('banana', 15)
+    ('banana', 15, 0)
+    """
     try:
         return item, count, SCORING_SHEET[item] * count
     except KeyError:
