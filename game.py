@@ -54,15 +54,30 @@ def scoring(item: str, count: int) -> (str, int, int):
         return item, count, 0
 
 
+def remove_non_legendary_items(item):
+    return item == "POSEIDON'S TRIDENT" or item == "An Unspoken Level of Rod-ly-ness" or item == "Leviathan"
+
+
 def scoreboard(character):
     inventory = character["inventory"]
     totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
     score = list(starmap(scoring, totals))
-    # total_score = sum([element[2] for element in score])
+    total_score = sum([element[2] for element in score])
     row_headers = [element[0] for element in score]
     column_headers = ["Quantity", "Points"]
     data = [[element[1], element[2]] for element in score]
+    legendary_items = filter(remove_non_legendary_items, inventory)
     print(DataFrame(data, row_headers, column_headers))
+    dialogue.slow_print(dialogue.tallying_message)
+    dialogue.slow_print(dialogue.final_legendary_item_display)
+    dialogue.loading(3)
+    for key, item in enumerate(legendary_items, 1):
+        print(f"{key}.\t{item}")
+    dialogue.slow_print(dialogue.transition_to_point_total)
+    dialogue.loading(3)
+    print(asc.cake)
+    print(f"\t\t\t\t\t\t\tTotal Points:\t\t{total_score}")
+    dialogue.slow_print(dialogue.final_point_total_display)
 
 
 def end_game(character):
@@ -113,12 +128,16 @@ def execute_glow_up_protocol(character: dict) -> None:
     >>> doctest_character = {'xp': 1, 'rod level': 0, 'charisma': 0, 'luck': 0}
     >>> execute_glow_up_protocol(doctest_character)
     You levelled up! Your rod is now stronger.
+    Current Charisma: 2 (level cap: 80)
+    Current Luck: 2 (level cap: 80)
     >>> doctest_character['xp'] == doctest_character['rod level'] and doctest_character['charisma'] == 2 and \
     doctest_character['luck'] == 2
     True
     >>> second_doctest_character = {'xp': 2, 'rod level': 0, 'charisma': 17, 'luck': 36}
     >>> execute_glow_up_protocol(second_doctest_character)
     You levelled up! Your rod is now stronger.
+    Current Charisma: 19 (level cap: 80)
+    Current Luck: 38 (level cap: 80)
     >>> second_doctest_character['xp'] == second_doctest_character['rod level'] \
     and second_doctest_character['charisma'] == 19 and second_doctest_character['luck'] == 38
     True
@@ -127,6 +146,8 @@ def execute_glow_up_protocol(character: dict) -> None:
     character["luck"] += 2
     character["charisma"] += 2
     print(dialogue.level_up)
+    print(f"Current Charisma: {character['charisma']} (level cap: 80)")
+    print(f"Current Luck: {character['luck']} (level cap: 80)")
     return
 
 

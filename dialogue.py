@@ -131,7 +131,8 @@ acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish 
                    "CONGRATULATIONS! You have reeled in the weapons of Pelagaeus, Aegaeon, the One Who Dashes Against,\n" \
                    "He who's Full of Seaweed, the Dark-Haired One, The One Who Secures Safe Voyage, Watcher, The Flooder,\n" \
                    "Earth-Shaker, Holder of the Earth, He Who Must Not Be Named--I'm joking.\n" \
-                   "You've reeled in Poseidon's Trident! What does it do? Who knows ;)"
+                   "You've reeled in Poseidon's Trident! What does it do? Who knows ;)\n\n" \
+                   "[LEGENDARY] POSEIDON'S TRIDENT has been added to your inventory."
 
 encounter_island = "There's a small island in the midst of the angry waves. There's a forest of palm trees on that island.\n" \
                    "Through them, you think you can glimpse movement.\n" \
@@ -165,7 +166,9 @@ leviathan_defeated_fish = "With your strong rod and amazing fishing skills, you'
 leviathan_defeated = "You should be jailed! Your irresistible charm and dashing good looks have stolen the Leviathan's heart.\n" \
                            "When talking with the Leviathan, you discovered that the only reason it was terrorizing the seas was because it had a terrible stomach ache.\n" \
                            "After giving the Leviathan drugs, I MEAN, asprin, it felt a lot better, and no longer terrorizes the sea.\n" \
-                           "You and the Leviathan, and all the other animals and people you've wooed along the way now live happily ever after."
+                           "You and the Leviathan, and all the other animals and people you've wooed along the way now live happily ever after.\n\n" \
+                           "[LEGENDARY] Leviathan has been added to your inventory\n" \
+                           "[LEGENDARY] An Unspoken Level of Rod-ly-ness has been added to your inventory"
 
 invalid_move_land = [
     "You can't step here!",
@@ -304,6 +307,14 @@ congratulations_pt2 = "Let's take a look at how you did!"
 
 end_of_game_shenanigans = "Thank you for playing our game! We hope you had lots of fun fishing and flirting with everyone.\n" \
                           "Come back again soon!"
+
+tallying_message = "That's a big haul, let's see the totals"
+
+final_point_total_display = "Wow! That's a lot of points, maybe your parents will finally love you- I mean what"
+
+final_legendary_item_display = "But first, let's remember take a look at legendary items that you unlocked throughout your journey!"
+
+transition_to_point_total = "And now, the point total!"
 
 # tprint("ERROR 102", "dirty")
     
