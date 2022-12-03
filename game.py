@@ -12,7 +12,7 @@ from itertools import starmap
 import dialogue
 import events
 import ascii_art as asc
-import pandas as pd
+from pandas import DataFrame
 
 
 WATER_TILE = "\U0001F30A"
@@ -56,7 +56,7 @@ def scoreboard(character):
     row_headers = [element[0] for element in score]
     column_headers = ["Quantity", "Points"]
     data = [[element[1], element[2]] for element in score]
-    print(pd.DataFrame(data, row_headers, column_headers))
+    print(DataFrame(data, row_headers, column_headers))
 
 
 def end_game(character):
