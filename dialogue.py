@@ -95,7 +95,7 @@ random_encounter_mermaid = [
 random_encounter_whale = [
     "\"Wow!\" You think, \"What a big fish!\" The whale looks at you blankly.",
     "The whale tries to swallow you into their stomach. You call your mom to ask for consent. Your mom says \"No.\"\n"
-    "The whale legally cannot swallow yoo without your mother's consent.",
+    "The whale legally cannot swallow you without your mother's consent.",
     "It's a bird! It's a plane! No! It's a flying whale- wait no you were just looking into the water. It's a regular whale."
 ]
 
@@ -133,7 +133,7 @@ acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish 
                    "Your old man said it was his favourite past time, but to you, any time spent not fishing is a waste of time.\n...\n" \
                    "This lack of struggle scares you. What kind of fish is this???\n" \
                    "Your \"fish\" starts rising out of the water.\n" \
-                   "Hmm, it has a shinny tip... A swordfish? But you've never seen a swordfish with three prongs on it––" \
+                   "Hmm, it has a shinny tip... A swordfish? But you've never seen a swordfish with three prongs on it––\n" \
                    "CONGRATULATIONS! You have reeled in the weapons of Pelagaeus, Aegaeon, the One Who Dashes Against,\n" \
                    "He who's Full of Seaweed, the Dark-Haired One, The One Who Secures Safe Voyage, Watcher, The Flooder,\n" \
                    "Earth-Shaker, Holder of the Earth, He Who Must Not Be Named--I'm joking.\n" \
@@ -188,7 +188,7 @@ invalid_move_land = [
 invalid_move_water = [
     "Careful there buddy! If you go over the edge you'll fall off this world!",
     "You look into the void.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nThe void looks back.\nYou should turn back",
-    "Did you know that the world is actually a hemisphere laid onto of four elephants standing onto of a giant turtle? "
+    "Did you know that the world is actually a hemisphere laid onto of four elephants standing onto of a giant turtle?\n"
     "You should be careful going that way, you might fall off the earth and onto a turtle.",
     "The water current gently brings you back on your right path. There's a monster to slay, you know! You don't want to slay it? Well, I guess there's a monster to fish!"
 ]
@@ -203,7 +203,7 @@ invalid_fish = [
     "There are no fish in the sand. Cease your foolish antics.",
     "There are plenty of fish in the sea. This ain't no sea.",
     "I'll be surprised if you can reel in any fish here, seeing as there are no fish here.",
-    "Even Jesus needed two fish to create more, how are you gonna get fish without any in the first place?"
+    "Even Jesus needed two fish to create more, how are you gonna get fish where there aren't any in the first place?"
 ]
 
 start_fish = [
