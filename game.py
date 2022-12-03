@@ -105,7 +105,15 @@ def execute_glow_up_protocol(character):
     print(dialogue.level_up)
 
 
-def character_has_leveled(character):
+def character_has_leveled(character: dict) -> bool:
+    """
+    Check if the character has leveled up.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character exists and has the key-value pairs 'xp' and 'rod level' containing integers.
+    :postcondition: Will return True if the character's xp has surpassed the rod level.
+    :return: A boolean indicating whether the character has leveled up.
+    """
     return character["xp"] > character["rod level"]
 
 
