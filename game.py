@@ -77,7 +77,7 @@ def end_game(character):
     dialogue.slow_print(dialogue.end_of_game_shenanigans)
 
 
-def check_if_goal_attained(character):
+def check_if_goal_attained(character: dict) -> bool:
     """
     Return if the win condition for the game has been met.
 
