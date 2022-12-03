@@ -60,6 +60,7 @@ def fishing_game(character: dict) -> None:
             sleep(1)
             print(asc.fishing_ascii[fished_item])
             print(f"You fished a {fished_item}! It has been added to your inventory.")
+            print("Your luck and charisma have been greatly increased")
         character["inventory"] += [fished_item]
         character["luck"] += 1
     else:

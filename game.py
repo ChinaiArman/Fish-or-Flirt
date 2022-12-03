@@ -549,7 +549,7 @@ def game() -> None:
         if valid_move:
             move_character(character, move)
             there_is_a_challenge, challenge, event_dialogue = check_for_challenges(board, character)
-            if there_is_a_challenge:
+            if there_is_a_challenge and move != 'fishing':
                 challenge(board, character, event_dialogue)
                 if character_has_leveled(character):
                     execute_glow_up_protocol(character)
