@@ -36,7 +36,7 @@ def fishing_game(character):
                 print("...\n\n")
                 sleep(1)
             print(asc.fishing_ascii[fished_item])
-            print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
+            dialogue.slow_print(dialogue.acquired_trident)
             del FISHABLE_ITEMS[20]
         else:
             sleep(1)
