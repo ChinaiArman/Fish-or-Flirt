@@ -21,7 +21,7 @@ SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
 FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 4: "Stick", 5: "Boot", 6: "Boot",
                   7: "Boot", 8: "Boot", 9: "Fishie", 10: "Fishie", 11: "Fishie", 12: "Pufferfishie", 13: "Penguin",
-                  14: "Shark", 15: "POSEIDON'S TRIDENT", 16: "none", 17: "none", 18: "none", 19: "none", 20: "none"}
+                  14: "Shark", 15: "none", 16: "none", 17: "none", 18: "none", 19: "none", 20: "POSEIDON'S TRIDENT"}
 
 
 def fishing_game(character):
@@ -37,7 +37,7 @@ def fishing_game(character):
                 sleep(1)
             print(asc.fishing_ascii[fished_item])
             print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
-            del FISHABLE_ITEMS["POSEIDON'S TRIDENT"]
+            del FISHABLE_ITEMS[20]
         else:
             sleep(1)
             print(asc.fishing_ascii[fished_item])
