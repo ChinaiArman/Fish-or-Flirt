@@ -28,4 +28,3 @@ class TestExecuteGlowUpProtocol(TestCase):
         expected = {'xp': 2, 'rod level': 2, 'charisma': 6, 'luck': 39}
         actual = character_information
         self.assertEqual(expected, actual)
-
