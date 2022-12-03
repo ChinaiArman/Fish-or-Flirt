@@ -105,7 +105,21 @@ def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
     return
 
 
-def pirate_event(board, character, event_dialogue):
+def pirate_event(board: dict, character: dict, event_dialogue: dict) -> None:
+    """
+    Play the Pirate Event Challenge; the first boss in Fish or Flirt.
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param event_dialogue: A dictionary containing the dialogue for the challenge.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', and 'charisma'
+    containing integers, and 'inventory' containing a list of game items.
+    :precondition: event_dialogue is a dictionary constant from the dialogue module containing strings with storylines
+    for the event.
+    :return: None
+    """
     pirate_charisma = 100
     position = (character['x-coordinate'], character['y-coordinate'])
     dialogue.slow_print(event_dialogue["encounter"])
