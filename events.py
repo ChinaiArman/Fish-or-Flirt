@@ -66,7 +66,7 @@ def fishing_game(character: dict) -> None:
     else:
         print(asc.sadness)
         dialogue.slow_print(dialogue.fishing_game_fail[randint(0, len(dialogue.fishing_game_fail) - 1)])
-    sleep(2)
+    sleep(1)
     return
 
 
