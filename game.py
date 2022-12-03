@@ -76,6 +76,8 @@ def scoreboard(character: dict) -> None:
     """
     Display the player's inventory, score, legendary items, and special dialogue congratulating them.
 
+    Not unit tested due to complexity with patching prints.
+
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character must have the key-value pair 'inventory', containing a list representing the players
     inventory.
@@ -111,6 +113,8 @@ def scoreboard(character: dict) -> None:
 def end_game(character: dict) -> None:
     """
     End the game for the player.
+
+    Not unit tested due to complexity with patching prints.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character must have the key-value pair 'inventory', containing a list representing the players
@@ -258,6 +262,8 @@ def check_for_challenges(board: dict, character: dict) -> tuple:
 def move_character(character: dict, move: (int, int)) -> None:
     """
     Move the character on the board to match the coordinates in move.
+
+    Not unit tested due to function calling an event function.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :param move: A tuple representing the x and y coordinates the player wishes to move to OR the string
@@ -434,6 +440,8 @@ def describe_current_location(board: dict, character: dict, columns: int) -> Non
     Describe the current state of the game board, as well as the players location on the game board in a visually
     pleasing manner (10 x 10 grid of Unicode characters).
 
+    Not unit tested due to complexity with print statements.
+
     :param board: A dictionary with key-value pairs representing tiles on the game board.
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :param columns: An integer representing the number of columns in the game board.
@@ -528,6 +536,8 @@ def game() -> None:
     """
     The game's main engine. This function operates all the logic for the game, and all helper functions branch off from
     here.
+
+    Not unit tested due to too many function calls within the function.
 
     :postcondition: Will run the Fish or Flirt game to completion.
     :return: None.
