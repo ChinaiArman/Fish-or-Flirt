@@ -6,6 +6,7 @@ from dialogue import loading
 
 
 class TestLoading(TestCase):
-    @unittest.patch('time.sleep', return_value=None)
-    def test_loading(self):
-        self.fail()
+    @unittest.mock.patch('time.sleep', return_value=None)
+    @unittest.mock.patch('sys.stdout', new_callable=io.StringIO)
+    def test_one_instance(self):
+        self.assertEqual()
