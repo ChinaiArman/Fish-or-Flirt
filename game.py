@@ -185,8 +185,8 @@ def execute_glow_up_protocol(character: dict) -> None:
     character["luck"] += 2
     character["charisma"] += 2
     print(dialogue.level_up)
-    print(f"Current Charisma: {character['charisma']} (level cap: 80)")
-    print(f"Current Luck: {character['luck']} (level cap: 80)")
+    print(f"Current Charisma: {character['charisma']}")
+    print(f"Current Luck: {character['luck']}")
     return
 
 

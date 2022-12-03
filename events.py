@@ -231,7 +231,7 @@ def land_event(_, character: dict, event_dialogue: dict) -> None:
             if character["charisma"] > randint(0, entity_charisma):
                 print(event_dialogue["ascii_blushing"])
                 print(event_dialogue["success_dialogue"])
-                character["charisma"] += character["charisma"] < 80
+                character["charisma"] += 1
                 character["inventory"] += [event_dialogue["entity"]]
                 flirting = False
             else:
@@ -284,7 +284,7 @@ def water_event(_, character: dict, event_dialogue: dict) -> None:
             if character["charisma"] > randint(0, entity_charisma):
                 print(event_dialogue["ascii_blushing"])
                 print(event_dialogue["flirt_success"])
-                character["charisma"] += character["charisma"] < 80
+                character["charisma"] += 1
                 character["inventory"] += [event_dialogue["entity"]]
                 attempting = False
             else:
