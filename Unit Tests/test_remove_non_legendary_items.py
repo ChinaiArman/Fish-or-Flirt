@@ -4,7 +4,11 @@ from game import remove_non_legendary_items
 
 class TestRemoveNonLegendaryItems(TestCase):
     def test_non_legendary(self):
-        self.assertEqual(remove_non_legendary_items("Fishies"), False)
+        expected = False
+        actual = remove_non_legendary_items("Fishies")
+        self.assertEqual(expected, actual)
 
     def test_legendary_item(self):
-        self.assertEqual(remove_non_legendary_items("An Unspoken Level of Rod-ly-ness"), True)
+        expected = True
+        actual = remove_non_legendary_items("An Unspoken Level of Rod-ly-ness")
+        self.assertEqual(expected, actual)
