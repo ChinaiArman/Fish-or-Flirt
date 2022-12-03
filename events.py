@@ -70,7 +70,7 @@ def leviathan_event(board, character, event_dialogue):
     leviathan_charisma = 100
     leviathan_difficulty = 100
     position = (character['x-coordinate'], character['y-coordinate'])
-    print(asc.leviathan)
+    print(event_dialogue["ascii_encounter"])
     dialogue.slow_print(event_dialogue["encounter"])
     flirting = True
     while flirting:
@@ -85,7 +85,7 @@ def leviathan_event(board, character, event_dialogue):
                     randint(0, leviathan_difficulty):
                 print(event_dialogue["success"])
                 dialogue.slow_print(event_dialogue["defeated"])
-                character["inventory"] += ["Leviathan", "An Unspoken Level of Rod-ly-ness"]
+                character["inventory"] += [event_dialogue["entity"], event_dialogue["reward"]]
                 flirting = False
             else:
                 print(event_dialogue["fail"])

@@ -331,6 +331,7 @@ PIRATE_DIALOGUE = {
 
 LEVIATHAN_DIALOGUE = {
     "entity": "Leviathan",
+    "reward": "An Unspoken Level of Rod-ly-ness",
     "ascii_encounter": asc.leviathan,
     "encounter": encounter_leviathan,
     "fish_and_flirt": leviathan_fish_and_flirt,
