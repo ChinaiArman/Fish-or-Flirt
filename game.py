@@ -113,6 +113,13 @@ def character_has_leveled(character: dict) -> bool:
     :precondition: character exists and has the key-value pairs 'xp' and 'rod level' containing integers.
     :postcondition: Will return True if the character's xp has surpassed the rod level.
     :return: A boolean indicating whether the character has leveled up.
+
+    >>> doctest_character = {'xp': 0, 'rod level': 0}
+    >>> character_has_leveled(doctest_character)
+    False
+    >>> doctest_character = {'xp': 1, 'rod level': 0}
+    >>> character_has_leveled(doctest_character)
+    True
     """
     return character["xp"] > character["rod level"]
 
