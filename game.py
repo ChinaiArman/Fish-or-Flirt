@@ -122,7 +122,7 @@ def execute_glow_up_protocol(character: dict) -> None:
     integers.
     :postcondition: Will increase 'rod level' to match the value of 'xp'.
     :postcondition: Will increase 'luck' and 'charisma' by 2.
-    :postcondition: Will print dialogue.level_up into the console.
+    :postcondition: Will print dialogue.level_up, current charisma, and current luck into the console.
     :return: None
 
     >>> doctest_character = {'xp': 1, 'rod level': 0, 'charisma': 0, 'luck': 0}
