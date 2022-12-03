@@ -24,13 +24,22 @@ FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 4: "Stick", 5:
                   14: "Shark", 15: "none", 16: "none", 17: "none", 18: "none", 19: "none", 20: "POSEIDON'S TRIDENT"}
 
 
-def fishing_game(character):
+def fishing_game(character: dict) -> None:
     """
+    Play the Fishing Game and have a random chance to catch an item. Caught items are added to players inventory.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
-    :precondition:
-    :postcondition:
-    :return:
+    :precondition: character exists and has the key-value pairs 'luck' and 'charisma' containing integers and
+    'inventory' containing a list of game items the player has acquired.
+    :postcondition: Will run the fishing game, giving players a random chance to catch an item from FISHABLE_ITEMS.
+    :postcondition: If the objected returned from FISHABLE_ITEMS is not 'none' the item will be added to their
+    inventory and success dialogue will be displayed in the console.
+    :postcondition: If the item caught is 'POSEIDON'S TRIDENT', the item will be added to the inventory, special
+    dialogue will display in the console, and the character's 'luck' and 'charisma' will be increased by a multiple of
+    1.2.
+    :postcondition: If the item caught is 'none', no item will be added and fail dialogue will be displayed in the
+    console.
+    :return: None
     """
     print(asc.fishing_rod)
     print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
@@ -57,6 +66,7 @@ def fishing_game(character):
         print(asc.sadness)
         dialogue.slow_print(dialogue.fishing_game_fail[randint(0, len(dialogue.fishing_game_fail) - 1)])
     sleep(2)
+    return
 
 
 def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
