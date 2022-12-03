@@ -32,12 +32,14 @@ def fishing_game(character):
     if fished_item != "none":
         print(asc.bucket)
         if fished_item == "POSEIDON'S TRIDENT":
-            for i in range(2):
+            for i in range(3):
                 print("...\n\n")
                 sleep(1)
             print(asc.fishing_ascii[fished_item])
             dialogue.slow_print(dialogue.acquired_trident)
             del FISHABLE_ITEMS[20]
+            character["luck"] *= 1.2
+            character["charisma"] *= 1.2
         else:
             sleep(1)
             print(asc.fishing_ascii[fished_item])
@@ -69,8 +71,6 @@ def leviathan_event(board, character, event_dialogue):
                     randint(0, leviathan_difficulty):
                 print(event_dialogue["success"])
                 dialogue.slow_print(event_dialogue["defeated"])
-                character["charisma"] += 15
-                character["luck"] += 15
                 character["inventory"] += ["Leviathan", "An Unspoken Level of Rod-ly-ness"]
                 flirting = False
             else:
