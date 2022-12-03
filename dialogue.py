@@ -122,6 +122,11 @@ encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the
 acquired_boat = "You touch the boat, and you feel an energy pulse through you. You've gotten stronger, my young friend. " \
                 "The hope of all those who've come before you empowers you on your journey."
 
+acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish you've caught before, and a mix of anxiety and excitement races through you." \
+                   "Will the string hold? You're really not looking forward to changing the fishing wire.\n" \
+                   "Your old man said it was his favourite past time, but to you, any time spent not fishing is a waste of time.\n...\n" \
+                   "This lack of struggle scares you. What kind of fish is this???"
+
 encounter_island = "There's a small island in the midst of the angry waves. There's a forest of palm trees on that island.\n" \
                    "Through them, you think you can glimpse movement.\n" \
                    "You're not sure if it's friend or foe, but there's only one (or two) real choices anyways."
