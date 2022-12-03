@@ -72,7 +72,20 @@ def remove_non_legendary_items(item: str) -> bool:
     return item in legendary_items
 
 
-def scoreboard(character):
+def scoreboard(character: dict) -> None:
+    """
+    Display the player's inventory, score, legendary items, and special dialogue congratulating them.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character must have the key-value pair 'inventory', containing a list representing the players
+    inventory.
+    :postcondition: Will calculate the player's score total for each item they collected and display it in a tabular
+    format in the console.
+    :postcondition: Will show the player in the console the legendary item's they gathered from completing the game.
+    :postcondition: Will show the player in the console their final score.
+    :postcondition: Will print dialogue congratulating them for completing the game.
+    :return: None
+    """
     inventory = character["inventory"]
     totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
     score = list(starmap(scoring, totals))
@@ -92,6 +105,7 @@ def scoreboard(character):
     print(asc.cake)
     print(f"\t\t\t\t\t\t\tTotal Points:\t\t{total_score}")
     dialogue.slow_print(dialogue.final_point_total_display)
+    return
 
 
 def end_game(character: dict) -> None:
