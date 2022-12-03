@@ -54,8 +54,17 @@ def scoring(item: str, count: int) -> (str, int, int):
         return item, count, 0
 
 
-def remove_non_legendary_items(item):
-    return item == "POSEIDON'S TRIDENT" or item == "An Unspoken Level of Rod-ly-ness" or item == "Leviathan"
+def remove_non_legendary_items(item: str) -> bool:
+    """
+    Filter out the non-legendary items from a list of inventory items.
+
+    :param item: An string containing the name of an object from the game.
+    :precondition: item must be a string containing the name of an object from the game.
+    :postcondition: Will return True if the item is a legendary item, else False.
+    :return: A boolean value.
+    """
+    legendary_items = ("POSEIDON'S TRIDENT", "An Unspoken Level of Rod-ly-ness", "Leviathan")
+    return item in legendary_items
 
 
 def scoreboard(character):
@@ -82,7 +91,7 @@ def scoreboard(character):
 
 def end_game(character: dict) -> None:
     """
-    Ends the game for the player.
+    End the game for the player.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character must have the key-value pair 'inventory', containing a list representing the players
@@ -126,7 +135,7 @@ def check_if_goal_attained(character: dict) -> bool:
 
 def execute_glow_up_protocol(character: dict) -> None:
     """
-    Level's up the character.
+    Level up the character.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character exists and has the key-value pairs 'xp', 'rod level', 'luck', and 'charisma' containing

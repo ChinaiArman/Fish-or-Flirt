@@ -312,7 +312,7 @@ tallying_message = "That's a big haul, let's see the totals"
 
 final_point_total_display = "Wow! That's a lot of points, maybe your parents will finally love you- I mean what"
 
-final_legendary_item_display = "But first, let's remember take a look at legendary items that you unlocked throughout your journey!"
+final_legendary_item_display = "But first, let's remember the legendary items you unlocked throughout your journey!"
 
 transition_to_point_total = "And now, the point total!"
 
