@@ -113,6 +113,12 @@ no_encounter_sea = [
     "You came, you saw, you left empty handed. Ain't no fish here pal!"
 ]
 
+no_encounter_island = [
+    "You take a handful of the island's sand and let it slip through your fingers.\nIt's much coarser than the one's back home.",
+    "You hear speaking in the distance, maybe head their instead.",
+    "You don't think this island is inhabitable. Not even the crabs will be able to survive here."
+]
+
 encounter_boat = "You see an old, but sturdy sailboat. It's well loved, with the signs of time decorating its sides.\n" \
                  "However, the paint was recently redone a brilliant white, and you could see that the sails have been changed.\n" \
                  "Beside the boat, an old fisherman sits, as if waiting for a friend.\nThe fisherman beckons you towards them, and gestures at their boat.\n" \
