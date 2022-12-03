@@ -38,6 +38,7 @@ SCORING_SHEET = {
     "Fisherman": 50,
     "Mermaid": 50,
     "Whale": 50,
+    "An Unspoken Level of Rod-ly-ness": 1000
 }
 
 
