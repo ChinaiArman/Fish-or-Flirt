@@ -128,7 +128,7 @@ def move_character(character, move):
 def describe_invalid_move(board, character, move):
     position = (character['x-coordinate'], character['y-coordinate'])
     if move == "fishing":
-        return "[LEX] INVALID FISH MOVE"
+        return dialogue.invalid_fish[randint(0, len(dialogue.invalid_fish) - 1)]
     if board[position] == WATER_TILE:
         return dialogue.invalid_move_water[randint(0, len(dialogue.invalid_move_water) - 1)]
     elif board[position] == LAND_TILE:

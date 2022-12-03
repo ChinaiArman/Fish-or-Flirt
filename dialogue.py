@@ -176,6 +176,13 @@ invalid_move_island = [
     "How did you get here again? We should change your name into little Alice Liddell. Stop following the White Rabbit and go."
 ]
 
+invalid_fish = [
+    "There are no fish in the sand. Cease your foolish antics.",
+    "There are plenty of fish in the sea. This ain't no sea.",
+    "I'll be surprised if you can reel in any fish here, seeing as there are no fish here.",
+    "Even Jesus needed two fish to create more, how are you gonna get fish without any in the first place?"
+]
+
 start_fish = [
     "You throw your rod into the sea. The bobber creates small ripples in the water, growing larger as they expand outwards. You feel one with the sea.",
     "The ocean breeze gently blows across your face like soft and loving caresses. You think you'll find good fish today.",
