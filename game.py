@@ -80,7 +80,17 @@ def scoreboard(character):
     dialogue.slow_print(dialogue.final_point_total_display)
 
 
-def end_game(character):
+def end_game(character: dict) -> None:
+    """
+    Ends the game for the player.
+
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :precondition: character must have the key-value pair 'inventory', containing a list representing the players
+    inventory.
+    :postcondition: Will print the final dialogue into the console,
+    :postcondition: Will call the scoreboard function to show the player's final score.
+    :return: None
+    """
     print(asc.win)
     sleep(0.5)
     dialogue.slow_print(dialogue.congratulations_pt1)
@@ -90,6 +100,7 @@ def end_game(character):
     dialogue.loading(3)
     scoreboard(character)
     dialogue.slow_print(dialogue.end_of_game_shenanigans)
+    return
 
 
 def check_if_goal_attained(character: dict) -> bool:
