@@ -125,7 +125,13 @@ acquired_boat = "You touch the boat, and you feel an energy pulse through you. Y
 acquired_trident = "You reel in your catch.\nIt's so much heavier than any fish you've caught before, and a mix of anxiety and excitement races through you." \
                    "Will the string hold? You're really not looking forward to changing the fishing wire.\n" \
                    "Your old man said it was his favourite past time, but to you, any time spent not fishing is a waste of time.\n...\n" \
-                   "This lack of struggle scares you. What kind of fish is this???"
+                   "This lack of struggle scares you. What kind of fish is this???\n" \
+                   "Your \"fish\" starts rising out of the water.\n" \
+                   "Hmm, it has a shinny tip... A swordfish? But you've never seen a swordfish with three prongs on it––" \
+                   "CONGRATULATIONS! You have reeled in the weapons of Pelagaeus, Aegaeon, the One Who Dashes Against,\n" \
+                   "He who's Full of Seaweed, the Dark-Haired One, The One Who Secures Safe Voyage, Watcher, The Flooder,\n" \
+                   "Earth-Shaker, Holder of the Earth, He Who Must Not Be Named--I'm joking.\n" \
+                   "You've reeled in Poseidon's Trident! What does it do? Who knows ;)"
 
 encounter_island = "There's a small island in the midst of the angry waves. There's a forest of palm trees on that island.\n" \
                    "Through them, you think you can glimpse movement.\n" \
