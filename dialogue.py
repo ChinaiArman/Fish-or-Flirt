@@ -27,7 +27,15 @@ def slow_print(dialogue: str) -> None:
     print("")
 
 
-def loading(times):
+def loading(times: int) -> None:
+    """
+    Creates a buffer in the console a variable number of times.
+
+    :param times: An integer greater than or equal to 0,
+    :precondition: times must be an integer greater than or equal to 0.
+    :postcondition: Will print in the console the string "...", then sleep for a second a variable number of times.
+    :return: None,
+    """
     for i in range(times):
         print("...\n\n")
         sleep(1)
