@@ -248,8 +248,9 @@ def check_for_challenges(board: dict, character: dict) -> tuple:
     elif board[position] == WATER_TILE:
         print(dialogue.no_encounter_sea[randint(0, len(dialogue.no_encounter_sea) - 1)])
         return False, None, None
-    elif board(position) == ISLAND_TILE:
+    elif board[position] == ISLAND_TILE:
         print(dialogue.no_encounter_island[randint(0, len(dialogue.no_encounter_island) - 1)])
+        return False, None, None
     else:
         return False, None, None
 

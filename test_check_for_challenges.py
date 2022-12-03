@@ -61,10 +61,14 @@ class TestCheckForChallenges(TestCase):
         actual = check_for_challenges({(0, 0): WATER_TILE}, {'x-coordinate': 0, 'y-coordinate': 0})
         self.assertEqual(expected, actual)
 
-    def test_non_specified_location(self):
+    @patch('builtins.print', side_effect=[''])
+    def test_island_tile(self, mock_print):
         expected = False, None, None
         actual = check_for_challenges({(0, 0): ISLAND_TILE}, {'x-coordinate': 0, 'y-coordinate': 0})
         self.assertEqual(expected, actual)
 
-
-
+    @patch('builtins.print', side_effect=[''])
+    def test_catch_all(self, mock_print):
+        expected = False, None, None
+        actual = check_for_challenges({(0, 0): 'banana'}, {'x-coordinate': 0, 'y-coordinate': 0})
+        self.assertEqual(expected, actual)
