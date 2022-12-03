@@ -162,6 +162,7 @@ def check_for_challenges(board: dict, character: dict) -> tuple:
     :postcondition: Will return a tuple containing a boolean value representing whether there is a challenge for the
     user, the name of a function corresponding to the challenge on that tile (or None if no challenge), and a dictionary
     containing the dialogue for the challenge (or None if no challenge).
+    :postcondition: If there is no event, function will print a no encounter message from the dialogue module.
     :return: A tuple containing a boolean value, the name of an event function and the dialogue corresponding to the
     event function.
     """
@@ -338,9 +339,9 @@ def validate_move(board: dict, character: dict, direction, rows: int, columns: i
 
 def get_user_choice(character: dict):
     """
-    Ask the user to select one of the enumerated options, and log their selection. Users respond with the enumerated
-    number corresponding to their desired selection, else the function returns False. Responding with an enumerated
-    option causes the function to return a value representing their selection.
+    Ask the user to select one of the enumerated options in the console, and log their selection. Users respond with the
+    enumerated number corresponding to their desired selection, else the function returns False. Responding with an
+    enumerated option causes the function to return a value representing their selection.
 
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
@@ -352,7 +353,8 @@ def get_user_choice(character: dict):
     the tile the user wishes to move their character to.
     :postcondition: If the user selects option 5, the function will return "fishing", to prompt the game function to run
     the fishing game.
-    :postcondition: If the user selects option 6, the call stack will be terminated and the game will end.
+    :postcondition: If the user selects option 6, function will print 'Thanks for playing', then the call stack will be
+    terminated and the game will end.
     :postcondition: If the user does not enter a valid option from the enumerated list, the function will return False.
     :return: A tuple of integers representing coordinates, a string, None, or False, depending on the user input.
     """
