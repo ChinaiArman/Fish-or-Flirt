@@ -138,7 +138,34 @@ def describe_invalid_move(board, character, move):
         return dialogue.invalid_move_island[randint(0, len(dialogue.invalid_move_island) - 1)]
 
 
-def validate_move(board, character, direction, rows, columns):
+def validate_move(board: dict, character: dict, direction: tuple, rows: int, columns: int) -> tuple:
+    """
+    Validate the user's move coming from get_user_choice, and returns a tuple containing their updated position on the
+    board. If the move is invalid, the function also returns False, else True.
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param direction: A tuple representing the x and y coordinates the player wishes to move to OR the string
+    'fishing' and a boolean to prompt the fishing game OR the boolean False.
+    :param rows: An integer representing the number of rows in the game board.
+    :param columns: An integer representing the number of columns in the game board.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :precondition: direction must be a tuple representing the x and y coordinates the player wishes to move to OR the
+    string 'fishing' and a boolean to prompt the fishing game OR the boolean False.
+    :precondition: rows equals to the number of rows represented in board.
+    :precondition: columns equals to the number of columns represented in board.
+    :postcondition: If direction is False, the function will return the characters current coordinates and the boolean
+    False, as a tuple.
+    :postcondition: If direction is equal to 'fishing', the function will return the string 'fishing' and a boolean
+    representing whether it is possible to play the fishing game from this tile.
+    :postcondition: If direction is a tuple of integers, the function will return a tuple representing the coordinates
+    to move the player to, and a boolean representing whether the user's desired move was valid.
+    :return: A tuple containing integers representing coordinates to move the character to, or the string 'fishing',
+    AND a boolean representing whether the move was valid.
+    """
     if not direction:
         return (character["x-coordinate"], character["y-coordinate"]), False
     if direction == "fishing":
