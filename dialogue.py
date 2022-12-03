@@ -8,6 +8,7 @@ A python module containing the dialogue for Fish or Flirt.
 import sys
 import time
 import ascii_art as asc
+from time import sleep
 
 
 def slow_print(dialogue: str) -> None:
@@ -22,8 +23,14 @@ def slow_print(dialogue: str) -> None:
     for char in dialogue:
         print(char, end="")
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.04)
     print("")
+
+
+def loading(times):
+    for i in range(times):
+        print("...\n\n")
+        sleep(1)
 
 
 # tprint("True Final Boss")
@@ -255,6 +262,10 @@ flirt_fail_pirate = "The pirate waves their shovel around. It almost hits you in
 flirt_fail_leviathan = "The Leviathan thrashes their many arms. You dodged skillfully. If only your flirting skills were just as skillful."
 
 level_up = "You levelled up! Your rod is now stronger."
+
+congratulations_pt1 = "CONGRATULATIONS! You have completed..."
+
+congratulations_pt2 = "Let's take a look at how you did!"
 
 end_of_game_shenanigans = "Thank you for playing our game! We hope you had lots of fun fishing and flirting with everyone.\n" \
                           "Come back again soon!"

@@ -19,18 +19,16 @@ ISLAND_TILE = "\U0001F334"
 PLAYER_TILE = "\U0001F3A3"
 SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
-FISHABLE_ITEMS = {0: "stick", 1: "stick", 2: "stick", 3: "stick", 5: "stick", 6: "boot", 7: "boot",
-                  8: "boot", 9: "fishie", 10: "fishie", 11: "fishie", 12: "pufferfishie", 13: "penguin", 14: "shark",
+FISHABLE_ITEMS = {0: "Stick", 1: "Stick", 2: "Stick", 3: "Stick", 5: "Stick", 6: "Boot", 7: "Boot",
+                  8: "Boot", 9: "Fishie", 10: "Fishie", 11: "Fishie", 12: "Pufferfishie", 13: "Penguin", 14: "Shark",
                   15: "POSEIDON'S TRIDENT", 16: "none", 17: "none", 18: "none", 19: "none", 20: "none"}
 
 
 def fishing_game(character):
     print(asc.fishing_rod)
     print(dialogue.start_fish[randint(0, len(dialogue.start_fish) - 1)])
-    for i in range(randint(2, 7)):
-        print("...\n\n")
-        sleep(1)
-    fished_item = FISHABLE_ITEMS[randint(0, 20)]
+    dialogue.loading(randint(2, 7))
+    fished_item = FISHABLE_ITEMS[randint(0, len(FISHABLE_ITEMS) - 1)]
     if fished_item != "none":
         print(asc.bucket)
         if fished_item == "POSEIDON'S TRIDENT":
@@ -39,6 +37,7 @@ def fishing_game(character):
                 sleep(1)
             print(asc.fishing_ascii[fished_item])
             print("[LEX] SPECIAL DIALOGUE FOR RECEIVING TRIDENT")
+            del FISHABLE_ITEMS["POSEIDON'S TRIDENT"]
         else:
             sleep(1)
             print(asc.fishing_ascii[fished_item])

@@ -12,6 +12,7 @@ from itertools import starmap
 import dialogue
 import events
 import ascii_art as asc
+import pandas as pd
 
 
 WATER_TILE = "\U0001F30A"
@@ -21,28 +22,53 @@ ISLAND_TILE = "\U0001F334"
 PLAYER_TILE = "\U0001F3A3"
 SKULL_TILE = "\U0001F480"
 LEVIATHAN_TILE = "\U00002757"
+SCORING_SHEET = {
+    "Mama's Fishing Rod": 1,
+    "Stick": 0,
+    "Boot": 0,
+    "Fishie": 3,
+    "Pufferfishie": 5,
+    "Penguin": 10,
+    "Shark": 20,
+    "POSEIDON'S TRIDENT": 500,
+    "Sail Boat": 100,
+    "Pirate": 100,
+    "Leviathan": 500,
+    "Crab": 50,
+    "Fisherman": 50,
+    "Mermaid": 50,
+    "Whale": 50,
+}
 
 
 def scoring(item, count):
-    if item == "banana":
-        return item, count, count * 5
-    elif item == "johnson":
-        return item, count, count * 17
-    else:
-        return item, count, count * 0
+    try:
+        return item, count, SCORING_SHEET[item] * count
+    except KeyError:
+        return item, count, 0
 
 
-def end_game(character):
-    print(asc.win)
-    print("[LEX] END GAME DIALOGUE")
+def scoreboard(character):
     inventory = character["inventory"]
     totals = [(item, character["inventory"].count(item)) for item in set(inventory)]
     score = list(starmap(scoring, totals))
     total_score = sum([element[2] for element in score])
-    print("[ARMAN] NEEDS TO BE BEAUTIFIED")
-    for item in score:
-        print(f"{item[1]}x {item[0]}:\t\t\t{item[2]}\n")
-    print(f"Total Score:\t\t{total_score}")
+    row_headers = [element[0] for element in score]
+    column_headers = ["Quantity", "Points"]
+    data = [[element[1], element[2]] for element in score]
+    print(pd.DataFrame(data, row_headers, column_headers))
+
+
+def end_game(character):
+    print(asc.win)
+    sleep(0.5)
+    dialogue.slow_print(dialogue.congratulations_pt1)
+    sleep(0.5)
+    print(asc.title)
+    dialogue.slow_print(dialogue.congratulations_pt2)
+    dialogue.loading(3)
+    scoreboard(character)
+    dialogue.slow_print(dialogue.end_of_game_shenanigans)
 
 
 def check_if_goal_attained(character):
