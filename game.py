@@ -147,7 +147,25 @@ def move_character(character, move):
         return
 
 
-def describe_invalid_move(board, character, move):
+def describe_invalid_move(board: dict, character: dict, move) -> str:
+    """
+    Return a random message from a list of messages in the dialogue module describing to the player the invalid move
+    they attempted.
+
+    :param board: A dictionary with key-value pairs representing tiles on the game board.
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param move: A tuple representing the x and y coordinates the player wishes to move to OR the string
+    'fishing'.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate' and 'y-coordinate' containing integers
+    within the range 0 and the game boards rows and columns.
+    :precondition: move must be a tuple representing the x and y coordinates the player wishes to move to OR the
+    string 'fishing'.
+    :postcondition: Will return a random string from the dialogue module containing a message describing the invalid
+    movement.
+    :return: A random string.
+    """
     position = (character['x-coordinate'], character['y-coordinate'])
     if move == "fishing":
         return dialogue.invalid_fish[randint(0, len(dialogue.invalid_fish) - 1)]
