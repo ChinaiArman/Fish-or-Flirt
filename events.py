@@ -28,6 +28,8 @@ def fishing_game(character: dict) -> None:
     """
     Play the Fishing Game and have a random chance to catch an item. Caught items are added to players inventory.
 
+    Not unit tested due to requiring too many print patches and having high loop complexity.
+
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :precondition: character exists and has the key-value pairs 'luck' and 'charisma' containing integers and
     'inventory' containing a list of game items the player has acquired.
@@ -74,6 +76,8 @@ def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
     """
     Play the Leviathan Event Challenge; the final boss for Fish or Flirt.
 
+    Not unit tested due to the complexity of its loops, and requiring too many patches for its prints.
+
     :param board: A dictionary with key-value pairs representing tiles on the game board.
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :param event_dialogue: A dictionary containing the dialogue for the challenge.
@@ -119,6 +123,8 @@ def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
 def pirate_event(board: dict, character: dict, event_dialogue: dict) -> None:
     """
     Play the Pirate Event Challenge; the first boss in Fish or Flirt.
+
+    Not unit tested due to its complexity with looping, and numerous prints that require patching.
 
     :param board: A dictionary with key-value pairs representing tiles on the game board.
     :param character: A dictionary with key-value pairs representing the player and their basic information.
@@ -169,6 +175,8 @@ def boat_event(board: dict, character: dict, event_dialogue: dict) -> None:
     """
     Play the Boat Event Challenge.
 
+    Not unit tested due to its many prints that require patching.
+
     :param board: A dictionary with key-value pairs representing tiles on the game board.
     :param character: A dictionary with key-value pairs representing the player and their basic information.
     :param event_dialogue: A dictionary containing the dialogue for the challenge.
@@ -193,6 +201,8 @@ def boat_event(board: dict, character: dict, event_dialogue: dict) -> None:
 def land_event(_, character: dict, event_dialogue: dict) -> None:
     """
     Play the Land Event Challenge. Fight against a Crab or a Fisherman, depending on the entity in event_dialogue.
+
+    Not unit tested due to the many prints that require patching.
 
     :param _: Not important to the function
     :param character: A dictionary with key-value pairs representing the player and their basic information.
@@ -243,6 +253,8 @@ def land_event(_, character: dict, event_dialogue: dict) -> None:
 def water_event(_, character: dict, event_dialogue: dict) -> None:
     """
     Play the Land Event Challenge. Fight against a Mermaid or a Whale, depending on the entity in event_dialogue.
+
+    Not unit tested due to the many prints that require patching.
 
     :param _: Not important to the function
     :param character: A dictionary with key-value pairs representing the player and their basic information.
