@@ -101,6 +101,7 @@ random_encounter_whale = [
 
 no_encounter_land = [
     "I don't like sand. ( ｡ •̀ ᴖ •́ ｡) It's coarse and rough and irritating and it gets everywhere.",
+    "WOW! CONGRATS! YOU FOUND\nseaweed... You found wet soggy seaweed... congrats",
     "What kind of fisherman stays landlocked! Go to the sea, you'll find nothing on this barren land.",
     "The 'racle hast possess'd me, I f'resee a prophecy...\nGasp! the young gudgeon'rman finds nothing h're!"
 ]
