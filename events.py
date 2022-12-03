@@ -59,13 +59,20 @@ def fishing_game(character):
     sleep(2)
 
 
-def leviathan_event(board, character, event_dialogue):
+def leviathan_event(board: dict, character: dict, event_dialogue: dict) -> None:
     """
+    Play the Leviathan Event Challenge; the final boss for Fish or Flirt.
 
     :param board: A dictionary with key-value pairs representing tiles on the game board.
     :param character: A dictionary with key-value pairs representing the player and their basic information.
-    :param event_dialogue:
-    :return:
+    :param event_dialogue: A dictionary containing the dialogue for the challenge.
+    :precondition: board has keys of tuples, representing x and y coordinates, and values representing the location
+    stored at that position.
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', 'charisma' and 'luck'
+    containing integers, and 'inventory' containing a list of game items.
+    :precondition: event_dialogue is a dictionary constant from the dialogue module containing strings with storylines
+    for the event.
+    :return: None
     """
     leviathan_charisma = 100
     leviathan_difficulty = 100
