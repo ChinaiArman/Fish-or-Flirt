@@ -218,7 +218,7 @@ fishing_success = [
 fishing_game_fail = [
     "Your wire broke. Unlucky.",
     "WOW! I never thought the Chosen One can suck so much at fishing!",
-    "YOU CAUUUUUUUUGHT, oh wow how rare, NOTHING!!!",
+    "YOU CAUUUUUUUUGHT, oh wow how rare, NOTHING!!!"
 ]
 
 fish_whale_success = "You caught a whale! Cue Pokemon sounds."
