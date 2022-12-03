@@ -215,7 +215,20 @@ def land_event(_, character: dict, event_dialogue: dict) -> None:
     return
 
 
-def water_event(_, character, event_dialogue):
+def water_event(_, character: dict, event_dialogue: dict) -> None:
+    """
+    Play the Land Event Challenge. Fight against a Mermaid or a Whale, depending on the entity in event_dialogue.
+
+    :param _: Not important to the function
+    :param character: A dictionary with key-value pairs representing the player and their basic information.
+    :param event_dialogue: A dictionary containing the dialogue for the challenge. Determines which enemy the player is
+    fighting against.
+    :precondition: character exists and has the key-value pairs 'x-coordinate', 'y-coordinate', 'charisma', and 'luck'
+    containing integers, and 'inventory' containing a list of game items.
+    :precondition: event_dialogue is either then Mermaid or Whale dictionary constant from the dialogue module
+    containing strings with storylines for the event.
+    :return: None
+    """
     entity_charisma = randint(80, 100)
     entity_difficulty = randint(80, 100)
     print(event_dialogue["ascii_encounter"])
