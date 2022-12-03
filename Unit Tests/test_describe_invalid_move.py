@@ -9,7 +9,7 @@ from game import ISLAND_TILE
 
 class TestDescribeInvalidMove(TestCase):
     @patch('game.randint', side_effect=[2])
-    def test_fishing(self, _):
+    def test_fishing(self, mock_random):
         user_position = {'x-coordinate': 0, 'y-coordinate': 0, 'rod level': 0}
         simple_board = {(0, 0): LAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): LAND_TILE}
         move = "fishing"
@@ -18,7 +18,7 @@ class TestDescribeInvalidMove(TestCase):
         self.assertEqual(actual, expected)
 
     @patch('game.randint', side_effect=[1])
-    def test_invalid_water(self, _):
+    def test_invalid_water(self, mock_random):
         user_position = {'x-coordinate': 1, 'y-coordinate': 0, 'rod level': 0}
         simple_board = {(0, 0): LAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): LAND_TILE}
         move = "north"
@@ -28,7 +28,7 @@ class TestDescribeInvalidMove(TestCase):
         self.assertEqual(expected, actual)
 
     @patch('game.randint', side_effect=[2])
-    def test_invalid_land(self, _):
+    def test_invalid_land(self, mock_random):
         user_position = {'x-coordinate': 0, 'y-coordinate': 0, 'rod level': 0}
         simple_board = {(0, 0): LAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): LAND_TILE}
         move = "east"
@@ -37,7 +37,7 @@ class TestDescribeInvalidMove(TestCase):
         self.assertEqual(expected, actual)
 
     @patch('game.randint', side_effect=[1])
-    def test_invalid_island(self, _):
+    def test_invalid_island(self, mock_random):
         user_position = {'x-coordinate': 1, 'y-coordinate': 1, 'rod level': 0}
         simple_board = {(0, 0): ISLAND_TILE, (0, 1): LAND_TILE, (1, 0): WATER_TILE, (1, 1): ISLAND_TILE}
         move = "east"
