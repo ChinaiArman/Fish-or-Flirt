@@ -62,6 +62,11 @@ def remove_non_legendary_items(item: str) -> bool:
     :precondition: item must be a string containing the name of an object from the game.
     :postcondition: Will return True if the item is a legendary item, else False.
     :return: A boolean value.
+
+    >>> remove_non_legendary_items("Stick")
+    False
+    >>> remove_non_legendary_items("POSEIDON'S TRIDENT")
+    True
     """
     legendary_items = ("POSEIDON'S TRIDENT", "An Unspoken Level of Rod-ly-ness", "Leviathan")
     return item in legendary_items
