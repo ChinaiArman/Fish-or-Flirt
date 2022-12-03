@@ -100,17 +100,17 @@ def pirate_event(board, character, event_dialogue):
         if selection == "1":
             dialogue.slow_print(event_dialogue["seduction"][randint(0, len(event_dialogue["seduction"]) - 1)])
             if character["charisma"] > randint(0, pirate_charisma):
-                print("[LEX] PIRATE BLUSH ART")
+                print(event_dialogue["blush"])
                 print(event_dialogue["success"])
                 character["charisma"] += 5
                 character["luck"] += 5
                 character["inventory"] += [event_dialogue["entity"]]
                 flirting = False
             else:
-                print("[LEX] PIRATE FAIL ART")
+                print(event_dialogue["skulls"])
                 print(event_dialogue["fail"])
         else:
-            print("[LEX] CONFUSION ART")
+            print(event_dialogue["run_away"])
             print(event_dialogue["flee"][randint(0, len(event_dialogue["flee"]) - 1)])
 
     board[position] = ISLAND_TILE

@@ -321,7 +321,10 @@ PIRATE_DIALOGUE = {
     "start_flirt": start_flirt,
     "seduction": seduce_pirate,
     "success": flirt_success_pirate,
+    "blush": asc.pirate_seduce_success,
     "fail": flirt_fail_pirate,
+    "skulls": asc.pirate_seduce_fail,
+    "run_away": asc.flee,
     "invalid": invalid_flirt,
     "flee": flee_from_pirate
 }
