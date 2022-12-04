@@ -171,16 +171,16 @@ def execute_glow_up_protocol(character: dict) -> None:
     >>> doctest_character = {'xp': 1, 'rod level': 0, 'charisma': 0, 'luck': 0}
     >>> execute_glow_up_protocol(doctest_character)
     You levelled up! Your rod is now stronger.
-    Current Charisma: 2 (level cap: 80)
-    Current Luck: 2 (level cap: 80)
+    Current Charisma: 2
+    Current Luck: 2
     >>> doctest_character['xp'] == doctest_character['rod level'] and doctest_character['charisma'] == 2 and \
     doctest_character['luck'] == 2
     True
     >>> second_doctest_character = {'xp': 2, 'rod level': 0, 'charisma': 17, 'luck': 36}
     >>> execute_glow_up_protocol(second_doctest_character)
     You levelled up! Your rod is now stronger.
-    Current Charisma: 19 (level cap: 80)
-    Current Luck: 38 (level cap: 80)
+    Current Charisma: 19
+    Current Luck: 38
     >>> second_doctest_character['xp'] == second_doctest_character['rod level'] \
     and second_doctest_character['charisma'] == 19 and second_doctest_character['luck'] == 38
     True
