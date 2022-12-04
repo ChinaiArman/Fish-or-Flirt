@@ -355,7 +355,8 @@ LEVIATHAN_DIALOGUE = {
     "success": asc.leviathan_success,
     "fail": asc.leviathan_fail,
     "action_failed": flirt_fail_leviathan,
-    "defeated": leviathan_defeated
+    "defeated": leviathan_defeated,
+    "invalid_flirt": invalid_flirt
 }
 
 CRAB_DIALOGUE = {
